@@ -28,7 +28,7 @@
     <ul class="navbar-nav navbar-dark bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home')}}">
         <div class="sidebar-brand-icon rotate-n-15">
           
         </div>
@@ -40,7 +40,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('kokpit.index')}}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Kokpit</span></a>
       </li>
@@ -88,8 +88,8 @@
         </a>
         <div id="collapseProducts" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">Dodaj Produkt</a>
-            <a class="collapse-item" href="#">Edytuj Produkt</a>
+            <a class="collapse-item"  href="{{ route('produkt.create')}}">Dodaj Produkt</a>
+            <a class="collapse-item"  href="{{ route('produkt.index')}}">Edytuj Produkt</a>
           </div>
         </div>
       </li>
@@ -102,7 +102,6 @@
         </a>
         <div id="collapseOrders" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">Dodaj Zamowienie</a>
             <a class="collapse-item" href="#">Edytuj Zamowienie</a>
           </div>
         </div>
