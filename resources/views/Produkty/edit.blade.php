@@ -71,7 +71,7 @@
                         <div class="form-group">
                             <label>Kategoria</label>
                             <select name="fk_kategorie" class="form-control">
-                                <option value="{{ $produkty->fk_kategorie }}">{{ $produkty->fk_kategorie }}</option>
+                                <option value="{{ $produkty->fk_kategorie }}">{{ $produkty->kategoria->Nazwa }}</option>
                                 <option value="1">Warzywa</option>
                                 <option value="2">Owoce</option>
                             </select>
@@ -80,7 +80,7 @@
                             </span>
                         </div>
                      
-                        <button type="submit" name="btn" class="btn btn-default">Zaaktualizuj</button>
+                        <button type="submit" name="btn" class="btn btn-success przyciskwyslij">Zaaktualizuj</button>
                         {!! Form::close() !!}
                     </div>
                 </div>

@@ -73,8 +73,8 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">Dodaj Kategorie</a>
-            <a class="collapse-item" href="#">Edytuj Kategorie</a>
+            <a class="collapse-item"  href="{{ route('kategorie.create')}}">Dodaj Kategorie</a>
+            <a class="collapse-item"  href="{{ route('kategorie.index')}}">Edytuj Kategorie</a>
           </div>
         </div>
       </li>

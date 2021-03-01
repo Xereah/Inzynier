@@ -45,7 +45,7 @@
                     </tr>
                     <tr>
                         <th>Kategoria</th>
-                        <th>{{ $produkty->fk_kategorie }}</th> 
+                        <th>{{ $produkty->kategoria->Nazwa }}</th> 
                     </tr>
                 </table>
             </div>

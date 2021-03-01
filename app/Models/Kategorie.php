@@ -7,28 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
-class Produkty extends Model
+class Kategorie extends Model
 {
     use HasFactory;
     use SoftDeletes;
   
 
-    protected $table='produkty';
+    protected $table='kategorie';
 
     protected $fillable = [
         'Nazwa',
-        'Cena',
-        'Cena',
-        'Zdjecie',
-        'Ilosc',
-        'JednostkaMiary',
         'Opis',
-        'fk_kategorie'
+        
     ];
 
-    public function kategoria()
+    public function products()
     {
-        return $this->belongsTo('App\Models\kategorie','fk_kategorie')->withTrashed();
+        return $this->hasMany('App\Models\Produkty');
     }
 }

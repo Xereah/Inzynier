@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produkty;
+use App\Models\Kategorie;
 
 class ProductController extends Controller
 {
@@ -15,7 +16,8 @@ class ProductController extends Controller
     public function index()
     {
         $produkty = Produkty::all();
-        return view('Produkty.index', compact('produkty'));
+        $kategorie = Kategorie::all();
+        return view('Produkty.index', compact('produkty','kategorie'));
     }
 
     /**
@@ -26,7 +28,8 @@ class ProductController extends Controller
     public function create()
     {
         $produkty = Produkty::all();
-        return view('Produkty.add', compact('produkty'));
+        $kategorie = Kategorie::all();
+        return view('Produkty.add', compact('produkty','kategorie'));
     }
 
     /**
@@ -70,9 +73,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+        $kategorie = Kategorie::all();
         $produkty = Produkty::findOrFail($id);
-        // $kategorie = kategorie::findOrFail($id);
-         return view('Produkty.widok', compact('produkty'));
+         return view('Produkty.widok', compact('produkty','kategorie'));
     }
 
     /**
@@ -84,7 +87,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $produkty = Produkty::findOrFail($id);
-        return view('Produkty.edit', compact('produkty'));
+        $kategorie = Kategorie::all();
+        return view('Produkty.edit', compact('produkty','kategorie'));
     }
 
     /**
@@ -122,7 +126,6 @@ class ProductController extends Controller
         $productById = Produkty::where('id', $request->id)->first();
         $productImage = $request->file('Zdjecie');
         if($productImage){
-            
             $imageName = $productImage->getClientOriginalName();
             $uploadPath = 'Zdjecie/';
             $productImage->move($uploadPath, $imageName);

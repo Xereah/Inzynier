@@ -13,10 +13,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="text-center text-success">{{ Session::get('message') }}</h4>
-                Dodawanie Produktu
-            </div>
+          
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
@@ -78,7 +75,7 @@
                             </span>
                         </div>
                      
-                        <button type="submit" name="btn" class="btn btn-default">Zaaktualizuj</button>
+                        <button type="submit" name="btn" class="btn btn-success przyciskwyslij">Dodaj Produkt do Bazy</button>
                         {!! Form::close() !!}
                     </div>
                 </div>
