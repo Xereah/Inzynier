@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KokpitController; 
 use App\Http\Controllers\ProductController; 
 use App\Http\Controllers\CategoryController; 
+use App\Http\Controllers\UserController;
 
 
 
@@ -41,7 +42,9 @@ Route::name('produkt.')->prefix('produkt')->group(function(){
 });
 
 //Kategorie
-
+Route::post('/kategorie/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('store');
+Route::get('/kategorie/delete/{id}', [App\Http\Controllers\CategoryController::class, 'destroy'])->name('destroy');
+Route::post('/update/{id}', [App\Http\Controllers\CategoryController::class, 'update'])->name('update');
 Route::name('kategorie.')->prefix('kategorie')->group(function(){
     Route::get('', [CategoryController::class,'index'])
         ->name('index');
@@ -57,6 +60,29 @@ Route::name('kategorie.')->prefix('kategorie')->group(function(){
         ->where('id', '[0-9]+');
   
 });
-Route::post('/kategorie/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('store');
-Route::get('/kategorie/delete/{id}', [App\Http\Controllers\CategoryController::class, 'destroy'])->name('destroy');
-Route::post('/update/{id}', [App\Http\Controllers\CategoryController::class, 'update'])->name('update');
+
+
+//Uzytkownicy
+
+Route::name('uzytkownik.')->prefix('uzytkownik')->group(function(){
+    Route::get('', [UserController::class,'index'])
+        ->name('index');
+   Route::get('create',  [UserController::class,'create'])
+        ->name('create');
+    Route::post('',  [UserController::class,'store'])
+        ->name('store');
+    Route::get('{id}',  [UserController::class,'show'])
+        ->name('show')
+       ->where('id', '[0-9]+');
+    Route::get('{id}/edit',  [UserController::class,'edit'])
+        ->name('edit')
+        ->where('id', '[0-9]+');
+ Route::post('{id}',  [UserController::class,'update'])
+        ->name('update')
+        ->where('id', '[0-9]+');
+  
+   Route::get('/uzytkownik/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('destroy');
+
+ 
+       
+});
