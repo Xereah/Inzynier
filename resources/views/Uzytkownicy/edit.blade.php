@@ -2,9 +2,12 @@
 
 @section('title', 'Uzytkownicy')
 @section('content')
+<div class="alert alert-warning" role="alert">
+  Uwaga! przy każdej edycji wymagana jest zmiana hasła.
+</div>
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Edit User</h1>
+        <h1 class="page-header">Edycja użytkownika</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -13,14 +16,19 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Edit User's Info
+            
             </div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                    <form id="uzytkownicy-form" method="post" action="{{ route('uzytkownik.update', $uzytkownik->id) }}">
+                    <form id="uzytkownik-form" method="post" 
+                action="{{ route('uzytkownik.update', $uzytkownik->id) }}">
+                    @if(isset($edit) && $edit === true)
+                         @method('PATCH')
+                            @endif
+                             @csrf
                             <div class="form-group">
-                                <label>Name</label>
+                                <label>Imie</label>
                                 <input type="hidden" name="userId" value="{{ $uzytkownik->id }}" class="form-control">
                                 <input type="text" name="name" value="{{ $uzytkownik->name }}" class="form-control">
                                 <span class="text-danger">
@@ -28,18 +36,39 @@
                                 </span>
                             </div>
                             <div class="form-group">
-                                <label>Email Address</label>
+                                <label>Nazwisko</label>
+                                <input type="text" name="surname" value="{{ $uzytkownik->surname }}" class="form-control">
+                                <span class="text-danger">
+                                    {{ $errors->has('surname') ? $errors->first('surname') : '' }}
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input type="text" name="phone" value="{{ $uzytkownik->phone }}" class="form-control">
+                                <span class="text-danger">
+                                    {{ $errors->has('phone') ? $errors->first('phone') : '' }}
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
                                 <input type="email" name="email" value="{{ $uzytkownik->email }}" class="form-control">
                                 <span class="text-danger">
                                     {{ $errors->has('email') ? $errors->first('email') : '' }}
                                 </span>
                             </div>
                             <div class="form-group">
-                                <label>Access Level</label>
+                                <label>Hasło</label>
+                                <input type="password" name="password" value="{{ $uzytkownik->password }}" class="form-control">
+                                <span class="text-danger">
+                                    {{ $errors->has('email') ? $errors->first('email') : '' }}
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>Rola</label>
                                 <select name="level" class="form-control">
-                                    <option value="{{ $uzytkownik->level }}">{{ $uzytkownik->level == 1 ? 'Admin':'Employee' }}</option>
-                                    <option value="1">Admin</option>
-                                    <option value="2">Employee</option>
+                                    <option value="{{ $uzytkownik->level }}">{{ $uzytkownik->level == 1 ? 'Administrator':'Uzytkownik' }}</option>
+                                    <option value="1">Administrator</option>
+                                    <option value="2">Użytkownik</option>
                                 </select>
                                 <span class="text-danger">
                                     {{ $errors->has('level') ? $errors->first('level') : '' }}
@@ -47,12 +76,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <textarea name="address" class="form-control" rows="3">{{ $uzytkownik->adress }}</textarea>
+                                <input type="text" name="adress" value="{{ $uzytkownik->adress }}" class="form-control">
                                 <span class="text-danger">
-                                    {{ $errors->has('address') ? $errors->first('address') : '' }}
+                                    {{ $errors->has('adress') ? $errors->first('adress') : '' }}
                                 </span>
                             </div>
-                        <button type="submit" name="btn" class="btn btn-default">Update User Info</button>
+                        <button type="submit" name="btn" class="btn btn-success" style="float:right">Update User Info</button>
                       </form>
                     </div>
                 </div>

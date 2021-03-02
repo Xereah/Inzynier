@@ -18,12 +18,13 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTable">
                     <thead>
                         <tr>
                             <th>Serial #</th>
                             <th>Imie</th>
                             <th>Nazwisko</th>
+                            <th>Telefon</th>
                             <th>Adress</th>
                             <th>Email</th>
                             <th width='180px'>Action</th>
@@ -36,6 +37,7 @@
                             <td>{{ $i++  }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->surname }}</td>
+                            <td>{{ $user->phone }}</td>
                             <td>{!! $user->adress !!}</td>
                             <td>{{ $user->email }}</td>
                             <td>

@@ -16,14 +16,14 @@
                 <div class="col-lg-6">
                   <div class="p-5">
                     <div class="text-center">
-                      <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                      <h1 class="h4 text-gray-900 mb-4">Witaj Spowrotem!</h1>
                     </div>
 
                     <form method="POST" action="{{ route('login') }}" class="user">
                       @csrf
 
                       <div class="form-group">
-                        <input type="email" name="email" value="{{ old('email') }}" class="form-control form-control-user @error('email') is-invalid @enderror" required placeholder="Email Address...">
+                        <input type="email" name="email" value="{{ old('email') }}" class="form-control form-control-user @error('email') is-invalid @enderror" required placeholder="Email...">
 
                         @error('email')
                             <span class="invalid-feedback ml-2 mt-2" role="alert">
@@ -33,7 +33,7 @@
                       </div>
 
                       <div class="form-group">
-                        <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required placeholder="Password">
+                        <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required placeholder="Hasło">
                       
                         @error('password')
                             <span class="invalid-feedback ml-2 mt-2" role="alert">
@@ -45,23 +45,23 @@
                       <div class="form-group">
                         <div class="custom-control custom-checkbox small">
                           <input type="checkbox" class="custom-control-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                          <label class="custom-control-label" for="remember">Remember Me</label>
+                          <label class="custom-control-label" for="remember">Zapamiętaj mnie</label>
                         </div>
                       </div>
 
                       <button type="submit" class="btn btn-primary btn-user btn-block">
-                        Login
+                        Zaloguj
                       </button>
                     </form>
 
                     <hr>
                     @if (Route::has('password.request'))
                         <div class="text-center">
-                          <a class="small" href="{{ route('password.request') }}">Forgot Password?</a>
+                          <a class="small" href="{{ route('password.request') }}">Zapomniałeś hasła?</a>
                         </div>
                     @endif
                     <div class="text-center">
-                        <a class="small" href="{{ route('register') }}">Create an Account!</a>
+                        <a class="small" href="{{ route('register') }}">Utwórz konto!</a>
                     </div>
                   </div>
                 </div>

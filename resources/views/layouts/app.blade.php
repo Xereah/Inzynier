@@ -13,7 +13,7 @@
   <link href="{{ asset('sbadmin2/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
   <!-- Custom styles for this template-->
   <link href="{{ asset('sbadmin2/css/sb-admin-2.min.css' ) }}" rel="stylesheet">
   @yield('css')
@@ -259,16 +259,15 @@
   <!-- Bootstrap core JavaScript-->
   <script src="{{ asset('sbadmin2/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('sbadmin2/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-   <!-- Wykresy-->
-    <script src="{{ asset('js/wykresy/chart-area-demo.js') }}" defer></script>
-    <script src="{{ asset('js/wykresy/chart-bar-demo.js') }}" defer></script>
-    <script src="{{ asset('js/wykresy/chart-pie-demo.js') }}" defer></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script> -->
+   
+   <!-- Datatables -->
+    <script src="{{ asset('js/datatables-demo.js') }}" defer></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
    
-  <!-- Core plugin JavaScript-->
-  <!-- <script src="{{ asset('sbadmin2/jquery-easing/jquery.easing.min.js') }}"></script> -->
-
   <!-- Custom scripts for all pages-->
   <script src="{{ asset('sbadmin2/js/sb-admin-2.min.js') }}"></script>
   

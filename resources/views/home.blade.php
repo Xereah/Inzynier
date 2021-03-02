@@ -46,3 +46,9 @@
                             
                         </div>
 @endsection
+
+@section('js')
+<script src="{{ asset('js/wykresy/chart-area-demo.js') }}" defer></script>
+    <script src="{{ asset('js/wykresy/chart-bar-demo.js') }}" defer></script>
+    <script src="{{ asset('js/wykresy/chart-pie-demo.js') }}" defer></script>
+ @endsection

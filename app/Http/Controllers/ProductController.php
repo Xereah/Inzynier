@@ -40,7 +40,7 @@ class ProductController extends Controller
      */
     public function storeProduct(Request $request) {
         //return $request->all();
-
+try{
         $productImage = $request->file('Zdjecie'); //for retrieving image from form
         $imageName = $productImage->getClientOriginalName();
         $uploadPath = 'public/Zdjecia/';
@@ -49,6 +49,19 @@ class ProductController extends Controller
         $this->saveProductInfo($request, $imageUrl);
 
         return redirect()->route('produkt.index')->with('message', 'Udało się dodać produkt!');
+    } catch(\Illuminate\Database\QueryException $e) {
+        \Log::error($e);
+        // duplikacja klucza - jest to sprawdzane w regułach walidacji
+        switch($e->getCode()){
+            case '23000':
+                return redirect()->route('produkt.index')
+                ->with('message', 'Nie udało się dodać produktu.');
+                break;
+            default:
+                return redirect()->route('produkt.index')
+                ->with('message', 'Nie udało się dodać produktu.');
+        }
+    }
     }
 
     protected function saveProductInfo($request, $imageUrl) {
@@ -100,9 +113,23 @@ class ProductController extends Controller
      */
     public function updateProduct(Request $request)
     {
+        try{
         $imageUrl = $this->imageExistStatus($request);
         $this->updateProductInfo($request, $imageUrl);
         return redirect()->route('produkt.index')->with('message', 'Udało się dokonać aktualizacji.');
+    } catch(\Illuminate\Database\QueryException $e) {
+        \Log::error($e);
+        // duplikacja klucza - jest to sprawdzane w regułach walidacji
+        switch($e->getCode()){
+            case '23000':
+                return redirect()->route('produkt.index')
+                ->with('message', 'Nie udało się zaktualizować produktu.');
+                break;
+            default:
+                return redirect()->route('produkt.index')
+                ->with('message', 'Nie udało się zaktualizować produktu.');
+        }
+    }
     }
 
     /**

@@ -16,7 +16,7 @@
               @csrf
 
               <div class="form-group">
-                  <input type="text" class="form-control form-control-user @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required placeholder="Name">
+                  <input type="text" class="form-control form-control-user @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required placeholder="Imie">
               
                   @error('name')
                     <span class="invalid-feedback ml-2 mt-2" role="alert">
@@ -26,7 +26,7 @@
               </div>
 
               <div class="form-group">
-                  <input type="text" class="form-control form-control-user @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required placeholder="Surname">
+                  <input type="text" class="form-control form-control-user @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required placeholder="Nazwisko">
               
                   @error('surname')
                     <span class="invalid-feedback ml-2 mt-2" role="alert">
@@ -36,7 +36,17 @@
               </div>
 
               <div class="form-group">
-                  <input type="text" class="form-control form-control-user @error('adress') is-invalid @enderror" name="adress" value="{{ old('adress') }}" required placeholder="adress">
+                  <input type="text" class="form-control form-control-user @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required placeholder="Telefon">
+              
+                  @error('surname')
+                    <span class="invalid-feedback ml-2 mt-2" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+              </div>
+
+              <div class="form-group">
+                  <input type="text" class="form-control form-control-user @error('adress') is-invalid @enderror" name="adress" value="{{ old('adress') }}" required placeholder="Adress">
               
                   @error('adress')
                     <span class="invalid-feedback ml-2 mt-2" role="alert">
@@ -57,7 +67,7 @@
 
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
-                  <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required placeholder="Password">
+                  <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required placeholder="Hasło">
 
                   @error('password')
                     <span class="invalid-feedback ml-2 mt-2" role="alert">
@@ -67,20 +77,21 @@
                 </div>
 
 
-                <div class="form-group">
-                  <input type="number" class="form-control form-control-user @error('level') is-invalid @enderror" name="level" value="{{ old('level') }}" required placeholder="Level">
-              
-                  @error('level')
-                    <span class="invalid-feedback ml-2 mt-2" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
-              </div>
                 
                 <div class="col-sm-6">
-                  <input type="password" class="form-control form-control-user" name="password_confirmation" required placeholder="Password Confirmation">
+                  <input type="password" class="form-control form-control-user" name="password_confirmation" required placeholder="Potwierdź hasło">
                 </div>
               </div>
+              <div class="form-group">
+                                <select name="level" class="form-control">
+                                <option>Wybierz role</option>
+                                    <option value="1">Administrator</option>
+                                    <option value="2">Użytkownik</option>
+                                </select>
+                                <span class="text-danger">
+                                    {{ $errors->has('level') ? $errors->first('level') : '' }}
+                                </span>
+                            </div>
 
               <button type="submit" class="btn btn-primary btn-user btn-block">
                 Utwórz konto

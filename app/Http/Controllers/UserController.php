@@ -35,16 +35,31 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
+        try {
         $uzytkownik = new User();
         $uzytkownik->name = $request->name;
         $uzytkownik->surname = $request->surname;
         $uzytkownik->adress = $request->adress;
         $uzytkownik->email = $request->email;
+        $uzytkownik->phone = $request->phone;
         $uzytkownik->password = bcrypt($request->password);
         $uzytkownik->level = $request->level;
         $uzytkownik->save();
         return redirect()->route('uzytkownik.index')->with('message', 'Udało się dodać użytkownika.');
+    } catch(\Illuminate\Database\QueryException $e) {
+        \Log::error($e);
+        // duplikacja klucza - jest to sprawdzane w regułach walidacji
+        switch($e->getCode()){
+            case '23000':
+                return redirect()->route('uzytkownik.index')
+                ->with('message', 'Nie udało się dodać użytkownika.');
+                break;
+            default:
+                return redirect()->route('uzytkownik.index')
+                ->with('message', 'Nie udało się dodać użytkownika.');
+        }
+    }
     }
 
     /**
@@ -67,6 +82,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $uzytkownik = User::findOrFail($id);
+        $edit = true;
         return view('Uzytkownicy.edit', compact('uzytkownik'));
     }
 
@@ -79,15 +95,43 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $uzytkownik = User::find($request->id);
-        $uzytkownik->name = $request->name;
-        $uzytkownik->surname = $request->surname;
-        $uzytkownik->adress = $request->adress;
-        $uzytkownik->email = $request->email;
-        $uzytkownik->password = bcrypt($request->password);
-        $uzytkownik->level = $request->level;
-        $uzytkownik->save();
-        return redirect()->route('uzytkownik.index')->with('message', 'Udało się edytowac użytkownika.');
+        // $uzytkownik = User::find($request->id);
+        // $uzytkownik->name = $request->name;
+        // $uzytkownik->surname = $request->surname;
+        // $uzytkownik->adress = $request->adress;
+        // $uzytkownik->email = $request->email;
+        // $uzytkownik->password = bcrypt($request->password);
+        // $uzytkownik->level = $request->level;
+        // $uzytkownik->save();
+        // return redirect()->route('uzytkownik.index')->with('message', 'Udało się edytowac użytkownika.');
+
+        try {
+            // pobranie aktualnej kategorii z bazy
+            $uzytkownik = User::find($request->id);
+            $uzytkownik->name = $request->name;
+             $uzytkownik->surname = $request->surname;
+             $uzytkownik->adress = $request->adress;
+             $uzytkownik->email = $request->email;
+             $uzytkownik->phone = $request->phone;
+             $uzytkownik->password = bcrypt($request->password);
+             $uzytkownik->level = $request->level;
+             $uzytkownik->save();
+            
+            return redirect()->route('uzytkownik.index')
+                ->with('message', 'Udało się edytowac użytkownika.');
+        } catch(\Illuminate\Database\QueryException $e) {
+            \Log::error($e);
+            // duplikacja klucza - jest to sprawdzane w regułach walidacji
+            switch($e->getCode()){
+                case '23000':
+                    return redirect()->route('uzytkownik.index')
+                    ->with('message', 'Nie udało się edytowac użytkownika.');
+                    break;
+                default:
+                    return redirect()->route('uzytkownik.index')
+                    ->with('message', 'Nie udało się edytowac użytkownika.');
+            }
+        }
     }
 
     /**

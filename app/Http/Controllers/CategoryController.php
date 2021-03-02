@@ -45,20 +45,20 @@ class CategoryController extends Controller
             $kategorie->save();
             // przekierowanie na stronę z informacją o kategoriach
             return redirect()->route('kategorie.index')
-                ->with('success', __('translation.kategorie.create.messages.success'));
-        } catch(\Illuminate\Database\QueryException $e) {
-            \Log::error($e);
-            // duplikacja klucza - jest to sprawdzane w regułach walidacji
-            switch($e->getCode()){
-                case '23000':
-                    return redirect()->route('kategorie.index')
-                        ->with('error', __('translation.kategorie.create.messages.duplicate_entry'));
-                    break;
-                default:
-                    return redirect()->route('kategorie.index')
-                        ->with('error', __('translation.kategorie.create.messages.error'));
-            }
-        }   
+                ->with('message', 'Udało się dodać Kategorie.');
+            } catch(\Illuminate\Database\QueryException $e) {
+                \Log::error($e);
+                // duplikacja klucza - jest to sprawdzane w regułach walidacji
+                switch($e->getCode()){
+                    case '23000':
+                        return redirect()->route('kategorie.index')
+                        ->with('message', 'Nie udało się dodać kategorii.');
+                        break;
+                    default:
+                        return redirect()->route('kategorie.index')
+                        ->with('message', 'Nie udało się dodać kategorii.');
+                }
+            }  
      }
 
     /**
@@ -94,11 +94,25 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        try{
         $kategorie = Kategorie::find($request->id);
         $kategorie->Nazwa = $request->Nazwa;
         $kategorie->Opis = $request->Opis;
         $kategorie->save();
         return redirect()->route('kategorie.index')->with('message', 'Udało się zaaktualizować kategorie.');
+    } catch(\Illuminate\Database\QueryException $e) {
+        \Log::error($e);
+        // duplikacja klucza - jest to sprawdzane w regułach walidacji
+        switch($e->getCode()){
+            case '23000':
+                return redirect()->route('kategorie.index')
+                ->with('message', 'Nie udało się zaktualizować kategorii.');
+                break;
+            default:
+                return redirect()->route('kategorie.index')
+                ->with('message', 'Nie udało się zaktualizować kategorii.');
+        }
+    }
     }
 
     /**
