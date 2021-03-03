@@ -75,24 +75,4 @@
 </div>
 <br>
 <br>
-<div class="logo_products">
-    <div class="container">
-        <div class="w3ls_logo_products_left">
-        <img src="{{url('/Zdjecie/GospodarstwoStruzik.jpg')}}" style="height:150px" class="zdjecie" alt="..." />
-        </div>
-        <div class="w3ls_logo_products_left1">
-            <ul class="special_items">
-                <li><a href="{{ url('/events') }}">Stron głowna</a><i>|</i></li>
-                <li><a href="{{ url('/about') }}">O nas</a><i>|</i></li>
-                <li><a href="{{ url('/contact') }}">Kontakt</a><i>|</i></li>
-            </ul>
-        </div>
-        <div class="w3ls_logo_products_left1">
-            <ul class="phone_email">
-                <li><i class="fa fa-phone" aria-hidden="true"></i>513623174</li>
-                <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:28933@akademiakaliska.edu.pl">28933@akademiakaliska.edu.pl</a></li>
-            </ul>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-</div>
+

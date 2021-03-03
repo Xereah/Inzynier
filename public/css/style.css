@@ -13,3 +13,18 @@ label{
 .fa{
     color:white;
 }
+.panelboczny{
+    padding:10px;
+    width:20%;
+    height:1000px;
+    border:1px solid black;
+   
+}
+.list-group-item:nth-child(2n){
+background-color: lightgray;
+
+}
+
+.category-item{
+    text-decoration: none  !important;
+}
