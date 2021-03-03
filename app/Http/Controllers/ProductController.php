@@ -17,7 +17,7 @@ class ProductController extends Controller
     {
         $produkty = Produkty::all();
         $kategorie = Kategorie::all();
-        return view('Produkty.index', compact('produkty','kategorie'));
+        return view('AdminPanel.Produkty.index', compact('produkty','kategorie'));
     }
 
     /**
@@ -29,7 +29,7 @@ class ProductController extends Controller
     {
         $produkty = Produkty::all();
         $kategorie = Kategorie::all();
-        return view('Produkty.add', compact('produkty','kategorie'));
+        return view('AdminPanel.Produkty.add', compact('produkty','kategorie'));
     }
 
     /**
@@ -88,7 +88,7 @@ try{
     {
         $kategorie = Kategorie::all();
         $produkty = Produkty::findOrFail($id);
-         return view('Produkty.widok', compact('produkty','kategorie'));
+         return view('AdminPanel.Produkty.widok', compact('produkty','kategorie'));
     }
 
     /**
@@ -101,7 +101,7 @@ try{
     {
         $produkty = Produkty::findOrFail($id);
         $kategorie = Kategorie::all();
-        return view('Produkty.edit', compact('produkty','kategorie'));
+        return view('AdminPanel.Produkty.edit', compact('produkty','kategorie'));
     }
 
     /**

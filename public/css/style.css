@@ -5,3 +5,11 @@ label{
 .przyciskwyslij{
     float:right;
 }
+.spacer{
+    height:25px;
+    background-color: limegreen;
+}
+
+.fa{
+    color:white;
+}

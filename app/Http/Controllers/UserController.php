@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index()
     {
         $uzytkownik = User::all();
-        return view('Uzytkownicy.index', compact('uzytkownik'));
+        return view('AdminPanel.Uzytkownicy.index', compact('uzytkownik'));
     }
 
     /**
@@ -25,7 +25,7 @@ class UserController extends Controller
     public function create()
     {
         $uzytkownik = User::all();
-        return view('Uzytkownicy.add', compact('uzytkownik'));
+        return view('AdminPanel.Uzytkownicy.add', compact('uzytkownik'));
     }
 
     /**
@@ -83,7 +83,7 @@ class UserController extends Controller
     {
         $uzytkownik = User::findOrFail($id);
         $edit = true;
-        return view('Uzytkownicy.edit', compact('uzytkownik'));
+        return view('AdminPanel.Uzytkownicy.edit', compact('uzytkownik'));
     }
 
     /**

@@ -5,6 +5,7 @@ use App\Http\Controllers\KokpitController;
 use App\Http\Controllers\ProductController; 
 use App\Http\Controllers\CategoryController; 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FrontEndController;
 
 
 
@@ -82,7 +83,26 @@ Route::name('uzytkownik.')->prefix('uzytkownik')->group(function(){
         ->where('id', '[0-9]+');
   
    Route::get('/uzytkownik/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('destroy');
+       
+});
 
- 
+Route::name('uzytkownik.')->prefix('uzytkownik')->group(function(){
+    Route::get('', [UserController::class,'index'])
+        ->name('index');
+   Route::get('create',  [UserController::class,'create'])
+        ->name('create');
+    Route::post('',  [UserController::class,'store'])
+        ->name('store');
+    Route::get('{id}',  [UserController::class,'show'])
+        ->name('show')
+       ->where('id', '[0-9]+');
+    Route::get('{id}/edit',  [UserController::class,'edit'])
+        ->name('edit')
+        ->where('id', '[0-9]+');
+ Route::post('{id}',  [UserController::class,'update'])
+        ->name('update')
+        ->where('id', '[0-9]+');
+  
+   Route::get('/uzytkownik/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('destroy');
        
 });

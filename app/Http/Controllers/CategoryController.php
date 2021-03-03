@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         $kategorie = Kategorie::all();
-        return view('Kategorie.index', compact('kategorie'));
+        return view('AdminPanel.Kategorie.index', compact('kategorie'));
     }
 
     /**
@@ -25,7 +25,7 @@ class CategoryController extends Controller
     public function create()
     {
         $kategorie = Kategorie::all();
-        return view('Kategorie.add', compact('kategorie'));
+        return view('AdminPanel.Kategorie.add', compact('kategorie'));
     }
 
     /**
@@ -70,7 +70,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         $kategorie = Kategorie::findOrFail($id);
-        return view('Kategorie.widok', compact('kategorie'));
+        return view('AdminPanel.Kategorie.widok', compact('kategorie'));
     }
 
     /**
@@ -82,7 +82,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $kategorie = Kategorie::findOrFail($id);
-        return view('Kategorie.edit', compact('kategorie'));
+        return view('AdminPanel.Kategorie.edit', compact('kategorie'));
     }
 
     /**
