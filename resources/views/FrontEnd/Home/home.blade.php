@@ -2,11 +2,10 @@
 
 @section('title', 'Kategorie')
 @section('content')
-<div class="row">
-<div class="col-sm-12">
-
 <h1><p class="text-center">Dzis w ofercie mamy</p></h1>
 <hr class="podkreslenie">
+<div class="row">
+<div class="col-sm-12">
     <div class="d-flex justify-content-center row">
             @foreach($produkty as $product)
         <div class="col-md-12">

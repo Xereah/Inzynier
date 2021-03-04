@@ -1,5 +1,5 @@
 
-  <div class="container-fluid py-5">
+  <div class="container-fluid py-1">
     <div class="row">
         <div class="col-sm-3 ">
         <div class="list-group-item active" style="background-color:grey;" >Oferta</div>
@@ -12,17 +12,18 @@
            <br>
         <div id='calendar'></div>
      </ul>
-        </div>
-        <div class="col-sm-9">
-        <img src="{{url('/Zdjecie/baner1.jpg')}}" style="height:300px" class="d-block w-100" alt="..." />
-        <main role="main" class="container padding-top-content py-5" >
+        </div>   
+      
+        <main role="main" class="container padding-top-content " >
         
         @yield('content')
     </main>
-        </div>
-        @include('FrontEnd.Element.footer')
+       
+        
     </div>
+  
 </div>
+@include('FrontEnd.Element.footer')
 @section('js-scripts')
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/calendar2.js') }}"></script>
