@@ -129,5 +129,29 @@ Route::name('task.')->prefix('task')->group(function(){
     Route::delete('{id}',  [TasksController::class,'destroy'])
         ->name('destroy')
        ->where('id', '[0-9]+');
+    Route::get('/show/{id}', [App\Http\Controllers\TasksController::class, 'showtask'])->name('showtask');
+});
+
+Route::name('index.')->prefix('index')->group(function(){
+    Route::get('', [FrontEndController::class,'index'])
+        ->name('index');
+   Route::get('create',  [FrontEndController::class,'create'])
+        ->name('create');
+    Route::post('',  [FrontEndController::class,'store'])
+        ->name('store');
+    Route::get('{id}',  [FrontEndController::class,'show'])
+        ->name('show')
+       ->where('id', '[0-9]+');
+    Route::get('{id}/edit',  [FrontEndController::class,'edit'])
+        ->name('edit')
+        ->middleware(['auth'])
+        ->where('id', '[0-9]+');
+   Route::patch('{id}',  [FrontEndController::class,'update'])
+        ->name('update')
+        ->where('id', '[0-9]+');
+    Route::delete('{id}',  [FrontEndController::class,'destroy'])
+        ->name('destroy')
+       ->where('id', '[0-9]+');
    
 });
+

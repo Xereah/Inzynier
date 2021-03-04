@@ -8,7 +8,8 @@
         <li class="list-group-item"><a class="category-item" href="/kategoria/{{ $kategoria->id }}/{{ str_replace(' ', '-', strtolower($kategoria->Nazwa)) }}">{{ $kategoria->Nazwa }}</a></li>
            @endforeach
            <br>
-           <h3>Kalendarz</h3>
+           <h3><p class="text-center">Kalendarz Wizyt na targu</p></h3>
+           <br>
         <div id='calendar'></div>
      </ul>
         </div>
@@ -36,7 +37,7 @@
                 {
                     title : '{{ $task->Nazwa }}',
                     start : '{{ $task->Data }}',
-                    url : '{{ route('task.show', $task->id) }}'
+                    // url : '{{ route('index.show', $task->id) }}'
                 },
                 @endforeach
             ]

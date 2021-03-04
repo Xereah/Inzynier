@@ -1,7 +1,10 @@
-@extends('layouts.app')
+@extends('FrontEnd.FrontEndSzablon')
 
 @section('title', 'Kategorie')
 @section('content')
+<div class="row">
+<div class="col-sm-12">
+<div class="py-4">
 <div class="row">
 <div class="col-sm-12">
 <div class="py-4">
@@ -21,15 +24,15 @@
                    
                     <tr>
                         <th>Nazwa</th>
-                        <th>{{ $task->Nazwa }}</th> 
+                        <th>{{ $tasks->Nazwa }}</th> 
                     </tr>
                     <tr>
                         <th>Opis</th>
-                        <th>{!! $task->Opis !!}</th> 
+                        <th>{!! $tasks->Opis !!}</th> 
                     </tr>
                     <tr>
                         <th>Data</th>
-                        <th>{!! $task->Data !!}</th> 
+                        <th>{!! $tasks->Data !!}</th> 
                     </tr>
                 </table>
             </div>

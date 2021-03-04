@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Produkty;
+use App\Models\Kategorie;
+use App\Models\Task;
 
 class FrontEndController extends Controller
 {
@@ -13,7 +16,10 @@ class FrontEndController extends Controller
      */
     public function index()
     {
-        return view('Home.home');
+        $tasks= Task::all();
+        $produkty= Produkty::all();
+        $kategorie = Kategorie::all();
+        return view('FrontEnd.Home.home',compact('kategorie','produkty','tasks'));
     }
 
     /**
@@ -45,7 +51,9 @@ class FrontEndController extends Controller
      */
     public function show($id)
     {
-        //
+        $kategorie = Kategorie::all();
+        $tasks = Task::findOrFail($id);
+        return view('FrontEnd.Element.KalendarzWidok', compact('tasks','kategorie'));
     }
 
     /**
