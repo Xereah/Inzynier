@@ -107,6 +107,20 @@
         </div>
       </li>
 
+        <!-- Nav Item - Kalendarz Collapse Menu -->
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCalendar" aria-expanded="true" aria-controls="collapsePages">
+        <i class="fas fa-calendar-alt"></i>
+          <span>Kalendarz</span>
+        </a>
+        <div id="collapseCalendar" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="{{ route('task.index')}}">Widok Kalendarz</a>
+            <a class="collapse-item"  href="{{ route('task.create')}}">Dodaj do Kalendarza</a>
+          </div>
+        </div>
+      </li>
+
     
 
       <!-- Sidebar Toggler (Sidebar) -->

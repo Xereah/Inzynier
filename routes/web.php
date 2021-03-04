@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController; 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\TasksController;
 
 
 
@@ -105,4 +106,28 @@ Route::name('uzytkownik.')->prefix('uzytkownik')->group(function(){
   
    Route::get('/uzytkownik/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('destroy');
        
+});
+
+// Kalendarz
+Route::name('task.')->prefix('task')->group(function(){
+    Route::get('', [TasksController::class,'index'])
+        ->name('index');
+   Route::get('create',  [TasksController::class,'create'])
+        ->name('create');
+    Route::post('',  [TasksController::class,'store'])
+        ->name('store');
+    Route::get('{id}',  [TasksController::class,'show'])
+        ->name('show')
+       ->where('id', '[0-9]+');
+    Route::get('{id}/edit',  [TasksController::class,'edit'])
+        ->name('edit')
+        ->middleware(['auth'])
+        ->where('id', '[0-9]+');
+   Route::patch('{id}',  [TasksController::class,'update'])
+        ->name('update')
+        ->where('id', '[0-9]+');
+    Route::delete('{id}',  [TasksController::class,'destroy'])
+        ->name('destroy')
+       ->where('id', '[0-9]+');
+   
 });
