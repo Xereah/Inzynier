@@ -79,6 +79,18 @@
                                 {{ $errors->has('fk_kategorie') ? $errors->first('fk_kategorie') : '' }}
                             </span>
                         </div>
+
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select name="status" class="form-control">
+                                <option value="{{ $produkty->status }}">{{ $produkty->status }}</option>
+                                <option value="1">Publikuj</option>
+                                <option value="0">Nie publikuj</option>
+                            </select>
+                            <span class="text-danger">
+                                {{ $errors->has('status') ? $errors->first('status') : '' }}
+                            </span>
+                        </div>
                      
                         <button type="submit" name="btn" class="btn btn-success przyciskwyslij">Zaaktualizuj</button>
                         {!! Form::close() !!}

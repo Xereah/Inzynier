@@ -84,6 +84,7 @@ Route::name('uzytkownik.')->prefix('uzytkownik')->group(function(){
         ->where('id', '[0-9]+');
   
    Route::get('/uzytkownik/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('destroy');
+   Route::post('/storeguest', [App\Http\Controllers\UserController::class, 'storeguest'])->name('storeguest');
        
 });
 

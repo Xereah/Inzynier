@@ -62,6 +62,34 @@ class UserController extends Controller
     }
     }
 
+
+    public function storeguest(Request $request)
+    { 
+        try {
+        $uzytkownik = new User();
+        $uzytkownik->name = $request->name;
+        $uzytkownik->surname = $request->surname;
+        $uzytkownik->adress = $request->adress;
+        $uzytkownik->email = $request->email;
+        $uzytkownik->phone = $request->phone;
+        $uzytkownik->password = bcrypt($request->password);
+        $uzytkownik->save();
+        return redirect()->route('index.index')->with('message', 'Udało się dodać użytkownika.');
+    } catch(\Illuminate\Database\QueryException $e) {
+        \Log::error($e);
+        // duplikacja klucza - jest to sprawdzane w regułach walidacji
+        switch($e->getCode()){
+            case '23000':
+                return redirect()->route('index.index')
+                ->with('message', 'Nie udało się dodać użytkownika.');
+                break;
+            default:
+                return redirect()->route('index.index')
+                ->with('message', 'Nie udało się dodać użytkownika.');
+        }
+    }
+    }
+
     /**
      * Display the specified resource.
      *

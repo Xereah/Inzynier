@@ -6,12 +6,12 @@ label{
     float:right;
 }
 .spacer{
-    height:25px;
+    height: 3em;;
     background-color: limegreen;
 }
 
 .fa{
-    color:white;
+    color:black;
 }
 .panelboczny{
     padding:10px;
@@ -19,10 +19,20 @@ label{
     
    
 }
-.list-group-item:nth-child(2n){
-background-color: lightgray;
+.list-group-item:hover{
+background-color: lightblue;
+
 
 }
+.list-group-item{
+    color:black !important;
+    font-size: 1.5em;
+    
+    }
+    
+.list-group-item a{
+        color:black !important;     
+        }
 
 .category-item{
     text-decoration: none  !important;
@@ -61,8 +71,8 @@ body {
 
 body {
     display: grid;
-    background: #fff;
-    font-family: 'Manrope', sans-serif
+    background-color: #fff  !important;
+    font-family: 'Manrope', sans-serif;
 }
 
 .mydiv {
@@ -271,5 +281,15 @@ div {
 
 .podkreslenie{
     background-color:red;
+    position:relative;
     width:60%;
+    height:3px;
+    right:20%;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+  

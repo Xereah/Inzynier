@@ -1,12 +1,13 @@
 
-  <div class="container-fluid py-1">
+  <div class="container-fluid py-3 p-5" >
     <div class="row">
-        <div class="col-sm-3 ">
-        <div class="list-group-item active" style="background-color:grey;" >Oferta</div>
+        <div class="col-sm-3 " >
+        <div class="list-group-item active" style="background-color:Blue;" >Oferta</div>
     <ul class="list-group list-group-flush">
         @foreach($kategorie as $kategoria)
-        <li class="list-group-item"><a class="category-item" href="/kategoria/{{ $kategoria->id }}/{{ str_replace(' ', '-', strtolower($kategoria->Nazwa)) }}">{{ $kategoria->Nazwa }}</a></li>
+        <li class="list-group-item"><a class="category-item" href="/kategoria/{{ $kategoria->id }}/{{ str_replace(' ', '-', strtolower($kategoria->Nazwa)) }}">{{ $kategoria->Nazwa }} </a><i class="fas fa-chevron-right" style="float:right;"></i></li>
            @endforeach
+           <hr>
            <br>
            <h3><p class="text-center">Kalendarz Wizyt na targu</p></h3>
            <br>
@@ -14,7 +15,7 @@
      </ul>
         </div>   
       
-        <main role="main" class="container padding-top-content " >
+        <main role="main" class="container " >
         
         @yield('content')
     </main>

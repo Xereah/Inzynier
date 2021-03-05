@@ -73,6 +73,7 @@ try{
         $produkty->JednostkaMiary = $request->JednostkaMiary;
         $produkty->Opis = $request->Opis;
         $produkty->fk_kategorie = $request->fk_kategorie;
+        $produkty->status = $request->status;
         $produkty->Zdjecie = $imageUrl;
      
         $produkty->save();
@@ -173,6 +174,7 @@ try{
         $produkty->Opis = $request->Opis;
         $produkty->Zdjecie = $imageUrl;
         $produkty->fk_kategorie = $request->fk_kategorie;
+        $produkty->status = $request->status;
         $produkty->save();
     }
 

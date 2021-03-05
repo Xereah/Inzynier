@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Produkty;
 class KokpitController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class KokpitController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $produkty=Produkty::all();
+        return view('home',compact('produkty'));
     }
 
     /**

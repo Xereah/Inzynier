@@ -22,6 +22,7 @@ class CreateProduktyTable extends Migration
             $table->string('JednostkaMiary');
             $table->text('Opis');
             $table->bigInteger('fk_kategorie')->unsigned();
+            $table->tinyInteger('status');
             $table->timestamps();
             $table->softDeletes();
         });

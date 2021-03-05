@@ -2,7 +2,7 @@
 
 @section('title', 'Kategorie')
 @section('content')
-<h1><p class="text-center">Dzis w ofercie mamy</p></h1>
+<h1>#Dziś w ofercie mamy</h1>
 <hr class="podkreslenie">
 <div class="row">
 <div class="col-sm-12">
@@ -16,6 +16,8 @@
                     <div class="d-flex flex-row">
                     </div>
                     {{ $product->Opis }}
+                    <hr>
+                    <p>Pozostało na stanie {{ $product->Ilosc }}{{ $product->JednostkaMiary }}</p>
                 </div>
                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                     <div class="d-flex flex-row align-items-center">

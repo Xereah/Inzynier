@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-md navbar-light ">
+ <!-- <a class="navbar-brand" href="#">Sklep Warzywny  </a>  -->
 
 
 
-<a class="navbar-brand" href="#">Dzis oferujemy   </a>
 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">  </button>
@@ -16,25 +16,25 @@
     {{-- LINKI UWIERZYTELNIENIA UZYTKOWNIKA --}}
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-
+<!-- 
     <form class="form-inline">
                          <input class="form-control mr-sm-2" type="search" placeholder="Szukaj" aria-label="Search">
                              <button class="btn btn-outline-success my-2 my-sm-0" type="Szukaj">Search</button>
-                     </form>
+                     </form> -->
 
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart" > <sup>3</sup> </i></a></h2>
         @guest
 
 @if (Route::has('login'))
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+    
+    <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> {{ __('Zaloguj się!') }}</a>
 </li>
 @endif
 
 @if (Route::has('register'))
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+    <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-plus-circle"></i> {{ __('Rejestracja') }}</a>
 </li>
 @endif
 
@@ -69,5 +69,25 @@
     </div>
 </nav>
 
+<!-- ------------------------------------------------------------------- -->
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <div class="collapse navbar-collapse" id="mainNavbar">
+  <p><h2>Sklep Warzywny</h2></p>
+    <ul class="navbar-nav mr-auto menu1 ">
+
+    </ul>
+    <a class="nav-link"><h3><i class="fas fa-bus"></i> Odbiór na rynku lub wysyłka</h3> </a>
+    <a class="nav-link"><h3><i class="fas fa-phone-volume"></i>  Tel: 513623174</h3> </a>
+    <form class="form-inline my-2 my-lg-0" style="margin-right: 5%;">
+      <input class="form-control mr-sm-2" type="search" placeholder="Szukaj" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Szukaj</button>
+    </form>
+    <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart"  > <sup>3</sup> </i></a></h2>
+  </div>
+</nav>
+<div class="spacer">
+
+</div>
 
 @include('FrontEnd.Element.sidebar')

@@ -7,6 +7,8 @@ use App\Models\Produkty;
 use App\Models\Kategorie;
 use App\Models\Task;
 
+use DB;
+
 class FrontEndController extends Controller
 {
     /**
@@ -17,7 +19,8 @@ class FrontEndController extends Controller
     public function index()
     {
         $tasks= Task::all();
-        $produkty= Produkty::all();
+        $produkty= DB::table('produkty')
+        ->where('produkty.status', 1)->get();
         $kategorie = Kategorie::all();
         return view('FrontEnd.Home.home',compact('kategorie','produkty','tasks'));
     }
