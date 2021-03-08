@@ -1,34 +1,20 @@
-<nav class="navbar navbar-expand-md navbar-light ">
- <!-- <a class="navbar-brand" href="#">Sklep Warzywny  </a>  -->
-
-
-
-<button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">  </button>
-
-
-    {{-- MENU APLIKACJI --}}
-    <div class="collapse navbar-collapse" id="mainNavbar">
-    
+<div class="agileits_header">
+    <div class="w3l_offers">
+        <a href="{{ url('/product/discount-offer') }}">Sklep Warzywny !</a>
     </div>
-
-    {{-- LINKI UWIERZYTELNIENIA UZYTKOWNIKA --}}
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-<!-- 
-    <form class="form-inline">
-                         <input class="form-control mr-sm-2" type="search" placeholder="Szukaj" aria-label="Search">
-                             <button class="btn btn-outline-success my-2 my-sm-0" type="Szukaj">Search</button>
-                     </form> -->
-
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        @guest
+    <div class="w3l_header_right1">
+        <ul style="list-style-type:none">
+            <li class="dropdown profile_details_drop">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+                <div class="mega-dropdown-menu">
+                    <div class="w3ls_vegetables">
+                        <ul class="dropdown-menu drp-mnu">
+                        @guest
 
 @if (Route::has('login'))
 <li class="nav-item">
     
-    <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> {{ __('Zaloguj się!') }}</a>
+    <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> {{ __('Logowanie!') }}</a>
 </li>
 @endif
 
@@ -37,14 +23,7 @@
     <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-plus-circle"></i> {{ __('Rejestracja') }}</a>
 </li>
 @endif
-
-
-
-
 @else
-
-
-
 <li class="nav-item dropdown">
     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -65,29 +44,39 @@
     </div>
 </li>
 @endguest
+                        </ul>
+                    </div>                  
+                </div>	
+            </li>
         </ul>
     </div>
-</nav>
-
-<!-- ------------------------------------------------------------------- -->
-
-<nav class="navbar navbar-expand-lg navbar-light ">
-  <div class="collapse navbar-collapse" id="mainNavbar">
-  <p><h2>Sklep Warzywny</h2></p>
-    <ul class="navbar-nav mr-auto menu1 ">
-
-    </ul>
-    <a class="nav-link"><h3><i class="fas fa-bus"></i> Odbiór na rynku lub wysyłka</h3> </a>
-    <a class="nav-link"><h3><i class="fas fa-phone-volume"></i>  Tel: 513623174</h3> </a>
-    <form class="form-inline my-2 my-lg-0" style="margin-right: 5%;">
-      <input class="form-control mr-sm-2" type="search" placeholder="Szukaj" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Szukaj</button>
-    </form>
-    <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart"  > <sup>3</sup> </i></a></h2>
-  </div>
-</nav>
-<div class="spacer">
-
+    <div class="w3l_header_right1">
+        <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart">  Przedmioty w twoim koszyku</i></a></h2>
+    </div>
+    <div class="clearfix"> </div>
 </div>
-
+<div class="w3l_search">
+        <form action="{{ url('search') }}">
+            <input type="text" name="searchData" value="Szukaj produktu..." onfocus="this.value = '';" onblur="if (this.value == '') {
+                        this.value = 'Search a product...';
+                    }" required="">
+           <!-- <button class="btn-outline-success  " type="submit">Szukaj</button> -->
+        </form>
+    </div>
+<div class="logo_products">
+    <div class="container">
+        <div class="w3ls_logo_products_left">
+            <h1><a href="{{ url('/') }}"><span>Gospodarstwo rolne </span> Struzik</a></h1>
+        </div>
+        <div class="w3ls_logo_products_left1">
+            <ul class="phone_email">
+                <li><i class="fa fa-phone" aria-hidden="true"></i>513623174</li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:28933@akademiakaliska.edu.pl">28933@akademiakaliska.edu.pl</a></li>
+            </ul>
+            
+        </div>
+        
+        <div class="clearfix"> </div>
+    </div>
+</div>
 @include('FrontEnd.Element.sidebar')

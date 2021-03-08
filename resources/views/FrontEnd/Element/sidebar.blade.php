@@ -2,7 +2,7 @@
   <div class="container-fluid py-3 p-5" >
     <div class="row">
         <div class="col-sm-3 " >
-        <div class="list-group-item active" style="background-color:Blue;" >Oferta</div>
+        <div class="list-group-item active" style="background-color:#84C639;" >Oferta</div>
     <ul class="list-group list-group-flush">
         @foreach($kategorie as $kategoria)
         <li class="list-group-item"><a class="category-item" href="/kategoria/{{ $kategoria->id }}/{{ str_replace(' ', '-', strtolower($kategoria->Nazwa)) }}">{{ $kategoria->Nazwa }} </a><i class="fas fa-chevron-right" style="float:right;"></i></li>

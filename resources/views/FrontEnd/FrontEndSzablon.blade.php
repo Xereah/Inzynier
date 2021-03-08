@@ -18,7 +18,7 @@
 <body>
     {{-- Navbar --}}
     @include('FrontEnd.Element.header')
-    
+    @yield('sidebar')
 
     {{-- Głowny kontener --}}
     

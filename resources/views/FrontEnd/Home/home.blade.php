@@ -2,9 +2,8 @@
 
 @section('title', 'Kategorie')
 @section('content')
-<h1>#Dziś w ofercie mamy</h1>
-<hr class="podkreslenie">
-<div class="row">
+<h3>Dziś w ofercie mamy</h3>
+<div class="container-fluid">
 <div class="col-sm-12">
     <div class="d-flex justify-content-center row">
             @foreach($produkty as $product)
