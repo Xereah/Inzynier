@@ -3,7 +3,7 @@
 @section('title', 'Kategorie')
 @section('content')
 <h3>Dziś w ofercie mamy</h3>
-<div class="container-fluid">
+<div class="container ">
 <div class="col-sm-12">
     <div class="d-flex justify-content-center row">
             @foreach($produkty as $product)

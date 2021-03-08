@@ -15,7 +15,7 @@
      </ul>
         </div>   
       
-        <main role="main" class="container " >
+        <main role="main"  class="container col-sm-8 "  >
         
         @yield('content')
     </main>
