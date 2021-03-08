@@ -1,5 +1,5 @@
 
-   <div class="container-fluid p-5">
+   <div class="container-fluid col-sm-8 mx-auto">
 <div class="row">
 <div class="col-sm-3">
 	<!-- Category -->

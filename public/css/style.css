@@ -79,8 +79,9 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 	-ms-transition: .5s ease-in;
 }
 .agileits_header{
-	background:#84C639;
-	    box-shadow: 0 0 50px 0 green;
+	background:#dcdcdc;
+	box-shadow: 0 0 50px 0 #dcdcdc;
+	
 }
 .w3l_offers{
 	float:left;
@@ -88,12 +89,12 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 }
 .w3l_offers a{
 	font-size: 2em;
-    color: #fff;
+    color: black;
     text-decoration: none;
     padding: .5em 3em;
-    background: #84C639;
+    background: #dcdcdc;
 	display:block;
-	height:90px;
+	height:50px;
 }
 .w3l_search{
 	float: right;
@@ -4858,3 +4859,8 @@ input.checkbox:checked:after {
 	color: #ff173c; }
 	.single li:last-child a {
 	border-bottom: 0; }
+
+	.fa{
+		color:black;
+	}
+	
