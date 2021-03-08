@@ -1,28 +1,26 @@
 
-  <div class="container-fluid py-3 p-5" >
-    <div class="row">
-        <div class="col-sm-3 " >
-        <div class="list-group-item active" style="background-color:#84C639;" >Oferta</div>
-    <ul class="list-group list-group-flush">
-        @foreach($kategorie as $kategoria)
-        <li class="list-group-item"><a class="category-item" href="/kategoria/{{ $kategoria->id }}/{{ str_replace(' ', '-', strtolower($kategoria->Nazwa)) }}">{{ $kategoria->Nazwa }} </a><i class="fas fa-chevron-right" style="float:right;"></i></li>
+   <div class="container-fluid p-5">
+<div class="row">
+<div class="col-sm-3">
+	<!-- Category -->
+	<div class="single category">
+		<h3 class="side-title">Kategorie</h3>
+		<ul class="list-unstyled">
+		  @foreach($kategorie as $kategoria)
+        <li><a class="category-item" href="/kategoria/{{ $kategoria->id }}/{{ str_replace(' ', '-', strtolower($kategoria->Nazwa)) }}">{{ $kategoria->Nazwa }}<i class="fas fa-chevron-right" style="float:right;"></i> </a></li>
            @endforeach
-           <hr>
+		</ul>
+   </div>
+   <br>
+   <h3><p class="text-center">Kalendarz Wizyt na targu</p></h3>
            <br>
-           <h3><p class="text-center">Kalendarz Wizyt na targu</p></h3>
-           <br>
-        <div id='calendar'></div>
-     </ul>
-        </div>   
-      
-        <main role="main"  class="container col-sm-8 "  >
+   <div id='calendar'></div>
+</div> 
+<main role="main"  class="container col-sm-8 "  >
         
         @yield('content')
     </main>
-       
-        
-    </div>
-  
+</div>
 </div>
 @include('FrontEnd.Element.footer')
 @section('js-scripts')

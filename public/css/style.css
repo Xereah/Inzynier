@@ -80,7 +80,7 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 }
 .agileits_header{
 	background:#84C639;
-	    box-shadow: 0 0 100px 0 green;
+	    box-shadow: 0 0 50px 0 green;
 }
 .w3l_offers{
 	float:left;
@@ -307,7 +307,7 @@ ul.dropdown-menu.drp-mnu li a i {
 	margin-bottom: 5em;
 }
 .w3l_banner_nav_right_banner{
-	background:url(../images/1.jpg) no-repeat 0px 0px;
+	
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -4823,3 +4823,38 @@ input.checkbox:checked:after {
 		font-size: 13px;
 	}
 }
+
+.single {
+	padding: 30px 15px;
+	margin-top: 40px;
+	background: #fcfcfc;
+	border: 1px solid #f0f0f0; }
+	.single h3.side-title {
+	margin: 0;
+	margin-bottom: 10px;
+	padding: 0;
+	font-size: 20px;
+	color: #333;
+	text-transform: uppercase; }
+	.single h3.side-title:after {
+	content: '';
+	width: 60px;
+	height: 1px;
+	background: #ff173c;
+	display: block;
+	margin-top: 6px; }
+	
+	.single ul {
+	margin-bottom: 0; }
+	.single li a {
+	color: #666;
+	font-size: 14px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #f0f0f0;
+	line-height: 40px;
+	display: block;
+	text-decoration: none; }
+	.single li a:hover {
+	color: #ff173c; }
+	.single li:last-child a {
+	border-bottom: 0; }
