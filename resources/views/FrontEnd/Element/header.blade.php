@@ -3,9 +3,9 @@
         <a href="{{ url('/product/discount-offer') }}">Sklep Warzywny !</a>
     </div>
     <div class="w3l_header_right1">
-        <ul style="list-style-type:none">
+        <ul style="list-style-type:none;">
             <li class="dropdown profile_details_drop">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:black;"><i class="fa fa-user fa-lg" aria-hidden="true"></i><span class="caret"></span></a>
                 <div class="mega-dropdown-menu">
                     <div class="w3ls_vegetables">
                         <ul class="dropdown-menu drp-mnu">
@@ -25,23 +25,22 @@
 @endif
 @else
 <li class="nav-item dropdown">
-    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+   
        
-        {{ Auth::user()->name }}
-    </a>
+       <p>Witaj {{ Auth::user()->name }} </p>
+  
 
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+   
         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
+            {{ __('Wyloguj') }}
         </a>
 
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>
-    </div>
+
 </li>
 @endguest
                         </ul>
@@ -51,8 +50,14 @@
         </ul>
     </div>
     <div class="w3l_header_right1">
-        <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart">  Przedmioty w twoim koszyku</i></a></h2>
+        
+        <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart"> </i></a></h2>
     </div>
+    <a class="btn btn-floating m-2 w3l_header_right1 " href="#!" role="button">
+        <i class="fab fa-facebook-f"></i></a>
+      <a class="btn  btn-floating m-2 w3l_header_right1" href="#!" role="button">
+          <i class="fab fa-twitter"></i
+      ></a>
     <div class="clearfix"> </div>
 </div>
 <div class="w3l_search">

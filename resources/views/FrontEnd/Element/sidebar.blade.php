@@ -1,10 +1,10 @@
 
-   <div class="container-fluid col-sm-8 mx-auto">
+   <div class="container-fluid col-sm-10 mx-auto">
 <div class="row">
 <div class="col-sm-3">
 	<!-- Category -->
 	<div class="single category">
-		<h3 class="side-title">Kategorie</h3>
+    <h3 class="side-title" ><i class="fas fa-bars"></i> Kategorie</h3>
 		<ul class="list-unstyled">
 		  @foreach($kategorie as $kategoria)
         <li><a class="category-item" href="/kategoria/{{ $kategoria->id }}/{{ str_replace(' ', '-', strtolower($kategoria->Nazwa)) }}">{{ $kategoria->Nazwa }}<i class="fas fa-chevron-right" style="float:right;"></i> </a></li>

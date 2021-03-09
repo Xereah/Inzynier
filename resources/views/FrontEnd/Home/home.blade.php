@@ -2,10 +2,18 @@
 
 @section('title', 'Kategorie')
 @section('content')
-<h3>Dziś w ofercie mamy</h3>
+
 <div class="container ">
-<div class="col-sm-12">
+<div class="col-lg-12">
+    
+<div class="baner more">
+<h3>Codziennie <span>świeże</span> <br>produkty</h3>
+<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Kup Teraz!">Kup Teraz!</a>
+</div>
+
+<h3 class="py-5">Dziś w ofercie mamy</h3>
     <div class="d-flex justify-content-center row">
+        
             @foreach($produkty as $product)
         <div class="col-md-12">
             <div class="row p-2 bg-white border rounded">
