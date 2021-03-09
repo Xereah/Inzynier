@@ -54,9 +54,19 @@ class FrontEndController extends Controller
      */
     public function show($id)
     {
-        $kategorie = Kategorie::all();
-        $tasks = Task::findOrFail($id);
-        return view('FrontEnd.Element.KalendarzWidok', compact('tasks','kategorie'));
+        $tasks= Task::all();
+        $kategorie= Kategorie::All();
+        $produkty = Produkty::findOrFail($id);
+        return view('FrontEnd.Home.ProduktWidok', compact('produkty','kategorie','tasks'));
+    }
+    public function kategorie($id) {
+        //Eloquent ORM
+        $tasks= Task::all();
+        $kategorie = Kategorie::where('id', $id)->first();
+        $kategorie= Kategorie::All();
+        $produkty = DB::table('produkty')
+        ->where('produkty.fk_kategorie', $id)->get();
+        return view('frontEnd.Home.KategorieWidok', compact('produkty','kategorie','kategorie','tasks'));
     }
 
     /**

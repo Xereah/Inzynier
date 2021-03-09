@@ -7,7 +7,7 @@
     <h3 class="side-title" ><i class="fas fa-bars"></i> Kategorie</h3>
 		<ul class="list-unstyled">
 		  @foreach($kategorie as $kategoria)
-        <li><a class="category-item" href="/kategoria/{{ $kategoria->id }}/{{ str_replace(' ', '-', strtolower($kategoria->Nazwa)) }}">{{ $kategoria->Nazwa }}<i class="fas fa-chevron-right" style="float:right;"></i> </a></li>
+        <li><a class="category-item" href="{{ url('produkty/kategorie/'.$kategoria->id) }}">{{ $kategoria->Nazwa }}<i class="fas fa-chevron-right" style="float:right;"></i> </a></li>
            @endforeach
 		</ul>
    </div>

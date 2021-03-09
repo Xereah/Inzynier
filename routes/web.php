@@ -153,6 +153,6 @@ Route::name('index.')->prefix('index')->group(function(){
     Route::delete('{id}',  [FrontEndController::class,'destroy'])
         ->name('destroy')
        ->where('id', '[0-9]+');
-   
 });
 
+Route::get('produkty/kategorie/{id}', [App\Http\Controllers\FrontEndController::class, 'kategorie'])->name('kategorie');

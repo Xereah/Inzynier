@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Kategorie;
 use App\Models\Produkty;
 use App\Models\Task;
-
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -27,7 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         $tasks= Task::all();
-        $produkty= Produkty::all();
+        $produkty= DB::table('produkty')
+        ->where('produkty.status', 1)->get();
         $kategorie = Kategorie::all();
         return view('FrontEnd.Home.home',compact('kategorie','produkty','tasks'));
     }

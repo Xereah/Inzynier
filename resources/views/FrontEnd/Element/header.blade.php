@@ -1,6 +1,6 @@
 <div class="agileits_header">
     <div class="w3l_offers">
-        <a href="{{ url('/product/discount-offer') }}">Sklep Warzywny !</a>
+        <a href="{{ route('index.index') }}">Sklep Warzywny !</a>
     </div>
     <div class="w3l_header_right1">
         <ul style="list-style-type:none;">

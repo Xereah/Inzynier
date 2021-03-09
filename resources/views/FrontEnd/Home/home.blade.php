@@ -12,8 +12,43 @@
 </div>
 
 <h3 class="py-5">Dziś w ofercie mamy</h3>
-    <div class="d-flex justify-content-center row">
-        
+<div class="col-md-12 ">
+        <div class="row">
+            @foreach($produkty as $product)
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <a href=""><img src="{{ $product->Zdjecie }}"
+                            class="card-img-top w-100" height="200px" alt="..."></a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $product->Nazwa }}</h5>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>{{ $product->Cena }}zł</h3>
+                            </div>
+                            <div class="col-md-6">
+
+                                <a href="{{ route('index.show',$product->id)}}" class="btn btn-primary">Szczególy</a>
+
+
+                            </div>
+
+                        </div>
+                        <p class="btn-holder"><a href="{{ url('add-to-cart/'.$product->id) }}"
+                                class="btn btn-warning btn-block text-center" role="button">Dodaj do koszyka</a> </p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+
+        </div>
+    </div>
+
+@endsection
+
+
+<!-- <div class="d-flex justify-content-center row">
             @foreach($produkty as $product)
         <div class="col-md-12">
             <div class="row p-2 bg-white border rounded">
@@ -22,7 +57,7 @@
                     <h5>{{ $product->Nazwa }}</h5>
                     <div class="d-flex flex-row">
                     </div>
-                    {{ $product->Opis }}
+                  
                     <hr>
                     <p>Pozostało na stanie {{ $product->Ilosc }}{{ $product->JednostkaMiary }}</p>
                 </div>
@@ -31,7 +66,9 @@
                         <h4 class="mr-1">{{ $product->Cena }} zł</h4>
                     </div>
                     <h6 class="text-success">Odbiór na rynku</h6>
-                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Szczegóły</button>
+                    <div class="d-flex flex-column mt-4">
+                    <a href="{{ route('index.show',$product->id)}}"
+                                class="btn btn-primary btn-sm" role="button">Szczegóły</a>
                     <a href="{{ url('add-to-cart/'.$product->id) }}"
                                 class="btn btn-warning btn-block text-center" role="button">Dodaj do koszyka</a></div>
                 </div>
@@ -46,6 +83,4 @@
 
 
 </div>
-</div>
-
-@endsection
+</div> -->
