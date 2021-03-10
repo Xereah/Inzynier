@@ -71,7 +71,7 @@
 <div class="logo_products">
     <div class="container">
         <div class="w3ls_logo_products_left">
-            <h1><a href="{{ url('/') }}"><span>Gospodarstwo rolne </span> Struzik</a></h1>
+            <h1><a href="{{ route('index.index') }}"><span>Gospodarstwo rolne </span> Struzik</a></h1>
         </div>
         <div class="w3ls_logo_products_left1">
             <ul class="phone_email">

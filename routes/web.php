@@ -156,3 +156,4 @@ Route::name('index.')->prefix('index')->group(function(){
 });
 
 Route::get('produkty/kategorie/{id}', [App\Http\Controllers\FrontEndController::class, 'kategorie'])->name('kategorie');
+Route::get('search', [App\Http\Controllers\FrontEndController::class, 'wyszukiwanie'])->name('wyszukiwanie');

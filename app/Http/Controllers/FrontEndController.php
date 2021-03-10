@@ -68,6 +68,20 @@ class FrontEndController extends Controller
         ->where('produkty.fk_kategorie', $id)->get();
         return view('frontEnd.Home.KategorieWidok', compact('produkty','kategorie','kategorie','tasks'));
     }
+    public function wyszukiwanie(Request $request)
+    {
+        $tasks= Task::all();
+        $searchData = $request->searchData;
+        $kategorie= Kategorie::All();
+        // $produkty= DB::table('produkty')
+        // ->where('produkty.status', 1)->get();
+        $produkty = DB::table('produkty')
+                ->where('produkty.status', 1)
+                ->where('produkty.Nazwa', 'like', '%'. $searchData .'%')
+                ->orWhere('produkty.Cena', 'like', '%'. $searchData .'%')
+                ->get();
+        return view('FrontEnd.Home.search',compact('produkty','kategorie','tasks'));
+    }
 
     /**
      * Show the form for editing the specified resource.
