@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Kategorie;
+use App\Models\Produkty;
+use App\Models\Task;
+use Illuminate\Support\Facades\Hash;
+use Session;
+use Auth;
 class UserController extends Controller
 {
     /**
@@ -177,4 +183,84 @@ class UserController extends Controller
 
         return redirect()->route('uzytkownik.index')->with('message', 'Udało się usunąć użytkownika.');
     }
+
+
+    public function UzytkownikProfil()
+    {
+        $tasks= Task::all();
+        $kategorie = Kategorie::all();
+        $Uzytkownik = Auth::user();
+     return view('FrontEnd.Uzytkownicy.uzytkownikprofil',compact('Uzytkownik','tasks','kategorie'));
+        
+    }
+
+    public function EdycjaProfiluUzytkownika()
+    {
+        $tasks= Task::all();
+        $kategorie = Kategorie::all();
+        $uzytkownik = Auth::user();
+     return view('FrontEnd.Uzytkownicy.uzytkownikprofiledycja',compact('uzytkownik','tasks','kategorie'));
+    }
+
+    public function AktualizacjaProfiluUzytkownika(Request $request)
+    {
+        try {
+            // pobranie aktualnej kategorii z bazy
+             $uzytkownik = Auth::user();
+             $uzytkownik->name = $request->name;
+             $uzytkownik->surname = $request->surname;
+             $uzytkownik->adress = $request->adress;
+             $uzytkownik->email = $request->email;
+             $uzytkownik->phone = $request->phone;
+             $uzytkownik->save();
+            
+            return redirect()->route('index.index')
+                ->with('message', 'Udało się edytowac użytkownika.');
+        } catch(\Illuminate\Database\QueryException $e) {
+            \Log::error($e);
+            // duplikacja klucza - jest to sprawdzane w regułach walidacji
+            switch($e->getCode()){
+                case '23000':
+                    return redirect()->route('index.index')
+                    ->with('message', 'Nie udało się edytowac użytkownika.');
+                    break;
+                default:
+                    return redirect()->route('index.index')
+                    ->with('message', 'Nie udało się edytowac użytkownika.');
+            }
+        }
+    }
+
+
+
+    public function ZmianaHaslaUzytkownika()
+    {
+        $uzytkownik = Auth::user();
+        $tasks= Task::all();
+        $kategorie = Kategorie::all();
+        if($uzytkownik != NULL) {
+            return view('FrontEnd.Uzytkownicy.uzytkownikzmianahasla',compact('uzytkownik','tasks','kategorie'));
+        } else {
+            return redirect('/');    
+        }
+    }
+
+    public function AktualizacjaHaslaUzytkownika(Request $request)
+    {
+        $uzytkownik = Auth::user();
+        if($uzytkownik != NULL) {
+            $chkPasswordById = Auth::user();                 
+            if(Hash::check($request->oldPassword, $chkPasswordById->password) && $request->password == $request->password2) {
+                $chkPasswordById->password = bcrypt($request->password);
+                $chkPasswordById->save();
+                $request->session()->flush();
+                return redirect()->route('index.index')->with('message', 'Password Updated Successfully! Please Login');
+            } else {
+                return redirect('/uzytkownik/password-change')->with('message', 'Old Password is Incorrect!');
+            }   
+        } else {
+            return redirect('/');    
+        }
+    }
+
 }

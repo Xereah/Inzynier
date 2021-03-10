@@ -60,7 +60,9 @@
 </section>
             @endforeach
             @else
-            <h2>Nic nie znaleziono!</h2>
+            
+            <h4><p class="nieznaleziono">Nie znaleziono produktów spełniających twoje kryteria!</p></h4>
+   
             @endif
 
 

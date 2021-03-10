@@ -27,7 +27,7 @@
 <li class="nav-item dropdown">
    
        
-       <p>Witaj {{ Auth::user()->name }} </p>
+       <p> <a href="{{ url('/uzytkownik/profil') }}">Witaj {{ Auth::user()->name }}</a> </p>
   
 
    
@@ -60,14 +60,22 @@
       ></a>
     <div class="clearfix"> </div>
 </div>
-<div class="w3l_search">
+<!-- <div class="w3l_search">
         <form action="{{ url('search') }}">
             <input type="text" name="searchData" value="Szukaj produktu..." onfocus="this.value = '';" onblur="if (this.value == '') {
                         this.value = 'Search a product...';
                     }" required="">
-           <!-- <button class="btn-outline-success  " type="submit">Szukaj</button> -->
+           <button class="btn-success  " type="submit">Szukaj</button> 
         </form>
-    </div>
+    </div> -->
+    <div class="search-container float-right w3l_search">
+    <form action="{{ url('search') }}">
+    <input type="text" name="searchData" value="Szukaj produktu..." onfocus="this.value = '';" onblur="if (this.value == '') {
+                        this.value = 'Search a product...';
+                    }" required="">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
 <div class="logo_products">
     <div class="container">
         <div class="w3ls_logo_products_left">
@@ -84,4 +92,3 @@
         <div class="clearfix"> </div>
     </div>
 </div>
-@include('FrontEnd.Element.sidebar')

@@ -18,7 +18,14 @@
 <body>
     {{-- Navbar --}}
     @include('FrontEnd.Element.header')
-    @yield('sidebar')
+    @include('FrontEnd.Element.sidebar')
+    <main role="main"  class="container col-sm-9 "  >
+        
+        @yield('content')
+    </main>
+</div>
+</div>
+    @include('FrontEnd.Element.footer')
 
     {{-- Głowny kontener --}}
     

@@ -16,13 +16,9 @@
            <br>
    <div id='calendar'></div>
 </div> 
-<main role="main"  class="container col-sm-8 "  >
-        
-        @yield('content')
-    </main>
-</div>
-</div>
-@include('FrontEnd.Element.footer')
+
+
+
 @section('js-scripts')
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/calendar2.js') }}"></script>

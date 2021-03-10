@@ -23,10 +23,10 @@
                         <h5 class="card-title">{{ $product->Nazwa }}</h5>
 
                         <div class="row ">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <h3>{{ $product->Cena }}zł</h3> 
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
 
                                 
 
@@ -34,7 +34,7 @@
                             </div>
 
                         </div>
-                        <p class="btn-holder"><a href="{{ route('index.show',$product->id)}}"
+                        <p class="btn-holder "><a href="{{ route('index.show',$product->id)}}"
                                 class="btn btn-success btn-block text-center" role="button">
                                 <i class="fa fa-info-circle" aria-hidden="true"></i> Szczegóły</a> </p>
 

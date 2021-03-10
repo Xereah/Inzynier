@@ -157,3 +157,8 @@ Route::name('index.')->prefix('index')->group(function(){
 
 Route::get('produkty/kategorie/{id}', [App\Http\Controllers\FrontEndController::class, 'kategorie'])->name('kategorie');
 Route::get('search', [App\Http\Controllers\FrontEndController::class, 'wyszukiwanie'])->name('wyszukiwanie');
+Route::get('/uzytkownik/profil', [App\Http\Controllers\UserController::class, 'UzytkownikProfil'])->name('UzytkownikProfil');
+Route::get('/uzytkownik/edit-profile', [App\Http\Controllers\UserController::class, 'EdycjaProfiluUzytkownika'])->name('EdycjaProfiluUzytkownika');
+Route::post('/uzytkownik/update-profile', [App\Http\Controllers\UserController::class, 'AktualizacjaProfiluUzytkownika'])->name('AktualizacjaProfiluUzytkownika');
+Route::get('/uzytkownik/password-change', [App\Http\Controllers\UserController::class, 'ZmianaHaslaUzytkownika'])->name('ZmianaHaslaUzytkownika');
+Route::post('/uzytkownik/password-update', [App\Http\Controllers\UserController::class, 'AktualizacjaHaslaUzytkownika'])->name('AktualizacjaHaslaUzytkownika');
