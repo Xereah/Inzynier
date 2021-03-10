@@ -35,7 +35,7 @@
 <script type="text/javascript" src="{{ asset('js/external/jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/external/popper.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/external/bootstrap.min.js') }}"></script>
-
+<script type="text/javascript" src="{{ asset('js/minicart.js') }}"></script>
 
 {{-- Funkcja debugująca --}}
 {{-- Funkcja do debugowania JS--}}
@@ -52,5 +52,8 @@
 @endif
 {{-- Globalne skrypty użytkownika  --}}
 {{-- Lokalne skrypty JS --}}
+
+
+
 @yield('js-scripts')
 </html>

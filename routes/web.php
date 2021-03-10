@@ -7,7 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\TasksController;
-
+use App\Http\Controllers\CartController;
 
 
 Route::get('/', function () {
@@ -162,3 +162,8 @@ Route::get('/uzytkownik/edit-profile', [App\Http\Controllers\UserController::cla
 Route::post('/uzytkownik/update-profile', [App\Http\Controllers\UserController::class, 'AktualizacjaProfiluUzytkownika'])->name('AktualizacjaProfiluUzytkownika');
 Route::get('/uzytkownik/password-change', [App\Http\Controllers\UserController::class, 'ZmianaHaslaUzytkownika'])->name('ZmianaHaslaUzytkownika');
 Route::post('/uzytkownik/password-update', [App\Http\Controllers\UserController::class, 'AktualizacjaHaslaUzytkownika'])->name('AktualizacjaHaslaUzytkownika');
+
+Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('index');
+Route::get('/cart/add/{id}', [App\Http\Controllers\CartController::class, 'dodawaniedokarty'])->name('dodawaniedokarty');
+Route::get('/cart/remove/{id}', [App\Http\Controllers\CartController::class, 'usuwaniezkarty'])->name('usuwaniezkarty');
+Route::get('/cart/update', [App\Http\Controllers\CartController::class, 'aktualizacjakarty'])->name('aktualizacjakarty');

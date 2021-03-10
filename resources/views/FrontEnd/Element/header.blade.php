@@ -51,7 +51,7 @@
     </div>
     <div class="w3l_header_right1">
         
-        <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart"> </i></a></h2>
+        <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart"><sup> {{ Cart::count() }}</sup> </i></a></h2>
     </div>
     <a class="btn btn-floating m-2 w3l_header_right1 " href="#!" role="button">
         <i class="fab fa-facebook-f"></i></a>

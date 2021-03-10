@@ -38,7 +38,7 @@
                                 class="btn btn-success btn-block text-center" role="button">
                                 <i class="fa fa-info-circle" aria-hidden="true"></i> Szczegóły</a> </p>
 
-                        <p class="btn-holder"><a href="{{ url('add-to-cart/'.$product->id) }}"
+                        <p class="btn-holder"><a href="{{ url('cart/add/'.$product->id) }}"
                                 class="btn btn-warning btn-block text-center" role="button">
                                 <i class="fas fa-shopping-cart pr-2"></i> Dodaj do koszyka</a> </p>
                     </div>
