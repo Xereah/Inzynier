@@ -177,6 +177,7 @@ Route::post('order/save-order', [App\Http\Controllers\ZamowieniaController::clas
 Route::get('/order/order-success', [App\Http\Controllers\ZamowieniaController::class, 'ZamowienieSukces'])->name('ZamowienieSukces');
 
 
-
-
-
+Route::get('/zamowienia', [App\Http\Controllers\ZamowieniaAdminController::class, 'index'])->name('index');
+Route::get('/zamowienie/delete/{id}', [App\Http\Controllers\ZamowieniaAdminController::class, 'UsunZamowienie'])->name('UsunZamowienie');
+Route::get('/zamowienie/edit/{id}', [App\Http\Controllers\ZamowieniaAdminController::class, 'edycjaZamowienia'])->name('edycjaZamowienia');
+Route::get('/zamowienie/podglad/{id}', [App\Http\Controllers\ZamowieniaAdminController::class, 'podgladZamowienia'])->name('podgladZamowienia');

@@ -71,7 +71,7 @@ class ZamowieniaController extends Controller
             
 
             $order->fk_uzytkownik = $UserId;
-            $order->ZamowienieStatus="ok";
+            $order->ZamowienieStatus="W oczekiwaniu";
             $order->fk_platnosc = $paymentId;
             $subtotal = str_replace(",", "", Cart::subtotal());
            
