@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlatnoscTable extends Migration
+class CreateKlienciTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreatePlatnoscTable extends Migration
      */
     public function up()
     {
-        Schema::create('platnosc', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('platnosc');
-            // $table->string('PlatnoscStatus');
+        Schema::create('klienci', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('surname');
+            $table->string('email');
+            $table->string('adress');
+            $table->integer('phone');
+            $table->rememberToken();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -29,6 +32,6 @@ class CreatePlatnoscTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('platnosc');
+        Schema::dropIfExists('klienci');
     }
 }

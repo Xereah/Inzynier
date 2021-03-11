@@ -167,3 +167,16 @@ Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name
 Route::get('/cart/add/{id}', [App\Http\Controllers\CartController::class, 'dodawaniedokarty'])->name('dodawaniedokarty');
 Route::get('/cart/remove/{id}', [App\Http\Controllers\CartController::class, 'usuwaniezkarty'])->name('usuwaniezkarty');
 Route::get('/cart/update', [App\Http\Controllers\CartController::class, 'aktualizacjakarty'])->name('aktualizacjakarty');
+
+Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('index');
+Route::post('/checkout/save-shipping', [App\Http\Controllers\CheckoutController::class, 'ZapisInformacjiOKupujacym'])->name('ZapisInformacjiOKupujacym');
+
+Route::get('order/payment', [App\Http\Controllers\ZamowieniaController::class, 'MetodyPlatnosci'])->name('MetodyPlatnosci');
+Route::post('order/save-order', [App\Http\Controllers\ZamowieniaController::class, 'InformacjeZamowienie'])->name('InformacjeZamowienie');
+
+Route::get('/order/order-success', [App\Http\Controllers\ZamowieniaController::class, 'ZamowienieSukces'])->name('ZamowienieSukces');
+
+
+
+
+
