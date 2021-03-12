@@ -12,7 +12,7 @@
 		</ul>
    </div>
    <br>
-   <h3><p class="text-center">Kalendarz Wizyt na targu</p></h3>
+   <h3><p class="text-center kalendarz">Kalendarz Wizyt na targu</p></h3>
            <br>
    <div id='calendar'></div>
 </div> 

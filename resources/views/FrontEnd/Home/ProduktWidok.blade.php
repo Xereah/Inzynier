@@ -46,11 +46,19 @@
       <p class="pt-1">{{ $produkty->Opis }}</p>
       <hr>
       <div class="table-responsive mb-2">
+      @if($produkty->Ilosc ==0)
+      <h5>Niestety nie mamy już tego produktu na stanie<h5>
+      @else
       <h5>Dostępna ilość: {{$produkty->Ilosc}}{{$produkty->JednostkaMiary}}</h5>
+      @endif
       </div>
      
-      <button type="button" class="btn btn-dark btn-md mr-1 mb-2"><i
-          class="fas fa-shopping-cart pr-2"></i>Dodaj do koszyka</button>
+    
+      @if($produkty->Ilosc !=0)
+        <p class="btn-holder"><a href="{{ url('cart/add/'.$produkty->id) }}"
+           class="btn btn-warning btn-block text-center" role="button">
+               <i class="fas fa-shopping-cart pr-2"></i> Dodaj do koszyka</a> </p>
+               @endif
     </div>
   </div>
 

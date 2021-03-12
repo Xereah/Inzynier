@@ -61,19 +61,21 @@
                                 {{ $errors->has('Opis') ? $errors->first('Opis') : '' }}
                             </span>
                         </div>
+                        
                         <div class="form-group">
                             <label>Zdjęcie</label>
-                            <input type="file" name="Zdjecie" accept="image/*">
+                            <input type="file" name="Zdjecie" accept="Zdjecie/*" >
                             <img src="{{ asset($produkty->Zdjecie) }}" alt="{{ $produkty->Nazwa }}" height="200px" width="200px">
-                           
+                         
                         </div>
+                    
 
                         <div class="form-group">
                             <label>Kategoria</label>
                             <select name="fk_kategorie" class="form-control">
-                                <option value="{{ $produkty->fk_kategorie }}">{{ $produkty->kategoria->Nazwa }}</option>
-                                <option value="1">Warzywa</option>
-                                <option value="2">Owoce</option>
+                                @foreach ($kategorie as $kategoria )
+                        <option value="{{ $kategoria->id }}"> {{ $kategoria->Nazwa  }}</option>
+                        @endforeach
                             </select>
                             <span class="text-danger">
                                 {{ $errors->has('fk_kategorie') ? $errors->first('fk_kategorie') : '' }}

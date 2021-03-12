@@ -50,6 +50,7 @@ class ZamowieniaController extends Controller
         $tasks= Task::all();
         $kategorie = Kategorie::all();
         $cart = Cart::content();
+
         if ($uzytkownik != NULL ) {
                 return view('FrontEnd.Zamowienia.ZamowienieSukcess',compact('uzytkownik','tasks','kategorie','cart'));
             } else {
@@ -68,15 +69,12 @@ class ZamowieniaController extends Controller
         {
             $order = new Zamowienia();
             $UserId = Auth::user()->id;
-            
 
             $order->fk_uzytkownik = $UserId;
             $order->ZamowienieStatus="W oczekiwaniu";
             $order->fk_platnosc = $paymentId;
             $subtotal = str_replace(",", "", Cart::subtotal());
-           
             $total = $subtotal;
-            //
             $order->ZamowienieKoszt = $total;
             $order->save();
             return $order->id;
@@ -86,6 +84,7 @@ class ZamowieniaController extends Controller
         {
             $contents = Cart::content();
             $orderData = array();
+            
             foreach ($contents as $content) {
                 $orderData['fk_zamowienie'] = $orderId;
                 $orderData['fk_produkt'] = $content->id;
@@ -93,6 +92,12 @@ class ZamowieniaController extends Controller
                 $orderData['ProduktCena'] = $content->price;
                 $orderData['ProduktIlosc'] = $content->qty;
                 DB::table('zamowienie_szczegoly')->insert($orderData);
+            }
+            foreach ($contents as $content) {
+            $produkty=Produkty::find($content->id);
+            $r=$produkty->Ilosc;
+            $produkty->Ilosc = $r-$content->qty;
+            $produkty->save();
             }
         }
     /**

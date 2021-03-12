@@ -67,8 +67,9 @@
                         <div class="form-group">
                             <label>Kategoria</label>
                             <select name="fk_kategorie" class="form-control">
-                                <option value="1">Owoce</option>
-                                <option value="2">Warzywa</option>
+                            @foreach ($kategorie as $kategoria )
+                        <option value="{{ $kategoria->id }}"> {{ $kategoria->Nazwa  }}</option>
+                        @endforeach
                             </select>
                             <span class="text-danger">
                                 {{ $errors->has('fk_kategorie') ? $errors->first('fk_kategorie') : '' }}

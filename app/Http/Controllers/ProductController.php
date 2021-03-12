@@ -114,6 +114,16 @@ try{
      */
     public function updateProduct(Request $request)
     {
+        // $this->validate($request, [
+        //     'Nazwa' => 'required',
+        //     'Cena' => 'required',
+        //     'Ilosc' => 'required',
+        //     'JednostkaMiary' => 'required',
+        //     'Opis' => 'required',
+        //     'Zdjecie' => 'required',
+        //     'fk_kategorie' => 'required',
+        // ]);
+
         try{
         $imageUrl = $this->imageExistStatus($request);
         $this->updateProductInfo($request, $imageUrl);
@@ -159,7 +169,7 @@ try{
             $productImage->move($uploadPath, $imageName);
             $imageUrl = $uploadPath . $imageName;
         } else {
-            $imageUrl = $productById->productImage;   
+            $imageUrl = $productById->Zdjecie;   
         }
         return $imageUrl;
     }

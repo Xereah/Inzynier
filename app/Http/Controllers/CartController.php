@@ -5,6 +5,7 @@ use Cart;
 use App\Models\Produkty;
 use App\Models\Kategorie;
 use App\Models\Task;
+use App\Models\Platnosc;
 use DB;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class CartController extends Controller
         $tasks= Task::all();
         $kategorie = Kategorie::all();
         $cart = Cart::content();
-        return view('FrontEnd.Koszyk.cart', compact('cart','kategorie','tasks'));
+        $platnosc=Platnosc::all();
+        return view('FrontEnd.Koszyk.cart', compact('cart','kategorie','tasks','platnosc'));
     }
 
 

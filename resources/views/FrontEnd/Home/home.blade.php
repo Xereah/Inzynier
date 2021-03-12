@@ -24,7 +24,7 @@
 
                         <div class="row ">
                             <div class="col-md-12">
-                                <h3>{{ $product->Cena }}zł</h3> 
+                            <h4>Cena: {{ $product->Cena }}zł</h4> 
                             </div>
                             <div class="col-md-12">
 
@@ -37,10 +37,11 @@
                         <p class="btn-holder "><a href="{{ route('index.show',$product->id)}}"
                                 class="btn btn-success btn-block text-center" role="button">
                                 <i class="fa fa-info-circle" aria-hidden="true"></i> Szczegóły</a> </p>
-
+                                @if($product->Ilosc !=0)
                         <p class="btn-holder"><a href="{{ url('cart/add/'.$product->id) }}"
                                 class="btn btn-warning btn-block text-center" role="button">
                                 <i class="fas fa-shopping-cart pr-2"></i> Dodaj do koszyka</a> </p>
+                                @endif
                     </div>
                 </div>
             </div>

@@ -25,8 +25,10 @@
                     <div class="d-flex flex-column mt-4">
                     <a href="{{ route('index.show',$product->id)}}"
                                 class="btn btn-primary btn-sm" role="button">Szczegóły</a>
-                    <a href="{{ url('add-to-cart/'.$product->id) }}"
+                                @if($product->Ilosc !=0)
+                    <a href="{{ url('cart/add/'.$product->id) }}"
                                 class="btn btn-warning btn-block text-center" role="button">Dodaj do koszyka</a></div>
+                                @endif
                 </div>
                 
             </div>

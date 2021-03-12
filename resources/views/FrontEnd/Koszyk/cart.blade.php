@@ -1,18 +1,20 @@
 @extends('FrontEnd.FrontEndSzablon')
 
+@section('css-styles')
+<link href="{{ asset('css/koszyk.css') }}" rel="stylesheet">
+@endsection
+
 @section('title', 'Kategorie')
 @section('content')
 
 <div class="container ">
 <div class="col-lg-12">
     
-<div class="w3l_banner_nav_right col-lg-12">
-    <!-- about -->
+<!-- <div class="w3l_banner_nav_right col-lg-12">
     <div class="privacy about">
         <h3>Koszyk z zakupami</h3>
         @if(Cart::count() != "0")
         <div class="checkout-right">
-            <h4>W twoim koszyku aktualnie jest : <span>{{ Cart::count() }} produktów</span></h4>
             <table class="timetable_sub">
                 <thead>
                     <tr>
@@ -55,7 +57,6 @@
                 </tbody>
             </table>
         </div>
-        <div class="alert alert-success" id="CartMsg"></div>
         <div class="checkout-left">	
             <div class="col-md-4 checkout-left-basket">
                 <h4>Łączna kwota</h4>
@@ -84,7 +85,66 @@
         @else
         <h1>Koszyk jest pusty!</h1>
         @endif
+    </div> -->
+
+
+
+    <div class="basket">
+    
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Produkt</li>
+          <li class="price">Cena</li>
+          <li class="quantity">Ilość</li>
+          <li class="subtotal">Koszt</li>
+        </ul>
+      </div>
+      @foreach(Cart::content() as $cartProduct)
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="{{ asset($cartProduct->options->img) }}" alt="$cartProduct->name" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h6><strong>{{$cartProduct->name}}</h6>
+         
+          </div>
+        </div>
+        <div class="price">{{$cartProduct->price}} zł</div>
+        <div class="quantity">
+        <input type="hidden"  id="rowId{{$cartProduct->id}}" value="{{$cartProduct->rowId}}">
+                                    <input type="number" id="upCart{{$cartProduct->id}}" value="{{$cartProduct->qty}}" max="10" min="1" class="entry value">
+
+        </div>
+        <?php
+                             $subtotal = str_replace(",", "", $cartProduct->qty*$cartProduct->price);
+                             $total = $subtotal;
+                         ?>
+        <div class="subtotal">{{$subtotal}} zł</div>
+        <div class="remove">
+          <button><a  href="{{ url('/cart/remove/'.$cartProduct->rowId) }}"><i class="fas fa-trash-alt"></i> </a></button>
+        </div>
+      </div>
+      @endforeach
     </div>
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span> Produkty w twoim koszyku</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Razem</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">{{Cart::subtotal()}} zł</div>
+        
+        </div>
+      
+        <div class="summary-total">
+        
+        <div class="summary-checkout">
+        <a href="{{ url('/checkout') }}">  <button class="checkout-cta">Zamawiam</button></a>
+        </div>
+      </div>
+    </aside>
+
+
 
 
         </div>
@@ -113,6 +173,8 @@
     });
    
 </script>
+
+
 
 
 @endsection
