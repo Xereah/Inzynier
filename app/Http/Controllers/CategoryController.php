@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategorie;
+use App\Http\Requests\Kategorie\StoreKategorieRequest;
+use App\Http\Requests\Kategorie\UpdateKategorieRequest;
 class CategoryController extends Controller
 {
     /**
@@ -34,7 +36,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreKategorieRequest $request)
     {
         $kategorie = new Kategorie([
             'Nazwa' => $request->input('Nazwa'),
@@ -92,7 +94,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateKategorieRequest $request, $id)
     {
         try{
         $kategorie = Kategorie::find($request->id);

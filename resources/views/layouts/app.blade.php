@@ -11,7 +11,6 @@
 
   <!-- Custom fonts for this template-->
   <link href="{{ asset('sbadmin2/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
   <!-- Custom styles for this template-->
@@ -273,7 +272,7 @@
   <!-- Bootstrap core JavaScript-->
   <script src="{{ asset('sbadmin2/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('sbadmin2/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-   
+  <script type="text/javascript" src="{{ url('js/jquery.validate.min.js') }}"></script>
    <!-- Datatables -->
     <script src="{{ asset('js/datatables-demo.js') }}" defer></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>

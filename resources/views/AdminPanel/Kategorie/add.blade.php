@@ -17,7 +17,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        {!! Form::open(['url'=>'kategorie/store', 'method'=>'POST',  'enctype'=>'multipart/form-data', 'name'=>'editProductForm', 'role'=>'form']) !!}
+                        {!! Form::open(['url'=>'kategorie/store', 'method'=>'POST',  'enctype'=>'multipart/form-data', 'name'=>'editProductForm', 'role'=>'form','id' =>'kategorie-form']) !!}
                         <div class="form-group">
                             <label>Nazwa</label>
                             <input type="hidden" name="id">
@@ -47,4 +47,18 @@
     <!-- /.col-lg-12 -->
 </div>
 
+@endsection
+
+{{-- Dodanie do szablonu lokalnych skryptów JS --}}
+{{-- Tagi {!! !!} powoduje, że kod w nim zawarty nie jest przepuszczany przez htmlspecial characters --}}
+@section('js-scripts')
+{{-- Laravel Javascript Validation --}}
+<script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
+{{-- Walidacja po stronie klienta z użyciem reguł walidacji po stronie serwera --}}
+@if(isset($edit) && $edit === true)
+{!! JsValidator::formRequest('App\Http\Requests\Kategorie\UpdateKategorieRequest', '#kategorie-form'); !!}
+@else
+{!! JsValidator::formRequest('App\Http\Requests\Kategorie\StoreKategorieRequest', '#kategorie-form'); !!}
+@endif
 @endsection
