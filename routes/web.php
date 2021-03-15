@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\CartController;
+use App\Http\Middleware\Authenticate;
 
 
 Route::get('/', function () {
@@ -88,26 +89,7 @@ Route::name('uzytkownik.')->prefix('uzytkownik')->group(function(){
        
 });
 
-Route::name('uzytkownik.')->prefix('uzytkownik')->group(function(){
-    Route::get('', [UserController::class,'index'])
-        ->name('index');
-   Route::get('create',  [UserController::class,'create'])
-        ->name('create');
-    Route::post('',  [UserController::class,'store'])
-        ->name('store');
-    Route::get('{id}',  [UserController::class,'show'])
-        ->name('show')
-       ->where('id', '[0-9]+');
-    Route::get('{id}/edit',  [UserController::class,'edit'])
-        ->name('edit')
-        ->where('id', '[0-9]+');
- Route::post('{id}',  [UserController::class,'update'])
-        ->name('update')
-        ->where('id', '[0-9]+');
-  
-   Route::get('/uzytkownik/delete/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('destroy');
-       
-});
+
 
 // Kalendarz
 Route::name('task.')->prefix('task')->group(function(){
@@ -132,7 +114,7 @@ Route::name('task.')->prefix('task')->group(function(){
        ->where('id', '[0-9]+');
     Route::get('/show/{id}', [App\Http\Controllers\TasksController::class, 'showtask'])->name('showtask');
 });
-
+// strona główna
 Route::name('index.')->prefix('index')->group(function(){
     Route::get('', [FrontEndController::class,'index'])
         ->name('index');
@@ -155,27 +137,34 @@ Route::name('index.')->prefix('index')->group(function(){
        ->where('id', '[0-9]+');
 });
 
+//tabela z dynamicznymi kategoriami
 Route::get('produkty/kategorie/{id}', [App\Http\Controllers\FrontEndController::class, 'kategorie'])->name('kategorie');
+//wyszukiwanie
 Route::get('search', [App\Http\Controllers\FrontEndController::class, 'wyszukiwanie'])->name('wyszukiwanie');
+Route::get('searchprice', [App\Http\Controllers\FrontEndController::class, 'wyszukiwaniecena'])->name('wyszukiwaniecena');
+//edycja zalogowanego uzytkownika
 Route::get('/uzytkownik/profil', [App\Http\Controllers\UserController::class, 'UzytkownikProfil'])->name('UzytkownikProfil');
 Route::get('/uzytkownik/edit-profile', [App\Http\Controllers\UserController::class, 'EdycjaProfiluUzytkownika'])->name('EdycjaProfiluUzytkownika');
 Route::post('/uzytkownik/update-profile', [App\Http\Controllers\UserController::class, 'AktualizacjaProfiluUzytkownika'])->name('AktualizacjaProfiluUzytkownika');
 Route::get('/uzytkownik/password-change', [App\Http\Controllers\UserController::class, 'ZmianaHaslaUzytkownika'])->name('ZmianaHaslaUzytkownika');
 Route::post('/uzytkownik/password-update', [App\Http\Controllers\UserController::class, 'AktualizacjaHaslaUzytkownika'])->name('AktualizacjaHaslaUzytkownika');
 
+//koszyk
+Route::middleware(['auth'])->group(function() {
 Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('index');
 Route::get('/cart/add/{id}', [App\Http\Controllers\CartController::class, 'dodawaniedokarty'])->name('dodawaniedokarty');
 Route::get('/cart/remove/{id}', [App\Http\Controllers\CartController::class, 'usuwaniezkarty'])->name('usuwaniezkarty');
 Route::get('/cart/update', [App\Http\Controllers\CartController::class, 'aktualizacjakarty'])->name('aktualizacjakarty');
 
+//dane do przesyłki
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('index');
 Route::post('/checkout/save-shipping', [App\Http\Controllers\CheckoutController::class, 'ZapisInformacjiOKupujacym'])->name('ZapisInformacjiOKupujacym');
 
+//płatność
 Route::get('order/payment', [App\Http\Controllers\ZamowieniaController::class, 'MetodyPlatnosci'])->name('MetodyPlatnosci');
 Route::post('order/save-order', [App\Http\Controllers\ZamowieniaController::class, 'InformacjeZamowienie'])->name('InformacjeZamowienie');
-
 Route::get('/order/order-success', [App\Http\Controllers\ZamowieniaController::class, 'ZamowienieSukces'])->name('ZamowienieSukces');
-
+});
 
 Route::get('/zamowienia', [App\Http\Controllers\ZamowieniaAdminController::class, 'index'])->name('index');
 Route::get('/zamowienie/delete/{id}', [App\Http\Controllers\ZamowieniaAdminController::class, 'UsunZamowienie'])->name('UsunZamowienie');

@@ -11,10 +11,33 @@
            @endforeach
 		</ul>
    </div>
+   <br>
+   <h3><p class="text-left kalendarz">Cena</p></h3>
+   <hr>
+    <form action="{{ url('searchprice') }}">
+    <div class="d-flex align-items-center mt-4 pb-1 form-group">
+          <div class="md-form md-outline my-0">   
+    <input type="text" id="from" class="form-control mb-0" name="searchData1" value="Od" onfocus="this.value = '';" onblur="if (this.value == '') {
+                        this.value = '1zł';
+                    }" required="">
+                    </div>
+                    <p class="px-2 mb-0 text-muted"> - </p>
+                    <div class="md-form md-outline my-0 ">  
+      <input type="text" class="form-control mb-0" name="searchData2" value="Do" onfocus="this.value = '';" onblur="if (this.value == '') {
+                        this.value = '10zł';
+                    }" required="">
+     
   
-   <h3><p class="text-center kalendarz">Kalendarz Wizyt na targu</p></h3>
-           <br> 
-   <div id='calendar'></div> 
+    
+                </div>
+                <br>
+               
+                </div>
+                <button type="submit" class="btn btn-outline-secondary col-sm-12 ">Filtruj</button>
+                </form>
+   <!-- <h3><p class="text-center kalendarz">Kalendarz Wizyt na targu</p></h3>
+           <br> -->
+   <!-- <div id='calendar'></div> -->
 
 
 </div> 

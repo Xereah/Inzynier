@@ -4880,3 +4880,12 @@ input.checkbox:checked:after {
 .paneluzytkownika{
 	border: dotted 1px green;
 }
+
+.spacer{
+	width:100%;
+	background-color: #1fa61f;
+	
+}
+.malemenu{
+	font-size:40px;
+}

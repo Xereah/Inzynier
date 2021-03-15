@@ -83,6 +83,21 @@ class FrontEndController extends Controller
         return view('FrontEnd.Home.search',compact('produkty','kategorie','tasks'));
     }
 
+    public function wyszukiwaniecena(Request $request)
+    {
+        $tasks= Task::all();
+        $searchData1 = $request->searchData1;
+        $searchData2 = $request->searchData2;
+        $kategorie= Kategorie::All();
+        // $produkty= DB::table('produkty')
+        // ->where('produkty.status', 1)->get();
+        $produkty = DB::table('produkty')
+                ->where('produkty.status', 1)
+                ->whereBetween('produkty.Cena',[ $searchData1,$searchData2])
+                ->get();
+        return view('FrontEnd.Home.KategorieWidok',compact('produkty','kategorie','tasks'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

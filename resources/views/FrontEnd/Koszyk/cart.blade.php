@@ -1,4 +1,4 @@
-@extends('FrontEnd.FrontEndSzablon')
+@extends('FrontEnd.FrontEndSzablon3')
 
 @section('css-styles')
 <link href="{{ asset('css/koszyk.css') }}" rel="stylesheet">
@@ -113,8 +113,7 @@
         <div class="price">{{$cartProduct->price}} zł</div>
         <div class="quantity">
         <input type="hidden"  id="rowId{{$cartProduct->id}}" value="{{$cartProduct->rowId}}">
-                                    <input type="number" id="upCart{{$cartProduct->id}}" value="{{$cartProduct->qty}}" max="10" min="1" class="entry value">
-
+                                    <input type="number" id="upCart{{$cartProduct->id}}" value="{{$cartProduct->qty}}" max="100" min="1" class="entry value">
         </div>
         <?php
                              $subtotal = str_replace(",", "", $cartProduct->qty*$cartProduct->price);

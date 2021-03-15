@@ -1,9 +1,9 @@
-@extends('FrontEnd.FrontEndSzablon')
+@extends('FrontEnd.FrontEndSzablon3')
 
 @section('title', 'Sklep')
 @section('content')
 
-<h3 class="py-5">Dziś w ofercie mamy</h3>
+<h3 class="py-5">Aktualnie na stanie mamy</h3>
     <div class="d-flex justify-content-center row">
             @foreach($produkty as $product)
         <div class="col-md-12">
@@ -15,7 +15,7 @@
                     </div>
                     {{ $product->Opis }}
                     <hr>
-                    <p>Pozostało na stanie {{ $product->Ilosc }}{{ $product->JednostkaMiary }}</p>
+                   <strong> <p>Pozostało na stanie {{ $product->Ilosc }}{{ $product->JednostkaMiary }}</p></strong>
                 </div>
                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                     <div class="d-flex flex-row align-items-center">

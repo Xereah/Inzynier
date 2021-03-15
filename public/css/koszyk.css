@@ -1,11 +1,7 @@
 html,
 
 
-body {
-  background-color: #fff;
-  color: #666;
 
-}
 
 a {
   border: 0 none;
@@ -64,14 +60,6 @@ button,
 .product-image,
 .product-details {
   float: left;
-}
-
-.price:before,
-.subtotal:before,
-.subtotal-value:before,
-.total-value:before,
-.promo-value:before {
-
 }
 
 .hide {
