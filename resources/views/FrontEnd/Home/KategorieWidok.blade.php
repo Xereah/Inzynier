@@ -1,6 +1,6 @@
 @extends('FrontEnd.FrontEndSzablon')
 
-@section('title', 'Kategorie')
+@section('title', 'Sklep')
 @section('content')
 
 <h3 class="py-5">Dziś w ofercie mamy</h3>

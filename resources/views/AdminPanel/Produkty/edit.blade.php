@@ -85,7 +85,12 @@
                         <div class="form-group">
                             <label>Status</label>
                             <select name="status" class="form-control">
-                                <option value="{{ $produkty->status }}">{{ $produkty->status }}</option>
+            
+                                <option value="{{ $produkty->status }}"> @if($produkty->status == 1)
+                                Widoczny
+                                @else
+                                Nie Widoczny</option>
+                                @endif
                                 <option value="1">Publikuj</option>
                                 <option value="0">Nie publikuj</option>
                             </select>

@@ -1,6 +1,6 @@
 @extends('FrontEnd.FrontEndSzablon')
 
-@section('title', 'Kategorie')
+@section('title', 'Użytkownik')
 @section('content')
 
 <div class="container ">

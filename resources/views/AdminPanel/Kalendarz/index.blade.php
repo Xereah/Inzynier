@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Kategorie')
+@section('title', 'Kalendarz')
 @section('css')
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
 @endsection

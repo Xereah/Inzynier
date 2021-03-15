@@ -1,6 +1,6 @@
 @extends('FrontEnd.FrontEndSzablon')
 
-@section('title', 'Kategorie')
+@section('title', 'Sklep')
 @section('content')
 
 <div class="container ">
@@ -46,8 +46,7 @@
                 </div>
             </div>
             @endforeach
-
-
+         
         </div>
     </div>
 
@@ -90,3 +89,5 @@
 
 </div>
 </div> -->
+
+

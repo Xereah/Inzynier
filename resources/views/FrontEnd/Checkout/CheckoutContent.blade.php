@@ -1,6 +1,6 @@
 @extends('FrontEnd.FrontEndSzablon')
 
-@section('title', 'Kategorie')
+@section('title', 'Koszyk')
 @section('content')
 <div class="w3l_banner_nav_right">
     <!-- login -->

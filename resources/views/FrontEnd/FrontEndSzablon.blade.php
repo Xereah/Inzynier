@@ -36,6 +36,7 @@
 <script type="text/javascript" src="{{ asset('js/external/popper.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/external/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/minicart.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.countdown.min.js') }}"></script>
 
 {{-- Funkcja debugująca --}}
 {{-- Funkcja do debugowania JS--}}

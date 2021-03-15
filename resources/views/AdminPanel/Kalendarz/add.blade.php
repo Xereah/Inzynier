@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Kategorie')
+@section('title', 'Kalendarz')
 @section('content')
 <form action="{{ route('task.store') }}" method="post">
   {{ csrf_field() }}

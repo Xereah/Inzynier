@@ -4,7 +4,7 @@
 <link href="{{ asset('css/koszyk.css') }}" rel="stylesheet">
 @endsection
 
-@section('title', 'Kategorie')
+@section('title', 'Koszyk')
 @section('content')
 
 <div class="container ">
