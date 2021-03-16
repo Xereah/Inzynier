@@ -13,6 +13,9 @@
   <link href="{{ asset('sbadmin2/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+ 
+
+  
   <!-- Custom styles for this template-->
   <link href="{{ asset('sbadmin2/css/sb-admin-2.css' ) }}" rel="stylesheet">
   @yield('css')
@@ -145,16 +148,16 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Szukaj..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
                 <button class="btn btn-primary" type="button">
                   <i class="fas fa-search fa-sm"></i>
                 </button>
               </div>
             </div>
-          </form>
+          </form> -->
 
           <!-- Topbar Navbar -->
         @auth
@@ -193,12 +196,14 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{  route('uzytkownik.edit', Auth::user()->id) }}">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Ustawienia
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+       
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Wyloguj
                 </a>
@@ -213,6 +218,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
             @yield('content')
+            <br>
         </div>
         <!-- /.container-fluid -->
 
@@ -227,7 +233,7 @@
   </div>
   <!-- End of Page Wrapper -->
    <!-- Footer -->
-   <footer class="sticky-footer bg-white">
+   <footer class="sticky-footer bg-white p-3">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright Struzik Patryk 28933 &copy;  {{ date('Y') }}</span>
@@ -277,7 +283,6 @@
     <script src="{{ asset('js/datatables-demo.js') }}" defer></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
    

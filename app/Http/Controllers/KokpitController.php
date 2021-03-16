@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 use App\Models\Produkty;
 class KokpitController extends Controller
@@ -14,7 +14,8 @@ class KokpitController extends Controller
     public function index()
     {
         $produkty=Produkty::all();
-        return view('home',compact('produkty'));
+        $user=Auth::user();
+        return view('home',compact('produkty','user'));
     }
 
     /**

@@ -4,7 +4,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">User Information</h1>
+        <h1 class="page-header">Użytkownicy</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -21,7 +21,7 @@
                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTable">
                     <thead>
                         <tr>
-                            <th>Serial #</th>
+                            <th>Id</th>
                             <th>Imie</th>
                             <th>Nazwisko</th>
                             <th>Telefon</th>

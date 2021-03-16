@@ -11,14 +11,13 @@ use App\Http\Controllers\CartController;
 use App\Http\Middleware\Authenticate;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/' , [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 
 Route::name('kokpit.')->prefix('kokpit')->group(function(){
     Route::get('', [KokpitController::class,'index'])
-        ->name('index'); 
+        ->name('index')->middleware(['auth']); 
 });
 
 Auth::routes();

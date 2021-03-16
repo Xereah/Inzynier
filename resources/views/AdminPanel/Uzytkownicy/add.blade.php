@@ -84,7 +84,7 @@
               </div>
               <div class="form-group">
                                 <select name="level" class="form-control">
-                                <option>Wybierz role</option>
+                                <option>Rola</option>
                                     <option value="1">Administrator</option>
                                     <option value="2">Użytkownik</option>
                                 </select>

@@ -81,8 +81,9 @@
                                     {{ $errors->has('adress') ? $errors->first('adress') : '' }}
                                 </span>
                             </div>
-                        <button type="submit" name="btn" class="btn btn-success" style="float:right">Update User Info</button>
+                        <button type="submit" name="btn" class="btn btn-success" style="float:right">Aktualizacja</button>
                       </form>
+                     
                     </div>
                 </div>
                 <!-- /.row (nested) -->
