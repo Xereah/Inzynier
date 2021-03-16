@@ -7,7 +7,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
     font-size: 100%;
 	font-family: "Cairo", sans-serif;
-	background:#ffffff;
+	/* background:#C6F28F !important; */
+	background: url(../Zdjecie/tło.jpg) no-repeat ;
+	background-size: cover;
 }
 ul li,ol li{
 	font-size:14px;
@@ -79,7 +81,7 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 	-ms-transition: .5s ease-in;
 }
 .agileits_header{
-	background:#dcdcdc;
+	background:rgb(116, 151, 26);;
 	box-shadow: 0 0 50px 0 #dcdcdc;
 	height:50px;
 	
@@ -89,11 +91,11 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 	
 }
 .w3l_offers a{
-	font-size: 2em;
+	font-size: 1em;
     color: black;
     text-decoration: none;
-    padding: .0em 3em;
-    background: #dcdcdc;
+    padding: .2em 1em;
+ 
 	display:block;
 	height:50px;
 }
@@ -155,7 +157,9 @@ ul.dropdown-menu.drp-mnu li a i {
     padding-left: 1em;
 }
 .logo_products{
-	padding:4em 0 1em;
+	
+	background-color:#D0FF96 ;
+	box-shadow: 1px 1px 5px 1px black;
 }
 .w3ls_logo_products_left{
 	float:left;
@@ -500,7 +504,7 @@ ul.dropdown-menu.drp-mnu li a i {
 .top-brands h3,.fresh-vegetables h3,.mail h3,.testimonials h3,.w3_login h3,.w3ls_w3l_banner_nav_right_grid h3,h3.title,.faq h3,.services h3,.about h3,.team h3,.events h3{
 	text-align:center;
 	color:#212121;
-	padding-bottom:.5em;
+	padding-bottom:.3em;
 	position:relative;
 	font-size: 2.5em;
 }
@@ -1796,6 +1800,7 @@ h2.typoh2{
 	}
 	table.table.table-striped,.table-bordered,.bs-docs-example {
 		display: none;
+		
 	}
 }
 .typo,.privacy,.faq,.services,.events,.mail,.agileinfo_single,.w3_login{
@@ -2733,6 +2738,8 @@ input.checkbox:checked:after {
 }
 .w3_login_module{
 	min-height: 475px;
+
+	
 
 }
 .form-module .toggle {
@@ -4873,12 +4880,14 @@ input.checkbox:checked:after {
 
 .nieznaleziono{
 	border: 5px solid lightblue;
-	padding:5%;
+	padding:15%;
+	width:100% !important;
 	text-align: center;
 }
 
 .paneluzytkownika{
-	border: dotted 1px green;
+	border: dotted 1px black;
+	padding:15%;
 }
 
 .spacer{
@@ -4888,4 +4897,17 @@ input.checkbox:checked:after {
 }
 .malemenu{
 	font-size:40px;
+}
+.stopka{
+	
+	bottom:0em;
+	width:100%;
+}
+.platnosc{
+	border:1px solid black;
+	text-align: center;
+	margin:7%;
+}
+.sukces{
+	height:500px;
 }

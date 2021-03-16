@@ -3,8 +3,9 @@
 @section('title', 'Sklep')
 @section('content')
 
-<h3 class="py-5">Aktualnie na stanie mamy</h3>
+
     <div class="d-flex justify-content-center row">
+    <h3 class="">Aktualnie na stanie mamy</h3>
             @foreach($produkty as $product)
         <div class="col-md-12">
             <div class="row p-2 bg-white border rounded">

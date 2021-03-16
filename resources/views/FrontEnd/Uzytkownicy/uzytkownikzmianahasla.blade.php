@@ -1,11 +1,11 @@
-@extends('FrontEnd.FrontEndSzablon')
+@extends('FrontEnd.FrontEndSzablon2')
 
 @section('title', 'Użytkownik')
 @section('content')
 
-<div class="container ">
-<div class="col-lg-12">
-<div class="w3l_banner_nav_right">
+<div class="container col-lg-10 ">
+<div class="col-lg-10">
+<div class="w3l_banner_nav_right" style="background-color:white;">
     <!-- login -->
     <div class="w3_login">
         <h3>Edycja hasła</h3><br><br>
@@ -32,7 +32,7 @@
 
 </div>
 </div>
-
+<div class="clearfix"></div>
 @endsection
 
 @section('js-scripts')

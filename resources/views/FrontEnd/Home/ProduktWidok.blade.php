@@ -7,7 +7,7 @@
 <div class="col-lg-12">
     
 <!--Section: Block Content-->
-<section class="mb-5" style="background-color:#f7f7f7">
+<section class="mb-5 py-5" style="background-color:#f7f7f7">
 
   <div class="row">
     <div class="col-md-6 mb-4 mb-md-0">
@@ -56,7 +56,7 @@
     
       @if($produkty->Ilosc !=0)
         <p class="btn-holder"><a href="{{ url('cart/add/'.$produkty->id) }}"
-           class="btn btn-warning btn-block text-center" role="button">
+        class="btn btn-dark btn-md mr-1 mb-2">
                <i class="fas fa-shopping-cart pr-2"></i> Dodaj do koszyka</a> </p>
                @endif
     </div>

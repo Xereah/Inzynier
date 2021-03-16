@@ -1,17 +1,7 @@
 <!-- Footer -->
-<footer class="text-center ">
+<footer class="text-center stopka">
   <!-- Grid container -->
-  <div class="container p-4">
 
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>
-      
-      </p>
-    </section>
-    <!-- Section: Text -->
-    <!-- Section: Links -->
-  </div>
   <!-- Grid container -->
 
   <!-- Copyright -->

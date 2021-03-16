@@ -1,4 +1,4 @@
-@extends('FrontEnd.FrontEndSzablon3')
+@extends('FrontEnd.FrontEndSzablon')
 
 @section('css-styles')
 <link href="{{ asset('css/koszyk.css') }}" rel="stylesheet">
@@ -7,8 +7,8 @@
 @section('title', 'Koszyk')
 @section('content')
 
-<div class="container ">
-<div class="col-lg-12">
+<div class="container">
+<div class="col-lg-12" >
     
 <!-- <div class="w3l_banner_nav_right col-lg-12">
     <div class="privacy about">
@@ -89,9 +89,9 @@
 
 
 
-    <div class="basket">
+    <div class="basket" class="p-2" >
     
-      <div class="basket-labels">
+      <div class="basket-labels" >
         <ul>
           <li class="item item-heading">Produkt</li>
           <li class="price">Cena</li>
@@ -147,6 +147,7 @@
 
 
         </div>
+        <br>
     </div>
 
 @endsection

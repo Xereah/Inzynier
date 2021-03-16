@@ -5,10 +5,10 @@
 <div class="w3l_banner_nav_right">
     <!-- login -->
     <br><br>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10">
-                <div class="well lead text-center text-success"><b>Dziękujemy</b>Udało ci się złożyć zamówienie</div>
+    <div class="container sukces">
+        <div class="row col-lg-12">
+            <div class="col-lg-12">
+                <div class="well lead text-center"><h2><b><strong>Dziękujemy <br></b>Udało ci się złożyć zamówienie</strong></h2></div>
             </div>
             <?php
                     Cart::destroy();

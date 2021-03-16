@@ -61,7 +61,7 @@
             @endforeach
             @else
             
-            <h4><p class="nieznaleziono">Nie znaleziono produktów spełniających twoje kryteria!</p></h4>
+            <h4><p class="nieznaleziono p-4">Nie znaleziono produktów spełniających twoje kryteria!</p></h4>
    
             @endif
 

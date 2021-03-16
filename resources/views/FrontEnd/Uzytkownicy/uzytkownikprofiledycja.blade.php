@@ -1,15 +1,17 @@
-@extends('FrontEnd.FrontEndSzablon')
+@extends('FrontEnd.FrontEndSzablon2')
 
 @section('title', 'Użytkownik')
 @section('content')
 
 <div class="container ">
-<div class="col-lg-12">
-<div class="w3l_banner_nav_right">
+<div class="col-lg-10">
+<div class="w3l_banner_nav_right" style="background-color:white;">
     <!-- login -->
-    <div class="w3_login paneluzytkownika">
+    <div class="w3_login ">
+        
+      
         <h3>Edycja Profilu</h3><br><br>
-        <div class="w3_login_module">
+        <div class="w3_login_module paneluzytkownika">
         <form id="uzytkownik-form" method="post" 
                 action="{{ url('/uzytkownik/update-profile') }}">
                     @if(isset($edit) && $edit === true)
@@ -61,7 +63,10 @@
 
 
 
-</div>
+
 </div>
 
+</div>
+</div>
+<div class="clearfix"></div>
 @endsection

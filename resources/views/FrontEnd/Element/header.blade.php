@@ -1,11 +1,20 @@
 <div class="agileits_header">
     <div class="w3l_offers">
         <!-- <a href="{{ route('index.index') }}">Sklep Warzywny !</a> -->
+          <a class="btn btn-floating m-2 w3l_header_right1 " href="https://www.facebook.com/patryk.struzik.5" role="button">
+        <i class="fab fa-facebook-f fa-lg"></i> Facebook</a>
+      <a class="btn  btn-floating m-2 w3l_header_right1" href="https://twitter.com/?lang=pl" role="button">
+          <i class="fab fa-twitter fa-lg"> Twitter</i></a>
+          <a class="btn  btn-floating m-2 w3l_header_right1"  role="button">
+          <i class="fa fa-phone fa-lg"></i> 513623174</a>
+          
     </div>
     <div class="w3l_header_right1">
+        
         <ul style="list-style-type:none;">
+        
             <li class="dropdown profile_details_drop">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:black;"><i class="fa fa-user fa-lg" aria-hidden="true"></i><span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:black;"><i class="fa fa-user fa-lg" aria-hidden="true"> Twoje konto</i><span class="caret"></span></a>
                 <div class="mega-dropdown-menu">
                     <div class="w3ls_vegetables">
                         <ul class="dropdown-menu drp-mnu">
@@ -50,32 +59,21 @@
         </ul>
     </div>
     <div class="w3l_header_right1">
+
+    
         
-        <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart"><sup> {{ Cart::content()->count() }}</sup> </i></a></h2>
+        <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart "><sup> {{ Cart::content()->count() }}</sup> </i></a></h2>
     </div>
-    <a class="btn btn-floating m-2 w3l_header_right1 " href="https://www.facebook.com/patryk.struzik.5" role="button">
-        <i class="fab fa-facebook-f"></i></a>
-      <a class="btn  btn-floating m-2 w3l_header_right1" href="https://twitter.com/?lang=pl" role="button">
-          <i class="fab fa-twitter"></i
-      ></a>
     <div class="clearfix"> </div>
-</div>
-<!-- <div class="w3l_search">
-        <form action="{{ url('search') }}">
-            <input type="text" name="searchData" value="Szukaj produktu..." onfocus="this.value = '';" onblur="if (this.value == '') {
-                        this.value = 'Search a product...';
-                    }" required="">
-           <button class="btn-success  " type="submit">Szukaj</button> 
-        </form>
-    </div> -->
     <div class="search-container float-right w3l_search">
     <form action="{{ url('search') }}">
-    <input type="text" name="searchData" value="Szukaj produktu..." onfocus="this.value = '';" onblur="if (this.value == '') {
+    <input type="text" name="searchData" value="Jakiego produktu szukasz? " onfocus="this.value = '';" onblur="if (this.value == '') {
                         this.value = 'Search a product...';
                     }" required="">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
+</div>  
 
   
 <div class="logo_products">
@@ -85,6 +83,9 @@
         </div>
         
         <div class="clearfix"> </div>
+       
     </div>
    
 </div>
+
+<br>

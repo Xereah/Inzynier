@@ -1,11 +1,11 @@
 
-   <div class="container-fluid col-sm-10 mx-auto">
+   <div class="container-fluid col-sm-10 mx-auto" style="background-color:white;">
 <div class="row">
 <div class="col-sm-3">
 	<!-- Category -->
 	<div class="single category">
     <h3 class="side-title" ><i class="fas fa-bars"></i> Kategorie</h3>
-		<ul class="list-unstyled">
+		<ul class="list-unstyled" >
 		  @foreach($kategorie as $kategoria)
         <li><a class="category-item" href="{{ url('produkty/kategorie/'.$kategoria->id) }}">{{ $kategoria->Nazwa }}<i class="fas fa-chevron-right" style="float:right;"></i> </a></li>
            @endforeach

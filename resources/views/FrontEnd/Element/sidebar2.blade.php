@@ -10,8 +10,8 @@
         <li><a class="category-item" href="{{ url('produkty/kategorie/'.$kategoria->id) }}">{{ $kategoria->Nazwa }}<i class="fas fa-chevron-right" style="float:right;"></i> </a></li>
            @endforeach
 		</ul>
-   </div>
-   <br>
+<hr>
+        <br>
    <h3><p class="text-left kalendarz">Cena</p></h3>
    <hr>
     <form action="{{ url('searchprice') }}">
@@ -35,6 +35,8 @@
                 </div>
                 <button type="submit" class="btn btn-outline-secondary col-sm-12 ">Filtruj</button>
                 </form>
+   </div>
+   
    <!-- <h3><p class="text-center kalendarz">Kalendarz Wizyt na targu</p></h3>
            <br> -->
    <!-- <div id='calendar'></div> -->

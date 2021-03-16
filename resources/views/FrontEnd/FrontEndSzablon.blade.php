@@ -19,7 +19,7 @@
     {{-- Navbar --}}
     @include('FrontEnd.Element.header')
     @include('FrontEnd.Element.sidebar')
-    <main role="main"  class="container col-sm-9 "  >
+    <main role="main"  class="container col-sm-9 py-4 " style="background-color:white;" >
         
         @yield('content')
     </main>
@@ -27,7 +27,6 @@
 </div>
     @include('FrontEnd.Element.footer')
 
-    {{-- Głowny kontener --}}
     
     
 </body>
