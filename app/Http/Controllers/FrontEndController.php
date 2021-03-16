@@ -62,11 +62,11 @@ class FrontEndController extends Controller
     public function kategorie($id) {
         //Eloquent ORM
         $tasks= Task::all();
-        $kategorie = Kategorie::where('id', $id)->first();
+        $kategoria1 = Kategorie::where('id', $id)->first();
         $kategorie= Kategorie::All();
         $produkty = DB::table('produkty')
         ->where('produkty.fk_kategorie', $id)->get();
-        return view('frontEnd.Home.KategorieWidok', compact('produkty','kategorie','kategorie','tasks'));
+        return view('frontEnd.Home.KategorieWidok', compact('produkty','kategorie','kategoria1','tasks'));
     }
     public function wyszukiwanie(Request $request)
     {
@@ -95,7 +95,7 @@ class FrontEndController extends Controller
                 ->where('produkty.status', 1)
                 ->whereBetween('produkty.Cena',[ $searchData1,$searchData2])
                 ->get();
-        return view('FrontEnd.Home.KategorieWidok',compact('produkty','kategorie','tasks'));
+        return view('FrontEnd.Home.search',compact('produkty','kategorie','tasks'));
     }
 
     /**

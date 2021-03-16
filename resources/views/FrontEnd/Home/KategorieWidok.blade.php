@@ -5,7 +5,9 @@
 
 
     <div class="d-flex justify-content-center row">
-    <h3 class="">Aktualnie na stanie mamy</h3>
+   
+    
+    <h2>{{$kategoria1->Nazwa}}</h2>
             @foreach($produkty as $product)
         <div class="col-md-12">
             <div class="row p-2 bg-white border rounded">
