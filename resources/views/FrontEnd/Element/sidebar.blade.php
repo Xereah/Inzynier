@@ -3,7 +3,7 @@
 <div class="row">
 <div class="col-sm-3">
 	<!-- Category -->
-	<div class="single category">
+	<div class="single category ">
     <h3 class="side-title" ><i class="fas fa-bars"></i> Kategorie</h3>
 		<ul class="list-unstyled" >
 		  @foreach($kategorie as $kategoria)

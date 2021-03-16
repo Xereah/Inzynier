@@ -4911,3 +4911,11 @@ input.checkbox:checked:after {
 .sukces{
 	height:500px;
 }
+footer {
+	position: relative;
+	bottom: 0;
+	width:100%;
+  }
+  .panelboczny{
+	  height:650px;
+  }

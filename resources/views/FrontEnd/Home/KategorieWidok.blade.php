@@ -4,7 +4,7 @@
 @section('content')
 
 
-    <div class="d-flex justify-content-center row">
+   
    
     
     <h2>{{$kategoria1->Nazwa}}</h2>
@@ -32,12 +32,13 @@
                     <a href="{{ url('cart/add/'.$product->id) }}"
                                 class="btn btn-warning btn-block text-center" role="button">Dodaj do koszyka</a></div>
                                 @endif
+                                
                 </div>
-                
+               
+            </div>
+            
             </div>
            
-            </div>
+    
             @endforeach
-    </div>
-
 @endsection
