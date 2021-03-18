@@ -4919,3 +4919,10 @@ footer {
   .panelboczny{
 	  height:650px;
   }
+  .circle {
+	padding:1px;
+	margin-right: 1px;
+	font-size:large;
+	
+  }
+  

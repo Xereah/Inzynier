@@ -62,7 +62,7 @@
 
     
         
-        <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart "><sup> {{ Cart::content()->count() }}</sup> </i></a></h2>
+        <h2><a href="{{ url('/cart') }}"><i class="fa fa-shopping-cart "><sup class="circle" > {{ Cart::content()->count() }}</sup> </i></a></h2>
     </div>
     
     <div class="clearfix"> </div>
@@ -82,8 +82,8 @@
     <div class="container">
         <div class="w3ls_logo_products_left">
             <h1><a href="{{ route('index.index') }}"><span>Gospodarstwo rolne </span> Struzik</a></h1>
-            <a class="btn btn-floating m-2" href="https://www.facebook.com/patryk.struzik.5" role="button"> Strona Główna</a> |
-            <a class="btn btn-floating m-2" href="https://www.facebook.com/patryk.struzik.5" role="button"> Produkty</a> |
+            <a class="btn btn-floating m-2" href="{{ route('index.index') }}" role="button"> Strona Główna</a> |
+            <a class="btn btn-floating m-2" href="{{url('produkty/menu')}}" role="button"> Produkty</a> |
             <a class="btn btn-floating m-2" href="https://www.facebook.com/patryk.struzik.5" role="button"> Kontakt</a> 
         </div>
         

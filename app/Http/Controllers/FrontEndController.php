@@ -24,6 +24,14 @@ class FrontEndController extends Controller
         $kategorie = Kategorie::all();
         return view('FrontEnd.Home.home',compact('kategorie','produkty','tasks'));
     }
+    public function ProduktyMenu()
+    {
+        $tasks= Task::all();
+        $produkty= DB::table('produkty')
+        ->where('produkty.status', 1)->get();
+        $kategorie = Kategorie::all();
+        return view('FrontEnd.Home.ProduktyMenu',compact('kategorie','produkty','tasks'));
+    }
 
     /**
      * Show the form for creating a new resource.

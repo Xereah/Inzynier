@@ -12,7 +12,7 @@
 		</ul>
 <hr>
         <br>
-   <h3><p class="text-left kalendarz">Cena</p></h3>
+   <h3><p class="text-left ">Cena</p></h3>
    <hr>
     <form action="{{ url('searchprice') }}">
     <div class="d-flex align-items-center mt-4 pb-1 form-group">

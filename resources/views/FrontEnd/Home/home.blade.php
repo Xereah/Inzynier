@@ -8,7 +8,7 @@
     
 <div class="baner more">
 <h3>Codziennie <span>świeże</span> <br>produkty</h3>
-<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Kup Teraz!">Kup Teraz!</a>
+<a href="{{url('produkty/menu')}}" class="button--saqui button--round-l button--text-thick" data-text="Kup Teraz!">Kup Teraz!</a>
 </div>
 
 <h3 class="py-5">Dziś w ofercie mamy</h3>
@@ -37,10 +37,57 @@
                         <p class="btn-holder "><a href="{{ route('index.show',$product->id)}}"
                                 class="btn btn-success btn-block text-center" role="button">
                                 <i class="fa fa-info-circle" aria-hidden="true"></i> Szczegóły</a> </p>
+
+
                                 @if($product->Ilosc !=0)
                         <p class="btn-holder"><a href="{{ url('cart/add/'.$product->id) }}"
                                 class="btn btn-warning btn-block text-center" role="button">
                                 <i class="fas fa-shopping-cart pr-2"></i> Dodaj do koszyka</a> </p>
+                            @else
+                            <button type="button" class="btn btn-primary col-sm-12" data-toggle="modal" data-target="#exampleModal">
+                                Kiedy dostępny?
+                            </button>
+<!-- Informacja o dostępności -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                          <div class="modal-header">
+                             <h5 class="modal-title" id="exampleModalLabel">Powiadom mnie o dostępności</h5>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                           </div>
+                          <div class="modal-body">
+                          <div class="row p-2 bg-white ">
+                          <div class="col-md-5 mt-1"><img class="img-fluid img-responsive rounded product-image" src="{{ asset($product->Zdjecie) }}"></div>
+                          <div class="col-md-6 mt-1">
+                              <h5>{{ $product->Nazwa }}</h5>
+                              {{ $product->Opis }}
+                              <br>
+                              <br>
+                          </div> 
+                          
+                        
+                            <div class="input-group">
+                            
+                                <input type="text" class="form-control" placeholder="Wpisz adres email">
+                                <div class="input-group-append">
+                                     <button class="btn btn-secondary" type="button">
+                                     <i class="fas fa-envelope"></i>
+                                     </button>
+                                    
+                                 </div>
+                                 <small id="emailHelp" class="form-text text-muted">Na podany email zostanie wysłana wiadmość gdy produkt będzie dostępny.</small>
+                             </div>
+                          </div> 
+                     </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                    </div>
+                     </div>
+                    </div>
+                </div>
+
                                 @endif
                     </div>
                 </div>
