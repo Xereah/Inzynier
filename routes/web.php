@@ -9,10 +9,9 @@ use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\CartController;
 use App\Http\Middleware\Authenticate;
-
+use App\Http\Controllers\GospodarstwoController;
 
 Route::get('/' , [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 
 Route::name('kokpit.')->prefix('kokpit')->group(function(){
@@ -134,6 +133,29 @@ Route::name('index.')->prefix('index')->group(function(){
     Route::delete('{id}',  [FrontEndController::class,'destroy'])
         ->name('destroy')
        ->where('id', '[0-9]+');
+});
+
+
+//Gospodarstwo
+Route::post('/gospodarstwo/store', [App\Http\Controllers\GospodarstwoController::class, 'store'])->name('store');
+Route::get('/gospodarstwo/delete/{id}', [App\Http\Controllers\GospodarstwoController::class, 'destroy'])->name('destroy');
+Route::post('/gospodarstwo/{id}', [App\Http\Controllers\GospodarstwoController::class, 'update'])->name('update');
+
+Route::name('gospodarstwo.')->prefix('gospodarstwo')->group(function(){
+    Route::get('', [GospodarstwoController::class,'index'])
+        ->name('index');
+   Route::get('create',  [GospodarstwoController::class,'create'])
+        ->name('create');
+    Route::get('{id}',  [GospodarstwoController::class,'show'])
+        ->name('show')
+       ->where('id', '[0-9]+');
+    Route::get('{id}/edit',  [GospodarstwoController::class,'edit'])
+        ->name('edit')
+        ->middleware(['auth'])
+        ->where('id', '[0-9]+');
+   Route::patch('{id}',  [GospodarstwoController::class,'update'])
+        ->name('update')
+        ->where('id', '[0-9]+');
 });
 
 //tabela z dynamicznymi kategoriami

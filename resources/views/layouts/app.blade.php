@@ -52,6 +52,21 @@
 
     
 
+       <!-- Nav Item - Gospodarstwo Collapse Menu -->
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGospodarstwo" aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-tractor"></i>
+          <span>Dane Gospodarstwa</span>
+        </a>
+        <div id="collapseGospodarstwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+          
+            <a class="collapse-item" href="{{ route('gospodarstwo.create')}}">Dodaj Gospodarstwo</a>
+            <a class="collapse-item" href="{{ route('gospodarstwo.index')}}">Edytuj Gospodarstwo</a>
+          </div>
+        </div>
+      </li>
+
       <!-- Nav Item - Users Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">

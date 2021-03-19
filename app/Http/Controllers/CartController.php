@@ -21,9 +21,10 @@ class CartController extends Controller
         $tasks= Task::all();
         $kategorie = Kategorie::all();
         $cart = Cart::content();
+        $gospodarstwo=Gospodarstwo::all();
         $produkty=Produkty::all();
         $platnosc=Platnosc::all();
-        return view('FrontEnd.Koszyk.cart', compact('cart','kategorie','tasks','platnosc','produkty'));
+        return view('FrontEnd.Koszyk.cart', compact('cart','kategorie','tasks','platnosc','produkty','gospodarstwo'));
     }
 
 

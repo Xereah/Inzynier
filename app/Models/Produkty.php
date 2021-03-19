@@ -19,7 +19,6 @@ class Produkty extends Model
     protected $fillable = [
         'Nazwa',
         'Cena',
-        'Cena',
         'Zdjecie',
         'Ilosc',
         'JednostkaMiary',

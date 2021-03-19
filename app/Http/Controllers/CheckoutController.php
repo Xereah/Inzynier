@@ -24,6 +24,7 @@ class CheckoutController extends Controller
         $tasks= Task::all();
         $kategorie = Kategorie::all();
         $cart = Cart::content();
+        $gospodarstwo=Gospodarstwo::all();
         // if($uzytkownik != NULL){
         //     return redirect('/order/payment'); 
         // } elseif($customerId != NULL && $shippingId == NULL) {
@@ -31,7 +32,7 @@ class CheckoutController extends Controller
         // } else {
         //     return view('FrontEnd.Checkout.CheckoutContent'); 
         // }  
-        return view('FrontEnd.Checkout.CheckoutContent',compact('uzytkownik','tasks','kategorie','cart')); 
+        return view('FrontEnd.Checkout.CheckoutContent',compact('uzytkownik','tasks','kategorie','cart','gospodarstwo')); 
     }
 
     public function ZapisInformacjiOKupujacym(Request $request) {
