@@ -18,7 +18,7 @@ class UpdateKategorieRequest extends FormRequest
                 'required','max:50','min:3'
             ],
             'Opis'=> [
-                'required','max:50','min:10'
+                'required','max:150','min:10'
             ],
         ];
     }

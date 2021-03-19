@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Gospodarstwo;
+use App\Http\Requests\Gospodarstwo\StoreGospodarstwoRequest;
+use App\Http\Requests\Gospodarstwo\UpdateGospodarstwoRequest;
 class GospodarstwoController extends Controller
 {
     /**
@@ -25,7 +27,11 @@ class GospodarstwoController extends Controller
     public function create()
     {
         $gospodarstwo = Gospodarstwo::all();
+        if($gospodarstwo->count() == 0)
         return view('AdminPanel.Gospodarstwo.add', compact('gospodarstwo'));
+        else
+        return redirect()->route('gospodarstwo.index')
+        ->with('message', 'Nie można dodać więcej niż jednego gospodarstwa');
     }
 
     /**
@@ -34,7 +40,7 @@ class GospodarstwoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreGospodarstwoRequest $request)
     {
         $gospodarstwo = new Gospodarstwo([
             'Imie_Wlasciciel' => $request->input('Imie_Wlasciciel'),
@@ -97,7 +103,7 @@ class GospodarstwoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateGospodarstwoRequest $request, $id)
     {
         try{
             $gospodarstwo = Gospodarstwo::find($request->id);

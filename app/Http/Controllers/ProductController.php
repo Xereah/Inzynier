@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produkty;
 use App\Models\Kategorie;
+use App\Http\Requests\Produkty\StoreProduktyRequest;
+use App\Http\Requests\Produkty\UpdateProduktyRequest;
 
 class ProductController extends Controller
 {
@@ -38,7 +40,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storeProduct(Request $request) {
+    public function storeProduct(StoreProduktyRequest $request) {
         //return $request->all();
 try{
         $productImage = $request->file('Zdjecie'); //for retrieving image from form
@@ -112,7 +114,7 @@ try{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updateProduct(Request $request)
+    public function updateProduct(UpdateProduktyRequest $request)
     {
         // $this->validate($request, [
         //     'Nazwa' => 'required',

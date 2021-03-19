@@ -20,7 +20,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        {!! Form::open(['route'=>['update', $gospodarstwo->id], 'method'=>'POST',  'enctype'=>'multipart/form-data', 'name'=>'editGospodarstwoForm', 'role'=>'form']) !!}
+                        {!! Form::open(['route'=>['update', $gospodarstwo->id], 'method'=>'POST',  'enctype'=>'multipart/form-data', 'name'=>'editGospodarstwoForm', 'role'=>'form','id' =>'Gospodarstwo-form']) !!}
                         <div class="form-group">
                             <label>Imie</label>
                             <input type="hidden" name="id" value="{{ $gospodarstwo->id }}">
@@ -89,5 +89,15 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+
+@endsection
+
+@section('js')
+{{-- Laravel Javascript Validation --}}
+
+<script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+{!! JsValidator::formRequest('App\Http\Requests\Gospodarstwo\UpdateGospodarstwoRequest', '#Gospodarstwo-form'); !!}
+
+
 
 @endsection

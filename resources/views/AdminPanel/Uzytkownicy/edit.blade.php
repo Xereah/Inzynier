@@ -21,7 +21,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                    <form id="uzytkownik-form" method="post" 
+                    <form id="Uzytkownicy-form" method="post" 
                 action="{{ route('uzytkownik.update', $uzytkownik->id) }}">
                     @if(isset($edit) && $edit === true)
                          @method('PATCH')
@@ -94,4 +94,14 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+@endsection
+
+@section('js')
+{{-- Laravel Javascript Validation --}}
+
+<script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+{!! JsValidator::formRequest('App\Http\Requests\Uzytkownicy\UpdateUzytkownicyRequest', '#Uzytkownicy-form'); !!}
+
+
+
 @endsection

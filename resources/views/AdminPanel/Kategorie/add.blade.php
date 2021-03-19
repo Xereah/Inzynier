@@ -49,16 +49,13 @@
 
 @endsection
 
-{{-- Dodanie do szablonu lokalnych skryptów JS --}}
-{{-- Tagi {!! !!} powoduje, że kod w nim zawarty nie jest przepuszczany przez htmlspecial characters --}}
-@section('js-scripts')
-{{-- Laravel Javascript Validation --}}
-<script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 
-{{-- Walidacja po stronie klienta z użyciem reguł walidacji po stronie serwera --}}
-@if(isset($edit) && $edit === true)
-{!! JsValidator::formRequest('App\Http\Requests\Kategorie\UpdateKategorieRequest', '#kategorie-form'); !!}
-@else
+@section('js')
+{{-- Laravel Javascript Validation --}}
+
+<script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 {!! JsValidator::formRequest('App\Http\Requests\Kategorie\StoreKategorieRequest', '#kategorie-form'); !!}
-@endif
+
+
+
 @endsection

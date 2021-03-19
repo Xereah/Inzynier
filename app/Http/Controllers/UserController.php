@@ -8,6 +8,8 @@ use App\Models\Kategorie;
 use App\Models\Produkty;
 use App\Models\Task;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Uzytkownicy\StoreUzytkownicyRequest;
+use App\Http\Requests\Uzytkownicy\UpdateUzytkownicyRequest;
 use Session;
 use Auth;
 class UserController extends Controller
@@ -40,7 +42,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUzytkownicyRequest $request)
     { 
         try {
         $uzytkownik = new User();
@@ -127,7 +129,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateUzytkownicyRequest $request, $id)
     {
         // $uzytkownik = User::find($request->id);
         // $uzytkownik->name = $request->name;

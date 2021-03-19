@@ -17,7 +17,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        {!! Form::open(['url'=>'produkty/save', 'method'=>'POST',  'enctype'=>'multipart/form-data', 'name'=>'editProductForm', 'role'=>'form']) !!}
+                        {!! Form::open(['url'=>'produkty/save', 'method'=>'POST',  'enctype'=>'multipart/form-data', 'name'=>'editProductForm', 'role'=>'form','id' =>'produkty-form']) !!}
                         <div class="form-group">
                             <label>Nazwa</label>
                             <input type="hidden" name="id">
@@ -100,5 +100,15 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+
+@endsection
+
+@section('js')
+{{-- Laravel Javascript Validation --}}
+
+<script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+{!! JsValidator::formRequest('App\Http\Requests\Produkty\StoreProduktyRequest', '#produkty-form'); !!}
+
+
 
 @endsection
