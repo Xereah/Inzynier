@@ -14,7 +14,7 @@
 <h3 class="py-5">Dziś w ofercie mamy</h3>
 <div class="col-md-12 ">
         <div class="row">
-            @foreach($produkty as $product)
+            @foreach($produkty->take(6) as $product)
             <div class="col-md-4 mb-4">
                 <div class="card">
                    <img src="{{ $product->Zdjecie }}"

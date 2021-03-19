@@ -21,7 +21,7 @@ class FrontEndController extends Controller
     {
         $tasks= Task::all();
         $produkty= DB::table('produkty')
-        ->where('produkty.status', 1)->get();
+        ->where('produkty.status', 1)->inRandomOrder()->get();
         $kategorie = Kategorie::all();
         $gospodarstwo=Gospodarstwo::all();
         return view('FrontEnd.Home.home',compact('kategorie','produkty','tasks','gospodarstwo'));
