@@ -68,21 +68,32 @@
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>Struzik Patryk<br> Wągłczew-Kolonia 14<br> 98-285 Wróblew</td>
+                        <td>
+                        @foreach($gospodarstwo as $gospodarz)
+                        {{$gospodarz->Imie_Wlasciciel}} {{$gospodarz->Nazwisko_Wlasciciel}} <br>
+                        {{$gospodarz->Miejscowosc}}<br>
+                        {{$gospodarz->Kod_Pocztowy}} {{$gospodarz->Poczta_Miejscowosc}}<br>
+                        {{$gospodarz->Telefon}} <br>
+                        {{$gospodarz->email}}
+                         @endforeach</td>
                         <td>&nbsp;</td>
-                        <td><div class="rightTextAlign">{{ $zamowienia->name. ' ' .$zamowienia->surname}}</div></td>
+                        <td><div class="rightTextAlign">
+                        {{ $zamowienia->name. ' ' .$zamowienia->surname}}<br>
+                        {{ $zamowienia->adress}}<br>
+                        {{ $zamowienia->phone}}<br>
+                        </div></td>
                         
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
-                        <td><div class="rightTextAlign">{{ $zamowienia->phone}}</div></td>
+                   
                        
                     </tr>
                     <tr>
                     <td>&nbsp;</td>
                         <td>&nbsp;</td>
-                        <td><div class="rightTextAlign">{{ $zamowienia->adress}}</div></td>
+                    
                       
                     </tr>
                     <tr>

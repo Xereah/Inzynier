@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Produkty;
 use App\Models\Kategorie;
 use App\Models\Task;
+use App\Models\Gospodarstwo;
 
 use DB;
 
@@ -42,7 +43,7 @@ class FrontEndController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
     public function show($id)
     {
         $tasks= Task::all();

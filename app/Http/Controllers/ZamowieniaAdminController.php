@@ -11,6 +11,7 @@ use App\Models\Klienci;
 use App\Models\Platnosc;
 use App\Models\Zamowienia;
 use App\Models\ZamowienieSzczegoly;
+use App\Models\Gospodarstwo;
 use DB;
 use Session;
 use Auth;
@@ -63,8 +64,9 @@ class ZamowieniaAdminController extends Controller
              ->select('zamowienie.*', 'users.name', 'users.surname','users.email','users.adress','users.phone', 'platnosc.platnosc')
              ->first();
         $zamowieniaSzczegoly = ZamowienieSzczegoly::where('fk_zamowienie', $id)->get();
+        $gospodarstwo=Gospodarstwo::all();
         //return view('admin.order.viewInvoice', ['order'=>$order]);
-        return view('AdminPanel.Zamowienia.ZamowieniaSzczegoly', compact('zamowienia','zamowieniaSzczegoly'));
+        return view('AdminPanel.Zamowienia.ZamowieniaSzczegoly', compact('zamowienia','zamowieniaSzczegoly','gospodarstwo'));
     }
 
     /**

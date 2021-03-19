@@ -8,6 +8,7 @@ use App\Models\Produkty;
 use App\Models\Kategorie;
 use App\Models\Task;
 use App\Models\Klienci;
+use App\Models\Gospodarstwo;
 use DB;
 use Session;
 use Auth;

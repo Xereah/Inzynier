@@ -7,6 +7,7 @@ use App\Models\Kategorie;
 use App\Models\Task;
 use App\Models\Platnosc;
 use DB;
+use App\Models\Gospodarstwo;
 use Illuminate\Http\Request;
 
 class CartController extends Controller

@@ -81,7 +81,7 @@
 <div class="logo_products">
     <div class="container">
         <div class="w3ls_logo_products_left">
-            <h1><a href="{{ route('index.index') }}"><span>Gospodarstwo rolne </span> Struzik</a></h1>
+            <h1><a href="{{ route('index.index') }}"><span>Gospodarstwo rolne </span>@foreach($gospodarstwo as $gospodarz) {{$gospodarz->Nazwisko_Wlasciciel}} @endforeach</a></h1>
             <a class="btn btn-floating m-2" href="{{ route('index.index') }}" role="button"> Strona Główna</a> |
             <a class="btn btn-floating m-2" href="{{url('produkty/menu')}}" role="button"> Produkty</a> |
             <a class="btn btn-floating m-2" href="https://www.facebook.com/patryk.struzik.5" role="button"> Kontakt</a> 
