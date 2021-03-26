@@ -19,7 +19,7 @@
     {{-- Navbar --}}
     @include('FrontEnd.Element.header')
     
-    <main role="main"  class="container col-sm-9 "  style="background-color:white;" >
+    <main role="main"  class="container col-sm-9 " style="background-color:#f7f7f7" >
         
         @yield('content')
     </main>

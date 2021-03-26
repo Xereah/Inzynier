@@ -13,6 +13,7 @@ class KokpitController extends Controller
      */
     public function index()
     {
+        
         $produkty=Produkty::all();
         $user=Auth::user();
         return view('home',compact('produkty','user'));

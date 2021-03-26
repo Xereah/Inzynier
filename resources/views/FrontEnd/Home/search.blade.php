@@ -1,4 +1,4 @@
-@extends('FrontEnd.FrontEndSzablon')
+@extends('FrontEnd.FrontEndSzablon2')
 
 @section('title', 'Sklep')
 @section('content')
@@ -7,10 +7,10 @@
 <div class="col-lg-12">
     
 <div class="col-md-12 ">
-        <div class="row">
+        <div class="row p-4">
         @if($produkty->count() > 0)
             @foreach($produkty as $product)
-            <section class="mb-5" style="background-color:#f7f7f7">
+            <section class="mb-5">
 
   <div class="row">
     <div class="col-md-6 mb-4 mb-md-0">
@@ -23,7 +23,7 @@
 
           <div class="col-12 mb-0">
             <figure class="view overlay rounded z-depth-1 main-img">
-                <img src="{{ asset($product->Zdjecie) }}"
+                <img style="width:100%;height:100%;" src="{{ asset($product->Zdjecie) }}"
                  >
               </a>
           </div>

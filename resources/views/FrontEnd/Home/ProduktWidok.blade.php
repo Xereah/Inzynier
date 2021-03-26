@@ -7,7 +7,7 @@
 <div class="col-lg-12">
     
 <!--Section: Block Content-->
-<section class="mb-5 py-5" style="background-color:#f7f7f7">
+<section class="mb-5 py-5">
 
   <div class="row">
     <div class="col-md-6 mb-4 mb-md-0">
@@ -20,7 +20,7 @@
 
           <div class="col-12 mb-0">
             <figure class="view overlay rounded z-depth-1 main-img">
-                <img src="{{ asset($produkty->Zdjecie) }}"
+                <img style="width:100%;height:100%;" src="{{ asset($produkty->Zdjecie) }}"
                  >
               </a>
           </div>

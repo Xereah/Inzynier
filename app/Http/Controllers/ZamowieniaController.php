@@ -10,6 +10,7 @@ use App\Models\Task;
 use App\Models\Klienci;
 use App\Models\Platnosc;
 use App\Models\Zamowienia;
+use App\Models\Gospodarstwo;
 use DB;
 use Session;
 use Auth;
@@ -28,7 +29,8 @@ class ZamowieniaController extends Controller
         $kategorie = Kategorie::all();
         $cart = Cart::content();
         $platnosc=Platnosc::all();
-        return view('FrontEnd.Zamowienia.platnosc', compact('uzytkownik','kategorie','tasks','cart','platnosc'));
+        $gospodarstwo=Gospodarstwo::all();
+        return view('FrontEnd.Zamowienia.platnosc', compact('uzytkownik','kategorie','tasks','cart','platnosc','gospodarstwo'));
         
     }
     public function InformacjeZamowienie(Request $request) {
@@ -50,9 +52,9 @@ class ZamowieniaController extends Controller
         $tasks= Task::all();
         $kategorie = Kategorie::all();
         $cart = Cart::content();
-
+        $gospodarstwo=Gospodarstwo::all();
         if ($uzytkownik != NULL ) {
-                return view('FrontEnd.Zamowienia.ZamowienieSukcess',compact('uzytkownik','tasks','kategorie','cart'));
+                return view('FrontEnd.Zamowienia.ZamowienieSukcess',compact('uzytkownik','tasks','kategorie','cart','gospodarstwo'));
             } else {
                 return redirect('/cart');    
             }
