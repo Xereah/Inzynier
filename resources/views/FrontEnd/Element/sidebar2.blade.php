@@ -1,70 +1,62 @@
+<section class="section-content padding-y">
+<div class="container">
 
-   <div class="container-fluid col-sm-10 mx-auto">
 <div class="row">
-<div class="col-sm-3">
-	<!-- Category -->
-	<div class="single category panelboczny">
-    <h3 class="side-title" ><i class="fas fa-bars"></i> Kategorie</h3>
-		<ul class="list-unstyled">
-		  @foreach($kategorie as $kategoria)
+	<aside class="col-md-3">
+		
+<div class="card">
+	<article class="filter-group">
+		<header class="card-header">
+			<a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+				<i class="icon-control fa fa-chevron-down"></i>
+				<h6 class="title">Kategorie</h6>
+			</a>
+		</header>
+		<div class="filter-content collapse show" id="collapse_1" style="">
+			<div class="card-body">
+				<form class="pb-3">
+				<div class="input-group">
+				  <input type="text" class="form-control" placeholder="Search">
+				  <div class="input-group-append">
+				    <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
+				  </div>
+				</div>
+				</form>
+				
+				<ul class="menu-category">
+            @foreach($kategorie as $kategoria)
         <li><a class="category-item" href="{{ url('produkty/kategorie/'.$kategoria->id) }}">{{ $kategoria->Nazwa }}<i class="fas fa-chevron-right" style="float:right;"></i> </a></li>
            @endforeach
-		</ul>
-<hr>
-        <br>
-   <h3><p class="text-left ">Cena</p></h3>
-   <hr>
-    <form action="{{ url('searchprice') }}">
-    <div class="d-flex align-items-center mt-4 pb-1 form-group">
-          <div class="md-form md-outline my-0">   
-    <input type="text" id="from" class="form-control mb-0" name="searchData1" value="Od" onfocus="this.value = '';" onblur="if (this.value == '') {
-                        this.value = '1zł';
-                    }" required="">
-                    </div>
-                    <p class="px-2 mb-0 text-muted"> - </p>
-                    <div class="md-form md-outline my-0 ">  
-      <input type="text" class="form-control mb-0" name="searchData2" value="Do" onfocus="this.value = '';" onblur="if (this.value == '') {
-                        this.value = '10zł';
-                    }" required="">
-     
-  
-    
-                </div>
-                <br>
-               
-                </div>
-                <button type="submit" class="btn btn-outline-secondary col-sm-12 ">Filtruj</button>
-                </form>
-   </div>
-   
-   <!-- <h3><p class="text-center kalendarz">Kalendarz Wizyt na targu</p></h3>
-           <br> -->
-   <!-- <div id='calendar'></div> -->
+			</ul>
+
+			</div> <!-- card-body.// -->
+		</div>
+	</article> <!-- filter-group  .// -->
+	
+	<article class="filter-group">
+		<header class="card-header">
+			<a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+				<i class="icon-control fa fa-chevron-down"></i>
+				<h6 class="title">Cena </h6>
+			</a>
+		</header>
+		<div class="filter-content collapse show" id="collapse_3" style="">
+			<div class="card-body">
+				<input type="range" class="custom-range" min="0" max="100" name="">
+				<div class="form-row">
+				<div class="form-group col-md-6">
+				  <label>Min</label>
+				  <input class="form-control" placeholder="$0" type="number">
+				</div>
+				<div class="form-group text-right col-md-6">
+				  <label>Max</label>
+				  <input class="form-control" placeholder="$1,0000" type="number">
+				</div>
+				</div> <!-- form-row.// -->
+				<button class="btn btn-block btn-primary">Filtruj</button>
+			</div><!-- card-body.// -->
+		</div>
+	</article> <!-- filter-group .// -->
+	</aside> <!-- col.// -->
 
 
-</div> 
-
-
-
-@section('js-scripts')
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="{{ asset('js/calendar2.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/calendar.js') }}"></script>
-<script>
-    $(document).ready(function() {
-        // page is now ready, initialize the calendar...
-        $('#calendar').fullCalendar({
-            // put your options and callbacks here
-            events : [
-                @foreach($tasks as $task)
-                {
-                    title : '{{ $task->Nazwa }}',
-                    start : '{{ $task->Data }}',
-                    // url : '{{ route('index.show', $task->id) }}'
-                },
-                @endforeach
-            ]
-        })
-    });
-</script>
-@endsection

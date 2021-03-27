@@ -3,14 +3,14 @@
 @section('title', 'Sklep')
 @section('content')
 
-<div class="container ">
-<div class="col-lg-12">
+<!-- <div class="container ">
+<div class="col-lg-12"> -->
     
-<div class="baner more">
+<!-- <div class="baner more">
 <h3>Codziennie <span>świeże</span> <br>produkty</h3>
 <a href="{{url('produkty/menu')}}" class="button--saqui button--round-l button--text-thick" data-text="Kup Teraz!">Kup Teraz!</a>
-</div>
-
+</div> -->
+<!-- 
 <h3 class="py-5">Dziś w ofercie mamy</h3>
 <div class="col-md-12 ">
         <div class="row">
@@ -47,7 +47,7 @@
                             <button type="button" class="btn btn-primary col-sm-12" data-toggle="modal" data-target="#exampleModal">
                                 Kiedy dostępny?
                             </button>
-<!-- Informacja o dostępności -->
+
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                          <div class="modal-content">
@@ -97,7 +97,45 @@
         </div>
     </div>
 
-@endsection
+
+-->
+
+
+<section class="section-name padding-y-sm">
+<div class="container">
+
+<header class="section-heading">
+	<a href="{{url('produkty/menu')}}" class="btn btn-outline-primary float-right">Zobacz Wszystkie</a>
+	<h3 class="section-title">Popularne produkty</h3>
+</header><!-- sect-heading -->
+
+	
+<div class="row">
+@foreach($produkty->take(8) as $product)
+	<div class="col-md-3">
+		<div href="#" class="card card-product-grid">
+			<a href="{{ route('index.show',$product->id)}}" class="img-wrap"> <img src="{{ $product->Zdjecie }}"> </a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title"> <h5>{{ $product->Nazwa }}</h5></a>
+				<div class="price mt-1">Cena: {{ $product->Cena }} zł</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div>
+       
+	</div> <!-- col.// -->
+    @endforeach
+		</div>
+        
+	</div> <!-- col.// -->
+    
+</div> <!-- row.// -->
+
+</div><!-- container // -->
+</section>
+
+
+
+
+@endsection 
 
 
 <!-- <div class="d-flex justify-content-center row">

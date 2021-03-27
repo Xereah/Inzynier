@@ -1,16 +1,12 @@
-@extends('FrontEnd.FrontEndSzablon2')
+@extends('FrontEnd.FrontEndSzablon3')
 
 @section('title', 'Użytkownik')
 @section('content')
-
-<div class="container ">
-<div class="col-lg-12">
-<div class="w3l_banner_nav_right" style="background-color:white;">
     <!-- login -->
-    <div class="w3_login ">
-        <div class="well lead text-center text-success">{{ Session::get('message') }}</div>
-        <h3>Profil Użytkownika</h3><br><br>
-        <div class="w3_login_module paneluzytkownika">
+    <div class="card mx-auto " style="max-width: 500px; margin-top:150px;margin:10px;">
+      <div class="card-body">
+        <h3 class="text-center">Profil Użytkownika</h3><br><br>
+        <div>
             <table class="stripe">
                 
                 <tr>
@@ -57,19 +53,17 @@
                 <tr>
                     <th><a href="{{ url('/uzytkownik/edit-profile') }}" class="btn btn-info" role="button">Edycja profilu</a></th>
                     <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                    <td><a href="{{ url('/uzytkownik/password-change') }}" class="btn btn-info" role="button">Zmiana hasła</a></td>
+                    <td><a href="{{ url('/uzytkownik/password-change') }}" class="btn btn-info float-right" role="button">Zmiana hasła</a></td>
                 </tr>
             </table>
         </div>
     </div>
     <!-- //login -->
 </div>
-<div class="clearfix"></div>
 </div>
 
 
 
-</div>
-</div>
+
 
 @endsection

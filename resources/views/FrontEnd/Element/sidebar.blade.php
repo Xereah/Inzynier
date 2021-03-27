@@ -1,8 +1,8 @@
-
+<!-- 
    <div class="container-fluid col-sm-10 mx-auto" style="background-color:white;">
 <div class="row">
 <div class="col-sm-3">
-	<!-- Category -->
+	
 	<div class="single category ">
     <h3 class="side-title" ><i class="fas fa-bars"></i> Kategorie</h3>
 		<ul class="list-unstyled" >
@@ -42,4 +42,5 @@
         })
     });
 </script>
-@endsection
+@endsection -->
+

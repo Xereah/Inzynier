@@ -1,11 +1,11 @@
-@extends('FrontEnd.FrontEndSzablon2')
+@extends('FrontEnd.FrontEndSzablon3')
 
 @section('title', 'Użytkownik')
 @section('content')
 
 <div class="container col-lg-10 ">
-<div class="col-lg-10">
-<div class="w3l_banner_nav_right" style="background-color:white;">
+<div class="card mx-auto " style="max-width: 500px; margin-top:150px;margin:10px;">
+      <div class="card-body">
     <!-- login -->
     <div class="w3_login">
         <h3>Edycja hasła</h3><br><br>

@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Kategorie;
 use App\Models\Produkty;
 use App\Models\Task;
+use App\Models\Gospodarstwo;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Uzytkownicy\StoreUzytkownicyRequest;
 use App\Http\Requests\Uzytkownicy\UpdateUzytkownicyRequest;
@@ -192,7 +193,8 @@ class UserController extends Controller
         $tasks= Task::all();
         $kategorie = Kategorie::all();
         $Uzytkownik = Auth::user();
-     return view('FrontEnd.Uzytkownicy.uzytkownikprofil',compact('Uzytkownik','tasks','kategorie'));
+        $gospodarstwo=Gospodarstwo::all();
+     return view('FrontEnd.Uzytkownicy.uzytkownikprofil',compact('Uzytkownik','tasks','kategorie','gospodarstwo'));
         
     }
 
@@ -201,7 +203,8 @@ class UserController extends Controller
         $tasks= Task::all();
         $kategorie = Kategorie::all();
         $uzytkownik = Auth::user();
-     return view('FrontEnd.Uzytkownicy.uzytkownikprofiledycja',compact('uzytkownik','tasks','kategorie'));
+        $gospodarstwo=Gospodarstwo::all();
+     return view('FrontEnd.Uzytkownicy.uzytkownikprofiledycja',compact('uzytkownik','tasks','kategorie','gospodarstwo'));
     }
 
     public function AktualizacjaProfiluUzytkownika(Request $request)
@@ -240,8 +243,9 @@ class UserController extends Controller
         $uzytkownik = Auth::user();
         $tasks= Task::all();
         $kategorie = Kategorie::all();
+        $gospodarstwo=Gospodarstwo::all();
         if($uzytkownik != NULL) {
-            return view('FrontEnd.Uzytkownicy.uzytkownikzmianahasla',compact('uzytkownik','tasks','kategorie'));
+            return view('FrontEnd.Uzytkownicy.uzytkownikzmianahasla',compact('uzytkownik','tasks','kategorie','gospodarstwo'));
         } else {
             return redirect('/');    
         }

@@ -1,9 +1,9 @@
-@extends('FrontEnd.FrontEndSzablon2')
+@extends('FrontEnd.FrontEndSzablon3')
 
 @section('title', 'Użytkownik')
 @section('content')
 
-<div class="container ">
+<div class="container py-4">
 <div class="col-lg-10">
 <div class="w3l_banner_nav_right" style="background-color:white;">
     <!-- login -->

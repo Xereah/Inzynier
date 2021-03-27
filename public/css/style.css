@@ -8,7 +8,7 @@ html, body{
     font-size: 100%;
 	font-family: "Cairo", sans-serif;
 	/* background:#C6F28F !important; */
-	background: url(../Zdjecie/tło.jpg) no-repeat ;
+	/* background: url(../Zdjecie/tło.jpg) no-repeat ; */
 	background-size: cover;
 }
 ul li,ol li{

@@ -7,24 +7,30 @@
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('sbadmin2/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>{{ config('app.name', 'Laravel') }}</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="{{ asset('css/style.css') }}" rel="stylesheet"> -->
+<link href="{{ asset('sbadmin2/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link href="{{ asset('css/new/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('css/new/ui.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('css/new/responsive.css') }}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
     @yield('css-styles')
 </head>
 <body>
     {{-- Navbar --}}
     @include('FrontEnd.Element.header')
-    @include('FrontEnd.Element.sidebar2')
-    <main role="main"  class="container col-sm-9 "  >
-        
-        @yield('content')
-    </main>
+    <main class="col-md-12">
+
+@yield('content')
+
+	</main> <!-- col.// -->
 </div>
-</div>
+
+</div> <!-- container .//  -->
+</section>
     @include('FrontEnd.Element.footer')
 
     {{-- Głowny kontener --}}
