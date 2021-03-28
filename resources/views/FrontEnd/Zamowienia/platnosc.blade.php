@@ -5,13 +5,13 @@
 <div class="w3l_banner_nav_right" style="background-color:white;">
     <!-- login -->
     <br><br>
-    <div class="container">
-        <div class="row p-4">
-            <div class="col-lg-12">
-                <div class="well lead text-center text-success"><strong>Wybierz metedę płatności</strong></div>
+    <div class="container ">
+        <div class="row p-4 card mx-auto " style="max-width: 500px; margin-top:150px;margin:15px;">
+            <div class="col-lg-12 text-center ">
+                <div class="well lead text-center text-success "><strong>Wybierz metedę płatności</strong></div>
             </div>
             <div class="col-lg-12">
-                <div class="w3_login">
+                <div class="w3_login ">
                     <h3>Metody płatności</h3>   
                 </div>
             </div>
@@ -19,7 +19,7 @@
               {!! Form::open(['url'=>'/order/save-order', 'method'=>'POST']) !!}
               @foreach($platnosc as $platnosci)
               <div class="form-group ">
-                <label><input type="radio" name="platnosc" value="{{$platnosci->id}}">{{$platnosci->platnosc}}</label>
+                <label><input type="radio" name="platnosc" value="{{$platnosci->id}}"> {{$platnosci->platnosc}}</label>
               </div>
               
               @endforeach

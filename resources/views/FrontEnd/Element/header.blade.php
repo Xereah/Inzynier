@@ -105,7 +105,7 @@
 	<a href="{{ route('index.index') }}"><span>Gospodarstwo rolne </span>@foreach($gospodarstwo as $gospodarz) {{$gospodarz->Nazwisko_Wlasciciel}} @endforeach</a>
 	</div>
 	<div class="col-lg-6 col-sm-12">
-		<form action="{{ url('search') }}"class="search">
+		<form action="{{ url('search') }}" class="search">
 			<div class="input-group w-100">
             <input type="text" class="form-control" name="searchData" value="Jakiego produktu szukasz? " onfocus="this.value = '';" onblur="if (this.value == '') {
                         this.value = 'Search a product...';

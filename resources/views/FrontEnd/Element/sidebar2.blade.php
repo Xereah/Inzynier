@@ -32,7 +32,7 @@
 			</div> <!-- card-body.// -->
 		</div>
 	</article> <!-- filter-group  .// -->
-	
+	<form action="{{ url('searchprice') }}" class="search">
 	<article class="filter-group">
 		<header class="card-header">
 			<a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
@@ -42,21 +42,22 @@
 		</header>
 		<div class="filter-content collapse show" id="collapse_3" style="">
 			<div class="card-body">
-				<input type="range" class="custom-range" min="0" max="100" name="">
+				<!-- <input type="range" class="custom-range" min="0" max="100" name=""> -->
 				<div class="form-row">
 				<div class="form-group col-md-6">
 				  <label>Min</label>
-				  <input class="form-control" placeholder="$0" type="number">
+				  <input class="form-control" name="searchData1" placeholder="0 zł" type="number">
 				</div>
 				<div class="form-group text-right col-md-6">
 				  <label>Max</label>
-				  <input class="form-control" placeholder="$1,0000" type="number">
+				  <input class="form-control" name="searchData2" placeholder="1000zł" type="number">
 				</div>
 				</div> <!-- form-row.// -->
 				<button class="btn btn-block btn-primary">Filtruj</button>
 			</div><!-- card-body.// -->
 		</div>
 	</article> <!-- filter-group .// -->
+	</form>
 	</aside> <!-- col.// -->
 
 

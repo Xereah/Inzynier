@@ -29,8 +29,9 @@ class FrontEndController extends Controller
     public function ProduktyMenu()
     {
         $tasks= Task::all();
+       
         $produkty= DB::table('produkty')
-        ->where('produkty.status', 1)->get();
+        ->where('produkty.status', 1)->simplePaginate(6);
         $kategorie = Kategorie::all();
         $gospodarstwo=Gospodarstwo::all();
         return view('FrontEnd.Home.ProduktyMenu',compact('kategorie','produkty','tasks','gospodarstwo'));
@@ -57,7 +58,7 @@ class FrontEndController extends Controller
         $kategoria1 = Kategorie::where('id', $id)->first();
         $kategorie= Kategorie::All();
         $produkty = DB::table('produkty')
-        ->where('produkty.fk_kategorie', $id)->get();
+        ->where('produkty.fk_kategorie', $id)->simplePaginate(3);
         $gospodarstwo=Gospodarstwo::all();
         return view('frontEnd.Home.KategorieWidok', compact('produkty','kategorie','kategoria1','tasks','gospodarstwo'));
     }
@@ -78,6 +79,7 @@ class FrontEndController extends Controller
     public function wyszukiwaniecena(Request $request)
     {
         $tasks= Task::all();
+        
         $searchData1 = $request->searchData1;
         $searchData2 = $request->searchData2;
         $kategorie= Kategorie::All();
