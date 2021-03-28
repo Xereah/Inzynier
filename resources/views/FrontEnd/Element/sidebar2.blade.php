@@ -14,11 +14,13 @@
 		</header>
 		<div class="filter-content collapse show" id="collapse_1" style="">
 			<div class="card-body">
-				<form class="pb-3">
+				<form class="pb-3" >
 				<div class="input-group">
-				  <input type="text" class="form-control" placeholder="Search">
+				<input type="text" class="form-control" name="searchData" value="Szukaj " onfocus="this.value = '';" onblur="if (this.value == '') {
+                        this.value = 'Search a product...';
+                    }" required="">
 				  <div class="input-group-append">
-				    <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
+				    <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
 				  </div>
 				</div>
 				</form>
