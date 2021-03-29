@@ -3,7 +3,32 @@
 @section('title', 'Płatność')
 @section('content')
 <div class="w3l_banner_nav_right" style="background-color:white;">
-    <!-- login -->
+    
+<section class="section-pagetop bg">
+<div class="container">
+<ul class="progress-indicator">
+            <li class="completed">
+                <span class="bubble"></span>
+                Koszyk. <br>
+            </li>
+            <li class="completed">
+                <span class="bubble"></span>
+                Dane klienta. <br>
+            </li>
+            <li class="active">
+                <span class="bubble"></span>
+                Wybór płatności. <br>
+            </li>
+            <li>
+                <span class="bubble"></span>
+                Podsumowanie
+            </li>
+           
+        </ul>
+</div> <!-- container //  -->
+</section>
+
+
     <br><br>
     <div class="container ">
         <div class="row p-4 card mx-auto " style="max-width: 500px; margin-top:150px;margin:15px;">

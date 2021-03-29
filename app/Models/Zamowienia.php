@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Zamowienia extends Model
 {
@@ -17,5 +19,14 @@ class Zamowienia extends Model
         'ZamowienieStatus',
         'ZamowienieKoszt'
     ];
+    public function zamowienia()
+    {
+        return $this->belongsTo('App\Models\User','fk_uzytkownik');
+    }
+
+    public function zamowieniaplatnosc()
+    {
+        return $this->belongsTo('App\Models\Platnosc','fk_platnosc');
+    }
 
 }

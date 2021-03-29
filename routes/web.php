@@ -183,6 +183,7 @@ Route::post('/checkout/save-shipping', [App\Http\Controllers\CheckoutController:
 
 //płatność
 Route::get('order/payment', [App\Http\Controllers\ZamowieniaController::class, 'MetodyPlatnosci'])->name('MetodyPlatnosci');
+Route::get('order/payment/online', [App\Http\Controllers\ZamowieniaController::class, 'online'])->name('online');
 Route::post('order/save-order', [App\Http\Controllers\ZamowieniaController::class, 'InformacjeZamowienie'])->name('InformacjeZamowienie');
 Route::get('/order/order-success', [App\Http\Controllers\ZamowieniaController::class, 'ZamowienieSukces'])->name('ZamowienieSukces');
 });

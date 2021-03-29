@@ -58,15 +58,12 @@ class ZamowieniaAdminController extends Controller
 
     public function podgladZamowienia($id)
     {
-        $zamowienia = DB::table('zamowienie')
-             ->join('users', 'users.id', '=', 'zamowienie.fk_uzytkownik')
-             ->join('platnosc', 'platnosc.id', '=', 'zamowienie.fk_platnosc')
-             ->select('zamowienie.*', 'users.name', 'users.surname','users.email','users.adress','users.phone', 'platnosc.platnosc')
-             ->first();
+        $zamowienia = Zamowienia::findOrFail($id);
         $zamowieniaSzczegoly = ZamowienieSzczegoly::where('fk_zamowienie', $id)->get();
         $gospodarstwo=Gospodarstwo::all();
+        $platnosc= Platnosc::all();
         //return view('admin.order.viewInvoice', ['order'=>$order]);
-        return view('AdminPanel.Zamowienia.ZamowieniaSzczegoly', compact('zamowienia','zamowieniaSzczegoly','gospodarstwo'));
+        return view('AdminPanel.Zamowienia.ZamowieniaSzczegoly', compact('zamowienia','zamowieniaSzczegoly','gospodarstwo','platnosc'));
     }
 
     /**

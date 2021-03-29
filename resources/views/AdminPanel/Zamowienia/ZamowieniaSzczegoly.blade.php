@@ -78,9 +78,11 @@
                          @endforeach</td>
                         <td>&nbsp;</td>
                         <td><div class="rightTextAlign">
-                        {{ $zamowienia->name. ' ' .$zamowienia->surname}}<br>
-                        {{ $zamowienia->adress}}<br>
-                        {{ $zamowienia->phone}}<br>
+                    
+                        {{ $zamowienia->zamowienia->name. ' ' .$zamowienia->zamowienia->surname}}<br>
+                        {{ $zamowienia->zamowienia->adress}}<br>
+                        {{ $zamowienia->zamowienia->phone}}<br>
+                    
                         </div></td>
                         
                     </tr>
@@ -112,7 +114,13 @@
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>{{ $zamowienia->platnosc }}</td>
+                        <td>
+                        @if( $zamowienia->fk_platnosc=='1')
+                        Gotowka przy odbiorze
+                        @elseif( $zamowienia->fk_platnosc=='2')
+                       Online
+                        @endif
+                        </td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>

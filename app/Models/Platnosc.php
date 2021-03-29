@@ -14,4 +14,9 @@ class Platnosc extends Model
     protected $fillable = [
         'platnosc'
     ];
+
+    public function platnosc()
+    {
+        return $this->hasMany('App\Models\Zamowienia');
+    }
 }

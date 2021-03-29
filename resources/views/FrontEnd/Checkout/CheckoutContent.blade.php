@@ -1,14 +1,43 @@
 @extends('FrontEnd.FrontEndSzablon3')
 
+
+
 @section('title', 'Koszyk')
 @section('content')
 <div class="w3l_banner_nav_right">
+<br>
+
+        <section class="section-pagetop bg">
+<div class="container">
+<ul class="progress-indicator">
+            <li class="completed">
+                <span class="bubble"></span>
+                Koszyk. <br>
+            </li>
+            <li class="active">
+                <span class="bubble"></span>
+                Dane klienta. <br>
+            </li>
+            <li class="bubble">
+                <span class="bubble"></span>
+                Wybór płatności. <br>
+            </li>
+            <li>
+                <span class="bubble"></span>
+                Podsumowanie
+            </li>
+           
+        </ul>
+</div> <!-- container //  -->
+</section>
     <!-- login -->
     <br><br>
     <div class="container" style="background-color:white;">
-        <div class="row p-4 "> 
+        <div class="row p-2 "> 
             <div class="col-lg-12">
                 <div class="well lead text-center text-success"><strong>Witaj <b>{{ $uzytkownik->name }}</b>. Sprawdź swoje dane kontaktowe. Jeżeli wszystko się zgadza przejdź dalej.</strong></div>
+                <br>
+                <br>
             </div>
             <div class="col-lg-12">
                 <div class="w3_login">

@@ -33,6 +33,18 @@ class ZamowieniaController extends Controller
         return view('FrontEnd.Zamowienia.platnosc', compact('uzytkownik','kategorie','tasks','cart','platnosc','gospodarstwo'));
         
     }
+    public function online()
+    {
+        $uzytkownik = Auth::user();
+        $tasks= Task::all();
+        $kategorie = Kategorie::all();
+        $cart = Cart::content();
+        $platnosc=Platnosc::all();
+        $gospodarstwo=Gospodarstwo::all();
+        return view('FrontEnd.Zamowienia.platnosconline', compact('uzytkownik','kategorie','tasks','cart','platnosc','gospodarstwo'));
+        
+    }
+
     public function InformacjeZamowienie(Request $request) {
         $platnosc = $request->platnosc;
 
@@ -42,7 +54,10 @@ class ZamowieniaController extends Controller
             $this->saveOrderDetails($orderId);
             return redirect('/order/order-success');
         } elseif ($platnosc == '2') {
-            return 'Jeszczenie nie mamy platności online';
+            $paymentId = 2;
+            $orderId = $this->saveOrder($paymentId);
+            $this->saveOrderDetails($orderId);
+            return redirect('/order/payment/online');
         } 
         }
 
