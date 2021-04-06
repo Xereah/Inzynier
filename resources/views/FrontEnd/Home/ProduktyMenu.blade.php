@@ -6,7 +6,7 @@
 <div class="container p-2">
 <div class="col-lg-12 ">
     
- <h3 class="py-1">Nasze Produkty</h3>
+ <h3 class="py-1">Nasze produkty</h3>
 
 <div class="col-md-12 ">
         <div class="row">
@@ -35,7 +35,7 @@
                                 <i class="fa fa-info-circle" aria-hidden="true"></i> Szczegóły</a> </p>
                                 @if($product->Ilosc !=0)
                         <p class="btn-holder"><a href="{{ url('cart/add/'.$product->id) }}"
-                                class="btn btn-warning btn-block text-center" role="button">
+                                class="btn btn-primary btn-block text-center" role="button">
                                 <i class="fas fa-shopping-cart pr-2"></i> Dodaj do koszyka</a> </p>
                                 @endif
                     </div>

@@ -52,8 +52,11 @@
       <h5>Dostępna ilość: {{$product->Ilosc}}{{$product->JednostkaMiary}}</h5>
       </div>
      
-      <button type="button" class="btn btn-dark btn-md mr-1 mb-2"><i
-          class="fas fa-shopping-cart pr-2"></i>Dodaj do koszyka</button>
+      @if($product->Ilosc !=0)
+        <p class="btn-holder"><a href="{{ url('cart/add/'.$product->id) }}"
+        class="btn btn-primary btn-md mr-1 mb-2">
+               <i class="fas fa-shopping-cart pr-2"></i> Dodaj do koszyka</a> </p>
+               @endif
     </div>
   </div>
 

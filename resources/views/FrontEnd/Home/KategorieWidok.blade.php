@@ -96,8 +96,8 @@
 				<p class="text-success">Odbiór na rynku</p>
 				<br>
 				<p>
-					<a href="{{ route('index.show',$product->id)}}" class="btn btn-primary btn-block"> Szczegóły </a>
-					<a href="{{ url('cart/add/'.$product->id) }}" class="btn btn-light btn-block"><i class="fa fa-heart"></i> 
+					<a href="{{ route('index.show',$product->id)}}" class="btn btn-success btn-block"> Szczegóły </a>
+					<a href="{{ url('cart/add/'.$product->id) }}" class="btn btn-primary btn-block"><i class="fa fa-shopping-cart"></i> 
 						<span class="text">Dodaj do koszyka</span>
 					</a>
 				</p>

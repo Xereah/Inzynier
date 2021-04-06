@@ -57,6 +57,26 @@ class CartController extends Controller
         Cart::update($rowId, $qty);
     }
 
+    public function zwiekszilosc($id)
+    {
+        $produkt = Cart::get($id);
+        $qty = $produkt->qty + 1;
+        $rowId = $produkt->rowId;
+        //update Cart
+        Cart::update($rowId, $qty);
+        return redirect('/cart');
+    }
+
+    public function zmniejszilosc($id)
+    {
+        $produkt = Cart::get($id);
+        $qty = $produkt->qty - 1;
+        $rowId = $produkt->rowId;
+        //update Cart
+        Cart::update($rowId, $qty);
+        return redirect('/cart');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

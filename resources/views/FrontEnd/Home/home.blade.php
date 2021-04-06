@@ -105,23 +105,26 @@
 <div class="container">
 
 <header class="section-heading">
-	<a href="{{url('produkty/menu')}}" class="btn btn-outline-primary float-right">Zobacz Wszystkie</a>
+	<a href="{{url('produkty/menu')}}" class="btn btn-outline-primary float-right">Zobacz wszystkie</a>
 	<h3 class="section-title">Popularne produkty</h3>
 </header><!-- sect-heading -->
 
 	
 <div class="row">
 @foreach($produkty->take(8) as $product)
+
 	<div class="col-md-3">
 		<div href="#" class="card card-product-grid">
 			<a href="{{ route('index.show',$product->id)}}" class="img-wrap"> <img src="{{ $product->Zdjecie }}"> </a>
 			<figcaption class="info-wrap">
-				<a href="#" class="title"> <h5>{{ $product->Nazwa }}</h5></a>
+				<a href="{{ route('index.show',$product->id)}}" class="title"> <h5>{{ $product->Nazwa }}</h5></a>
 				<div class="price mt-1">Cena: {{ $product->Cena }} zł</div> <!-- price-wrap.// -->
+                
 			</figcaption>
 		</div>
        
 	</div> <!-- col.// -->
+    
     @endforeach
 		</div>
         

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Cart;
 use Illuminate\Http\Request;
 use App\Models\Produkty;
 use App\Models\Kategorie;
@@ -23,8 +23,9 @@ class FrontEndController extends Controller
         $produkty= DB::table('produkty')
         ->where('produkty.status', 1)->get();
         $kategorie = Kategorie::all();
+        $cart = Cart::content();
         $gospodarstwo=Gospodarstwo::all();
-        return view('FrontEnd.Home.home',compact('kategorie','produkty','tasks','gospodarstwo'));
+        return view('FrontEnd.Home.home',compact('kategorie','produkty','tasks','gospodarstwo','cart'));
     }
     public function ProduktyMenu()
     {

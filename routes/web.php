@@ -177,6 +177,9 @@ Route::get('/cart/add/{id}', [App\Http\Controllers\CartController::class, 'dodaw
 Route::get('/cart/remove/{id}', [App\Http\Controllers\CartController::class, 'usuwaniezkarty'])->name('usuwaniezkarty');
 Route::get('/cart/update', [App\Http\Controllers\CartController::class, 'aktualizacjakarty'])->name('aktualizacjakarty');
 
+Route::get('/cart/zwieksz/{id}', [App\Http\Controllers\CartController::class, 'zwiekszilosc'])->name('zwiekszilosc');
+Route::get('/cart/zmniejsz/{id}', [App\Http\Controllers\CartController::class, 'zmniejszilosc'])->name('zmniejszilosc');
+
 //dane do przesyłki
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('index');
 Route::post('/checkout/save-shipping', [App\Http\Controllers\CheckoutController::class, 'ZapisInformacjiOKupujacym'])->name('ZapisInformacjiOKupujacym');

@@ -162,7 +162,7 @@
 <!-- ========================= SECTION INTRO END// ========================= -->
 
 <!-- ========================= SECTION CONTENT ========================= -->
-<section class="section-content padding-y">
+<section class="section-content padding-y" style="font-size:15px;">
 <div class="container col-md-9">
 
 <div class="row">
@@ -171,7 +171,7 @@
 
 <table class="table table-borderless table-shopping-cart">
 <thead class="text-muted">
-<tr class="small text-uppercase">
+<tr class="small text-uppercase" style="color:black;font-size:15px;text-align:center;">
   <th scope="col">Produkt</th>
   <th scope="col" >Ilosc</th>
   <th scope="col">Cena</th>
@@ -192,7 +192,18 @@
 	</td>
 	<td> 
     <input type="hidden"  id="rowId{{$cartProduct->id}}" value="{{$cartProduct->rowId}}">
-                                    <input type="number" id="upCart{{$cartProduct->id}}" value="{{$cartProduct->qty}}" max="100" min="1" class="entry value">
+    <!-- <input type="number" id="upCart{{$cartProduct->id}}" value="{{$cartProduct->qty}}" max="100" min="1" class="entry value"> -->
+   
+								<div class="quantity-input" style="margin-left:30%;">
+                <a class="btn btn-primary"  href="{{ url('/cart/zmniejsz/'.$cartProduct->rowId) }}">-</a>
+									<input type="text" disabled name="product-quatity" value="{{$cartProduct->qty}}" max="100" min="1" pattern="[0-9]*" style="font-size:12px;text-align:center;width:15%;">									
+									<a class="btn btn-primary" href="{{ url('/cart/zwieksz/'.$cartProduct->rowId) }}">+</a>
+									
+								</div>
+						
+      
+      
+      
         </div>
         <?php
                              $subtotal = str_replace(",", "", $cartProduct->qty*$cartProduct->price);
@@ -201,7 +212,7 @@
 	</td>
 	<td> 
 		<div class="price-wrap"> 
-			<var class="price">{{$cartProduct->price}} zł</var> 
+			<var class="price" style="width:20px;">{{$cartProduct->price}}zł</var> 
 		
 		</div> <!-- price-wrap .// -->
 	</td>
@@ -214,7 +225,6 @@
 </table>
 
 <div class="card-body border-top">
-	<a href="{{ url('/checkout') }}" class="btn btn-primary float-md-right"> Zamawiam<i class="fa fa-chevron-right"></i> </a>
 	<a href="{{ route('index.index') }}" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Kontynuuj zakupy </a>
 </div>	
 </div> <!-- card.// -->
@@ -238,9 +248,11 @@
 					<dl class="dlist-align">
 					  <dt>Razem:</dt>
 					  <dd class="text-right  h5"><strong>{{Cart::subtotal()}} zł</strong></dd>
+            
 					</dl>
+          
 					<hr>
-				
+					<a href="{{ url('/checkout') }}" class="btn btn-primary float-md-right col-12"> Zamawiam<i class="fa fa-chevron-right"></i> </a>
 					
 			</div> <!-- card-body.// -->
 		</div>  <!-- card .// -->
