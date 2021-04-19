@@ -187,6 +187,9 @@ try{
         $produkty->Zdjecie = $imageUrl;
         $produkty->fk_kategorie = $request->fk_kategorie;
         $produkty->status = $request->status;
+
+       
+
         $produkty->save();
     }
 

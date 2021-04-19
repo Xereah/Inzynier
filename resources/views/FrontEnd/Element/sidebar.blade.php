@@ -1,46 +1,40 @@
-<!-- 
-   <div class="container-fluid col-sm-10 mx-auto" style="background-color:white;">
+<section class="section-content padding-y">
+<div class="container">
+
 <div class="row">
-<div class="col-sm-3">
-	
-	<div class="single category ">
-    <h3 class="side-title" ><i class="fas fa-bars"></i> Kategorie</h3>
-		<ul class="list-unstyled" >
-		  @foreach($kategorie as $kategoria)
+	<aside class="col-md-3">
+		
+<div class="card">
+	<article class="filter-group">
+		<header class="card-header">
+			<a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+				<i class="icon-control fa fa-chevron-down"></i>
+				<h6 class="title">Kategorie</h6>
+			</a>
+		</header>
+		<div class="filter-content collapse show" id="collapse_1" style="">
+			<div class="card-body">
+				<form class="pb-3" >
+				<div class="input-group">
+				<input type="text" class="form-control" name="searchData" value="Szukaj " onfocus="this.value = '';" onblur="if (this.value == '') {
+                        this.value = 'Search a product...';
+                    }" required="">
+				  <div class="input-group-append">
+				    <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
+				  </div>
+				</div>
+				</form>
+				
+				<ul class="menu-category">
+            @foreach($kategorie as $kategoria)
         <li><a class="category-item" href="{{ url('produkty/kategorie/'.$kategoria->id) }}">{{ $kategoria->Nazwa }}<i class="fas fa-chevron-right" style="float:right;"></i> </a></li>
            @endforeach
-		</ul>
-   </div>
-  
-   <h3><p class="text-center kalendarz">Kalendarz Wizyt na targu</p></h3>
-           <br> 
-   <div id='calendar'></div> 
+			</ul>
 
+			</div> <!-- card-body.// -->
+		</div>
+	</article> <!-- filter-group  .// -->
+	
+	</aside> <!-- col.// -->
 
-</div> 
-
-
-
-@section('js-scripts')
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="{{ asset('js/calendar2.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/calendar.js') }}"></script>
-<script>
-    $(document).ready(function() {
-        // page is now ready, initialize the calendar...
-        $('#calendar').fullCalendar({
-            // put your options and callbacks here
-            events : [
-                @foreach($tasks as $task)
-                {
-                    title : '{{ $task->Nazwa }}',
-                    start : '{{ $task->Data }}',
-                    // url : '{{ route('index.show', $task->id) }}'
-                },
-                @endforeach
-            ]
-        })
-    });
-</script>
-@endsection -->
 

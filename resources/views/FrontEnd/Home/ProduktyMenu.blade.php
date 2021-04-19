@@ -1,4 +1,4 @@
-@extends('FrontEnd.FrontEndSzablon2')
+@extends('FrontEnd.FrontEndSzablon5')
 
 @section('title', 'Sklep')
 @section('content')

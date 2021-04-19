@@ -52,7 +52,9 @@ class FrontEndController extends Controller
         $kategorie= Kategorie::All();
         $produkty = Produkty::findOrFail($id);
         $gospodarstwo=Gospodarstwo::all();
-        return view('FrontEnd.Home.ProduktWidok', compact('produkty','kategorie','tasks','gospodarstwo'));
+       
+        $kategoria1 = Produkty::where('id', $id)->first();
+        return view('FrontEnd.Home.ProduktWidok', compact('produkty','kategorie','tasks','gospodarstwo','kategoria1'));
     }
     public function kategorie($id) {
         $tasks= Task::all();

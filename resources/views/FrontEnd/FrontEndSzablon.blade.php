@@ -45,7 +45,7 @@
 </div> <!-- row.// -->
 </div> <!-- container //  -->
 </section>
-    @include('FrontEnd.Element.sidebar')
+   
     <main role="main"  class="container col-sm-9 py-4 " style="background-color:white;min-height:700px;" >
         
         @yield('content')

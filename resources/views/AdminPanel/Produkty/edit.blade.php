@@ -73,7 +73,7 @@
                         <div class="form-group">
                             <label>Kategoria</label>
                             <select name="fk_kategorie" class="form-control">
-                            <option value="{{ $produkty->id }}"> {{ $produkty->kategoria->Nazwa }}</option>
+                            <option value="{{ $produkty->fk_kategorie }}"> {{ $produkty->kategoria->Nazwa }}</option>
                                 @foreach ($kategorie as $kategoria )
                         <option value="{{ $kategoria->id }}"> {{ $kategoria->Nazwa  }}</option>
                         @endforeach
