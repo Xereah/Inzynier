@@ -10,6 +10,7 @@ use App\Http\Controllers\TasksController;
 use App\Http\Controllers\CartController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Controllers\GospodarstwoController;
+use App\Http\Controllers\ZamowieniaKlientController;
 
 Route::get('/' , [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -200,5 +201,8 @@ Route::get('/zamowienie/podglad/{id}', [App\Http\Controllers\ZamowieniaAdminCont
 //menu
 Route::get('produkty/menu', [App\Http\Controllers\FrontEndController::class, 'ProduktyMenu'])->name('ProduktyMenu');
 
+//klient zamowienia podglad
+Route::get('/uzytkownik/zamowienia', [App\Http\Controllers\ZamowieniaKlientController::class, 'index'])->name('index');
+Route::get('/uzytkownik/zamowienia/szczegoly/{id}', [App\Http\Controllers\ZamowieniaKlientController::class, 'podgladZamowienia'])->name('podgladZamowienia');
 
 

@@ -92,7 +92,7 @@
 			<div class="info-aside">
 				<div class="price-wrap">
 					<span class="price h5"> {{ $product->Cena }} zł </span>	
-					<del class="price-old"> {{ $product->Cena-1 }}  zł</del>
+					<del class="price-old"> {{ $product->Cena+1 }}  zł</del>
 				</div> <!-- info-price-detail // -->
 				<p class="text-success">Odbiór na rynku</p>
 				<br>

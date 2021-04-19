@@ -145,6 +145,9 @@
                             <a class="dropdown-item" href="{{ url('/uzytkownik/profil') }}" >
                                     {{ __('Ustawienia') }}
                                 </a>
+                            <a class="dropdown-item" href="{{ url('/uzytkownik/zamowienia') }}" >
+                                    {{ __('Zamówienia') }}
+                                </a>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
