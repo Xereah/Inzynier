@@ -46,6 +46,7 @@
             <header class="border-bottom mb-4 pb-3">
 		<div class="form-inline">
 		<h2>{{$kategoria1->Nazwa}}</h2>
+		
 			<!-- <span class="mr-md-auto"> </span>
 			<select class="mr-2 form-control">
 				<option>Latest items</option>
@@ -60,14 +61,14 @@
 <article class="card card-product-list">
 	<div class="row no-gutters">
 		<aside class="col-md-3">
-			<a href="#" class="img-wrap">
+			<a href="{{ route('index.show',$product->id)}}" class="img-wrap">
 			
 				<img src="{{ asset($product->Zdjecie) }}">
 			</a>
 		</aside> <!-- col.// -->
 		<div class="col-md-6">
 			<div class="info-main">
-				<a href="#" class="h5 title"> {{ $product->Nazwa }}  </a>
+				<a href="{{ route('index.show',$product->id)}}" class="h5 title"> {{ $product->Nazwa }}  </a>
 				<div class="rating-wrap mb-3">
 					<ul class="rating-stars">
 						<li style="width:80%" class="stars-active"> 

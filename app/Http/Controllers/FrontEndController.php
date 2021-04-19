@@ -83,12 +83,16 @@ class FrontEndController extends Controller
         
         $searchData1 = $request->searchData1;
         $searchData2 = $request->searchData2;
+        $searchData3 = $request->searchData3;
+        $kategoria1 = Kategorie::where('id', $searchData3)->first();
         $kategorie= Kategorie::All();
         $produkty = DB::table('produkty')
                 ->where('produkty.status', 1)
+                ->where('produkty.fk_kategorie', [ $searchData3])
                 ->whereBetween('produkty.Cena',[ $searchData1,$searchData2])
                 ->get();
         $gospodarstwo=Gospodarstwo::all();
-        return view('FrontEnd.Home.search',compact('produkty','kategorie','tasks','gospodarstwo'));
+   
+        return view('FrontEnd.Home.search',compact('produkty','kategorie','kategoria1','tasks','gospodarstwo'));
     }
 }

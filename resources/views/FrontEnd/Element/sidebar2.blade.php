@@ -53,6 +53,7 @@
 				<div class="form-group text-right col-md-6">
 				  <label>Max</label>
 				  <input class="form-control" name="searchData2" placeholder="1000zł" type="number">
+				  <input class="form-control"  hidden name="searchData3" value="{{$kategoria1->id}}" type="number">
 				</div>
 				</div> <!-- form-row.// -->
 				<button class="btn btn-block btn-primary">Filtruj</button>
