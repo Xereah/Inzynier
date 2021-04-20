@@ -19,7 +19,7 @@
 
                             <div class="row ">
                                 <div class="col-md-12">
-                                    <h4>Cena: {{ $product->Cena }}zł</h4>
+                                    <h4>Cena: {{ $product->Cena }}zł/{{ $product->JednostkaMiary }}</h4>
                                 </div>
                                 <div class="col-md-12">
 

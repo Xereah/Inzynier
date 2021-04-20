@@ -212,7 +212,7 @@
 	</td>
 	<td> 
 		<div class="price-wrap"> 
-			<var class="price" style="width:20px;">{{$cartProduct->price}}zł</var> 
+			<var class="price" style="width:30px;">{{$cartProduct->price}}zł</var> 
 		
 		</div> <!-- price-wrap .// -->
 	</td>
