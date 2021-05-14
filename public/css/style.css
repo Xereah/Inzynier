@@ -4925,5 +4925,10 @@ footer {
 	font-size:large;
 	
   }
+  .logo{
+	  position:relative;
+	  left: 5px;
+	  width:200px !important;
+  }
   
   

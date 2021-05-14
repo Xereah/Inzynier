@@ -31,13 +31,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($zamowienia as $zamówienie)
+                        @foreach($zamowienie as $zamówienie)
                         <tr class="odd gradeX">
                             <td>{{ $zamówienie->id  }}</td>
                             <td>{{ $zamówienie->name.' '.$zamówienie->surname }}</td>
                             <td>{{ $zamówienie->ZamowienieKoszt.' zł' }}</td>
                             <td>{{ $zamówienie->created_at }}</td>
-                            <td>{{ $zamówienie->ZamowienieStatus }}</td>
+                            @if($zamówienie->ZamowienieStatus == 'Potwierdzone')
+                      <td><span class="badge badge-warning">{{ $zamówienie->ZamowienieStatus }}</span></td>     
+
+                      @elseif($zamówienie->ZamowienieStatus == 'W oczekiwaniu')
+                      <td><span class="badge badge-danger">{{ $zamówienie->ZamowienieStatus }}</span></td>
+
+                      @elseif($zamówienie->ZamowienieStatus == 'Sprzedane')
+                      <td><span class="badge badge-success">{{ $zamówienie->ZamowienieStatus }}</span></td>
+                      @endif
                             <td>{{ $zamówienie->platnosc }}</td>
                             <td>
                                 <a href="{{ url('/zamowienie/podglad/'.$zamówienie->id) }}" title="podgląd zamówienia" class="btn btn-info">

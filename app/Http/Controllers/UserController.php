@@ -8,6 +8,7 @@ use App\Models\Kategorie;
 use App\Models\Produkty;
 use App\Models\Task;
 use App\Models\Gospodarstwo;
+use App\Models\Zamowienia;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Uzytkownicy\StoreUzytkownicyRequest;
 use App\Http\Requests\Uzytkownicy\UpdateUzytkownicyRequest;
@@ -22,8 +23,10 @@ class UserController extends Controller
      */
     public function index()
     {
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         $uzytkownik = User::all();
-        return view('AdminPanel.Uzytkownicy.index', compact('uzytkownik'));
+        return view('AdminPanel.Uzytkownicy.index', compact('uzytkownik','produktystanilosc','zamowienia'));
     }
 
     /**
@@ -33,8 +36,10 @@ class UserController extends Controller
      */
     public function create()
     {
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         $uzytkownik = User::all();
-        return view('AdminPanel.Uzytkownicy.add', compact('uzytkownik'));
+        return view('AdminPanel.Uzytkownicy.add', compact('uzytkownik','produktystanilosc','zamowienia'));
     }
 
     /**
@@ -118,9 +123,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         $uzytkownik = User::findOrFail($id);
         $edit = true;
-        return view('AdminPanel.Uzytkownicy.edit', compact('uzytkownik'));
+        return view('AdminPanel.Uzytkownicy.edit', compact('uzytkownik','produktystanilosc','zamowienia'));
     }
 
     /**

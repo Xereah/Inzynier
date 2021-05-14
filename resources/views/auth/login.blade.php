@@ -3,6 +3,10 @@
 @section('title', 'Logowanie')
 
 @section('content')
+<div class="col-lg-2 col-4 p-3" >
+	<a href="{{ route('index.index') }}"><img src="{{url('/Zdjecie/logotransparent.png')}}"></a>
+	</div>
+  <hr>
     <div class="row justify-content-center">
 
         <div class="col-xl-10 col-lg-12 col-md-9">

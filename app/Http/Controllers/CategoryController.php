@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategorie;
+use App\Models\Zamowienia;
+use App\Models\Produkty;
 use App\Http\Requests\Kategorie\StoreKategorieRequest;
 use App\Http\Requests\Kategorie\UpdateKategorieRequest;
 class CategoryController extends Controller
@@ -15,8 +17,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         $kategorie = Kategorie::all();
-        return view('AdminPanel.Kategorie.index', compact('kategorie'));
+        return view('AdminPanel.Kategorie.index', compact('kategorie','produktystanilosc','zamowienia'));
     }
 
     /**
@@ -26,8 +30,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         $kategorie = Kategorie::all();
-        return view('AdminPanel.Kategorie.add', compact('kategorie'));
+        return view('AdminPanel.Kategorie.add', compact('kategorie','produktystanilosc','zamowienia'));
     }
 
     /**
@@ -71,8 +77,10 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         $kategorie = Kategorie::findOrFail($id);
-        return view('AdminPanel.Kategorie.widok', compact('kategorie'));
+        return view('AdminPanel.Kategorie.widok', compact('kategorie','produktystanilosc','zamowienia'));
     }
 
     /**
@@ -83,8 +91,10 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         $kategorie = Kategorie::findOrFail($id);
-        return view('AdminPanel.Kategorie.edit', compact('kategorie'));
+        return view('AdminPanel.Kategorie.edit', compact('kategorie','produktystanilosc','zamowienia'));
     }
 
     /**

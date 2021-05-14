@@ -99,9 +99,7 @@
 
             </form>
             <hr>
-            <div class="text-center">
-                <a class="small" href="{{ route('login') }}">Masz już konto? Zaloguj się!</a>
-            </div>
+           
           </div>
         </div>
       </div>

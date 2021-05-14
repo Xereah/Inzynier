@@ -5,8 +5,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Task;
 use App\Models\Kategorie;
-
-
+use App\Models\Produkty;
+use App\Models\Zamowienia;
 class TasksController extends Controller
 {
     /**
@@ -17,7 +17,9 @@ class TasksController extends Controller
     public function index()
     {
         $tasks = Task::all();
-        return view('AdminPanel.Kalendarz.index', compact('tasks'));
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
+        return view('AdminPanel.Kalendarz.index', compact('tasks','produktystanilosc','zamowienia'));
     }
 
     /**
@@ -27,7 +29,9 @@ class TasksController extends Controller
      */
     public function create()
     {
-        return view('AdminPanel.Kalendarz.add');
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
+        return view('AdminPanel.Kalendarz.add',compact('produktystanilosc','zamowienia'));
     }
 
     /**
@@ -64,8 +68,10 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         $task = Task::findOrFail($id);
-        return view('AdminPanel.Kalendarz.edit', compact('task'));
+        return view('AdminPanel.Kalendarz.edit', compact('task','produktystanilosc','zamowienia'));
     }
 
     /**

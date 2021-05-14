@@ -20,7 +20,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        {!! Form::open(['route'=>['update', $kategorie->id], 'method'=>'POST',  'enctype'=>'multipart/form-data', 'name'=>'editProductForm', 'role'=>'form','id' =>'kategorie-form']) !!}
+                        {!! Form::open(['url'=>['/kategorie/update', $kategorie->id], 'method'=>'POST',  'enctype'=>'multipart/form-data', 'name'=>'editProductForm', 'role'=>'form','id' =>'kategorie-form']) !!}
                         <div class="form-group">
                             <label>Nazwa</label>
                             <input type="hidden" name="id" value="{{ $kategorie->id }}">

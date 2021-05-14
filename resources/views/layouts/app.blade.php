@@ -17,6 +17,7 @@
 
   
   <!-- Custom styles for this template-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css" integrity="sha512-mxrUXSjrxl8vm5GwafxcqTrEwO1/oBNU25l20GODsysHReZo4uhVISzAKzaABH6/tTfAxZrY2FprmeAP5UZY8A==" crossorigin="anonymous" />
   <link href="{{ asset('sbadmin2/css/sb-admin-2.css' ) }}" rel="stylesheet">
   @yield('css')
 </head>
@@ -27,7 +28,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav navbar-dark bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav navbar-dark bg-dark sidebar sidebar-dark accordion" style="height:auto;" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home')}}">
@@ -200,7 +201,25 @@
           
 
             <div class="topbar-divider d-none d-sm-block"></div>
-
+            <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="{{ url('/zamowienia')}}" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> {{$zamowienia}} Nowych zamówień
+           
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="{{ route('produkt.index')}}" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> {{$produktystanilosc}} skończonych produktów
+           
+          </a>
+      </li>
+     
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

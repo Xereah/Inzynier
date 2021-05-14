@@ -46,7 +46,7 @@ Route::name('produkt.')->prefix('produkt')->group(function(){
 //Kategorie
 Route::post('/kategorie/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('store');
 Route::get('/kategorie/delete/{id}', [App\Http\Controllers\CategoryController::class, 'destroy'])->name('destroy');
-Route::post('/update/{id}', [App\Http\Controllers\CategoryController::class, 'update'])->name('update');
+Route::post('/kategorie/update/{id}', [App\Http\Controllers\CategoryController::class, 'update'])->name('update');
 Route::name('kategorie.')->prefix('kategorie')->group(function(){
     Route::get('', [CategoryController::class,'index'])
         ->name('index');

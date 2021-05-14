@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Gospodarstwo;
+use App\Models\Produkty;
+use App\Models\Zamowienia;
 use App\Http\Requests\Gospodarstwo\StoreGospodarstwoRequest;
 use App\Http\Requests\Gospodarstwo\UpdateGospodarstwoRequest;
 class GospodarstwoController extends Controller
@@ -16,7 +18,9 @@ class GospodarstwoController extends Controller
     public function index()
     {
         $gospodarstwo = Gospodarstwo::all();
-        return view('AdminPanel.Gospodarstwo.index', compact('gospodarstwo'));
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
+        return view('AdminPanel.Gospodarstwo.index', compact('gospodarstwo','produktystanilosc','zamowienia'));
     }
 
     /**

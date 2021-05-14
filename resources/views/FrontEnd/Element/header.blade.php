@@ -101,8 +101,8 @@
 <section class="header-main border-bottom">
 	<div class="container">
 <div class="row align-items-center">
-	<div class="col-lg-2 col-4">
-	<a href="{{ route('index.index') }}"><span>Gospodarstwo rolne </span>@foreach($gospodarstwo as $gospodarz) {{$gospodarz->Nazwisko_Wlasciciel}} @endforeach</a>
+	<div>
+	<a href="{{ route('index.index') }}"><img src="{{url('/Zdjecie/logotransparent.png')}}" style="width:200px;height:50px;float-left;"></a>
 	</div>
 	<div class="col-lg-6 col-sm-12">
 		<form action="{{ url('search') }}" class="search">

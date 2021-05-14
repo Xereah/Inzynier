@@ -37,15 +37,15 @@
                     <tr>
                         <td rowspan="3"> <img src="{{url('/Zdjecie/GospodarstwoStruzik.jpg')}}" style="height:150px;width:200px"  class="d-block w-100" alt="..." /></td>
                         <td>&nbsp;</td>
-                        <td><div class="rightTextAlign">Identyfikator paragonu: {{ $zamowienia->id }}</div></td>
+                        <td><div class="rightTextAlign">Identyfikator paragonu: {{ $zamowienie->id }}</div></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td><div class="rightTextAlign">Stworzony: {{ $zamowienia->created_at }}</div></td>
+                        <td><div class="rightTextAlign">Stworzony: {{ $zamowienie->created_at }}</div></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td><div class="rightTextAlign">Zaktualizowany: {{ $zamowienia->updated_at }}</div></td>
+                        <td><div class="rightTextAlign">Zaktualizowany: {{ $zamowienie->updated_at }}</div></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
@@ -79,9 +79,9 @@
                         <td>&nbsp;</td>
                         <td><div class="rightTextAlign">
                     
-                        {{ $zamowienia->zamowienia->name. ' ' .$zamowienia->zamowienia->surname}}<br>
-                        {{ $zamowienia->zamowienia->adress}}<br>
-                        {{ $zamowienia->zamowienia->phone}}<br>
+                        {{ $zamowienie->zamowienia->name. ' ' .$zamowienie->zamowienia->surname}}<br>
+                        {{ $zamowienie->zamowienia->adress}}<br>
+                        {{ $zamowienie->zamowienia->phone}}<br>
                     
                         </div></td>
                         
@@ -115,9 +115,9 @@
                     </tr>
                     <tr>
                         <td>
-                        @if( $zamowienia->fk_platnosc=='1')
+                        @if( $zamowienie->fk_platnosc=='1')
                         Gotowka przy odbiorze
-                        @elseif( $zamowienia->fk_platnosc=='2')
+                        @elseif( $zamowienie->fk_platnosc=='2')
                        Online
                         @endif
                         </td>
@@ -144,7 +144,7 @@
                     <tr>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
-                        <th  class="page-header"><div class="rightTextAlign"><div class="mypadding">Razem: {{ $zamowienia->ZamowienieKoszt.' zł' }}</div></div></th>
+                        <th  class="page-header"><div class="rightTextAlign"><div class="mypadding">Razem: {{ $zamowienie->ZamowienieKoszt.' zł' }}</div></div></th>
                     </tr>
                 </table>
             </div>

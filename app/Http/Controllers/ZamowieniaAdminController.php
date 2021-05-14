@@ -25,12 +25,14 @@ class ZamowieniaAdminController extends Controller
      */
     public function index()
     {
-        $zamowienia = DB::table('zamowienie')
+        $zamowienie = DB::table('zamowienie')
                 ->join('users', 'users.id', '=', 'zamowienie.fk_uzytkownik')
                 ->join('platnosc', 'platnosc.id', '=', 'zamowienie.fk_platnosc')
                 ->select('zamowienie.*', 'users.name', 'users.surname', 'platnosc.platnosc')
                 ->get();
-        return view('AdminPanel.Zamowienia.ZamowieniaWidok',compact('zamowienia'));
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
+        return view('AdminPanel.Zamowienia.ZamowieniaWidok',compact('zamowienie','produktystanilosc','zamowienia'));
     }
 
 
@@ -58,12 +60,14 @@ class ZamowieniaAdminController extends Controller
 
     public function podgladZamowienia($id)
     {
-        $zamowienia = Zamowienia::findOrFail($id);
+        $zamowienie = Zamowienia::findOrFail($id);
         $zamowieniaSzczegoly = ZamowienieSzczegoly::where('fk_zamowienie', $id)->get();
         $gospodarstwo=Gospodarstwo::all();
         $platnosc= Platnosc::all();
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         //return view('admin.order.viewInvoice', ['order'=>$order]);
-        return view('AdminPanel.Zamowienia.ZamowieniaSzczegoly', compact('zamowienia','zamowieniaSzczegoly','gospodarstwo','platnosc'));
+        return view('AdminPanel.Zamowienia.ZamowieniaSzczegoly', compact('zamowienie','zamowieniaSzczegoly','gospodarstwo','platnosc','produktystanilosc','zamowienia'));
     }
 
     /**
