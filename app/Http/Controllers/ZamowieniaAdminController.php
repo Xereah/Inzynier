@@ -28,7 +28,7 @@ class ZamowieniaAdminController extends Controller
         $zamowienie = DB::table('zamowienie')
                 ->join('users', 'users.id', '=', 'zamowienie.fk_uzytkownik')
                 ->join('platnosc', 'platnosc.id', '=', 'zamowienie.fk_platnosc')
-                ->select('zamowienie.*', 'users.name', 'users.surname', 'platnosc.platnosc')
+                ->select('zamowienie.*', 'users.name','users.email' ,'users.surname', 'platnosc.platnosc')
                 ->get();
         $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
         $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
