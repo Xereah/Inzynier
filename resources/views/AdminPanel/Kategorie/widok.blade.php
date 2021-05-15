@@ -17,15 +17,15 @@
                 <table width="100%" class="table table-striped table-bordered table-hover">
                     <tr>
                         <th>ID Kategorii</th>
-                        <th>{{ $kategorie->id }}</th> 
+                        <th>{{ $kategorie->id }}</th>
                     </tr>
                     <tr>
                         <th>Nazwa</th>
-                        <th>{{ $kategorie->Nazwa }}</th> 
+                        <th>{{ $kategorie->Nazwa }}</th>
                     </tr>
                     <tr>
                         <th>Opis</th>
-                        <th>{!! $kategorie->Opis !!}</th> 
+                        <th>{!! $kategorie->Opis !!}</th>
                     </tr>
                 </table>
             </div>

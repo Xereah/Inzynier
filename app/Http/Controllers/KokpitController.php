@@ -27,6 +27,7 @@ class KokpitController extends Controller
         ->join('users', 'users.id', '=', 'zamowienie.fk_uzytkownik')
         ->join('platnosc', 'platnosc.id', '=', 'zamowienie.fk_platnosc')
         ->select('zamowienie.*', 'users.name', 'users.surname', 'platnosc.platnosc')
+        ->orderByDesc('zamowienie.id')
         ->take(10)->get();
         $produktylista=Produkty::all()->take(5);
         $produktystan=Produkty::where('produkty.Ilosc',0)->get();

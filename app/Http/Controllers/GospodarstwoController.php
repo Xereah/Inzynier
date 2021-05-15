@@ -31,8 +31,10 @@ class GospodarstwoController extends Controller
     public function create()
     {
         $gospodarstwo = Gospodarstwo::all();
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         if($gospodarstwo->count() == 0)
-        return view('AdminPanel.Gospodarstwo.add', compact('gospodarstwo'));
+        return view('AdminPanel.Gospodarstwo.add', compact('gospodarstwo','zamowienia','produktystanilosc'));
         else
         return redirect()->route('gospodarstwo.index')
         ->with('message', 'Nie można dodać więcej niż jednego gospodarstwa');
@@ -84,8 +86,10 @@ class GospodarstwoController extends Controller
      */
     public function show($id)
     {
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         $gospodarstwo = Gospodarstwo::findOrFail($id);
-        return view('AdminPanel.Gospodarstwo.widok', compact('gospodarstwo'));
+        return view('AdminPanel.Gospodarstwo.widok', compact('gospodarstwo','produktystanilosc','zamowienia'));
     }
 
     /**
@@ -96,8 +100,10 @@ class GospodarstwoController extends Controller
      */
     public function edit($id)
     {
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
         $gospodarstwo = Gospodarstwo::findOrFail($id);
-        return view('AdminPanel.Gospodarstwo.edit', compact('gospodarstwo'));
+        return view('AdminPanel.Gospodarstwo.edit', compact('gospodarstwo','produktystanilosc','zamowienia'));
     }
 
     /**

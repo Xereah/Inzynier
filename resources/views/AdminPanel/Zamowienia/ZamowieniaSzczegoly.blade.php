@@ -5,6 +5,13 @@
 <link href="{{ asset('css/faktura.css' ) }}" rel="stylesheet">
 @endsection
 @section('content')
+
+<div class="print ">
+                        <button class="print-link no-print float-right" onclick="jQuery('#ele2').print()">
+								<i class="fa fa-print" ></i>
+								Drukuj fakture
+                                </button>
+						</div>
                         
 <div class="receipt-content"id="ele2" >
     <div class="container bootstrap snippets bootdey" > 
@@ -107,12 +114,7 @@
 							</div>
 						</div>
 
-						<div class="print">
-                        <button class="print-link no-print" onclick="jQuery('#ele2').print()">
-								<i class="fa fa-print" ></i>
-								Drukuj fakture
-                                </button>
-						</div>
+					
 					</div>
 				</div>
               

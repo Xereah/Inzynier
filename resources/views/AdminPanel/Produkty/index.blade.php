@@ -27,7 +27,7 @@
                             <th>Nazwa</th>
                             <th>Cena</th>
                             <th>Ilosc</th>
-                            <th>Opis</th>                            
+                            <th>Opis</th>
                             <th width='180px'>Akcja</th>
                         </tr>
                     </thead>
@@ -39,16 +39,20 @@
                             <td>{{ $product->Ilosc.$product->JednoskaMiary }}</td>
                             <td>{{ $product->Opis }}</td>
                             <td>
-                                <a href="{{ route('produkt.show',$product->id)}}" title="Product Info" class="btn btn-info">
-                                <i class="fas fa-eye"></i>
+                                <a href="{{ route('produkt.show',$product->id)}}" title="Product Info"
+                                    class="btn btn-info">
+                                    <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="{{ route('produkt.edit',$product->id)}}" title="Product Edit" class="btn btn-success">
-                                <i class="fas fa-edit"></i>
+                                <a href="{{ route('produkt.edit',$product->id)}}" title="Product Edit"
+                                    class="btn btn-success">
+                                    <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="{{ url('/product/delete',$product->id)}}" title="Product Delete" onclick="return confirm('Jesteś pewień że chcesz to usunąć?!');" class="btn btn-danger">
-                                <i class="fas fa-trash-alt"></i>
+                                <a href="{{ url('/product/delete',$product->id)}}" title="Product Delete"
+                                    onclick="return confirm('Jesteś pewień że chcesz to usunąć?!');"
+                                    class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
                                 </a>
-                                
+
                             </td>
                         </tr>
                         @endforeach
@@ -69,9 +73,9 @@
 
 
 <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable();
-    });
+$(document).ready(function() {
+    $('#dataTables-example').DataTable();
+});
 </script>
 
 @endsection

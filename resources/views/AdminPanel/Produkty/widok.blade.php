@@ -17,35 +17,36 @@
                 <table width="100%" class="table table-striped table-bordered table-hover">
                     <tr>
                         <th>ID Produktu</th>
-                        <th>{{ $produkty->id }}</th> 
+                        <th>{{ $produkty->id }}</th>
                     </tr>
                     <tr>
                         <th>Nazwa</th>
-                        <th>{{ $produkty->Nazwa }}</th> 
+                        <th>{{ $produkty->Nazwa }}</th>
                     </tr>
                     <tr>
                         <th>Cena</th>
-                        <th>{{ $produkty->Cena }} zł</th> 
+                        <th>{{ $produkty->Cena }} zł</th>
                     </tr>
                     <tr>
                         <th>Ilość</th>
-                        <th>{{ $produkty->Ilosc }}</th> 
+                        <th>{{ $produkty->Ilosc }}</th>
                     </tr>
                     <tr>
                         <th>Jednostka miary</th>
-                        <th>{{ $produkty->JednostkaMiary }}</th> 
+                        <th>{{ $produkty->JednostkaMiary }}</th>
                     </tr>
                     <tr>
                         <th>Opis</th>
-                        <th>{!! $produkty->Opis !!}</th> 
+                        <th>{!! $produkty->Opis !!}</th>
                     </tr>
                     <tr>
                         <th>Product Image</th>
-                        <th><img src="{{ asset($produkty->Zdjecie) }}" alt="{{ $produkty->Nazwa }}" height="300px" width="300px"></th> 
+                        <th><img src="{{ asset($produkty->Zdjecie) }}" alt="{{ $produkty->Nazwa }}" height="300px"
+                                width="300px"></th>
                     </tr>
                     <tr>
                         <th>Kategoria</th>
-                        <th>{{ $produkty->kategoria->Nazwa }}</th> 
+                        <th>{{ $produkty->kategoria->Nazwa }}</th>
                     </tr>
                 </table>
             </div>

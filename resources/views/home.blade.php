@@ -3,6 +3,9 @@
 @section('title', 'Home')
 
 @section('content')
+
+
+
 <div class="tytul">
     <div class="row">
         <div class="col-lg-3 col-6">
@@ -128,7 +131,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer clearfix">
-            <a href="{{ url('/zamowienia')}}" class="btn btn-sm btn-secondary float-right">Wszystkie zamówienia</a>
+            <a href="{{ url('/zamowienia')}}" class="btn btn-sm btn-secondary float-right">Przejdź do edycji zamówień</a>
         </div>
         <!-- /.card-footer -->
     </div>

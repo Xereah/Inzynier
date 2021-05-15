@@ -57,7 +57,9 @@ class TasksController extends Controller
     {
         $kategorie = Kategorie::all();
         $task = Task::findOrFail($id);
-        return view('AdminPanel.Kalendarz.widok', compact('task','kategorie'));
+        $produktystanilosc=Produkty::where('produkty.Ilosc',0)->count();
+        $zamowienia= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
+        return view('AdminPanel.Kalendarz.widok', compact('task','kategorie','produktystanilosc','zamowienia'));
     }
 
     /**
