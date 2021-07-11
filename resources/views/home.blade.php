@@ -158,6 +158,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                @if($produktystanilosc != 0)
                     @foreach($produktystan as $stan)
                     <tr>
                         <td>
@@ -166,6 +167,13 @@
                         </td>
                     </tr>
                     @endforeach
+                    @else
+                    <tr>
+                        <td>
+                <p>Wszystkie produkty są dostępne</p>
+                      </td>
+                    </tr>
+                @endif
                 </tbody>
             </table>
         </div>
