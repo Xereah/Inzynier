@@ -1451,3 +1451,7 @@ a[class*=card]:hover .title {
     text-align: center;
    
 }
+
+.powiekszenie:hover{
+  transform: scale(1.05,1.07);
+}
