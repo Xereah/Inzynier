@@ -125,7 +125,7 @@
 				<span class="badge badge-pill badge-danger notify">{{ Cart::content()->count() }}</span>
 			</div>
 			<div class="widget-header icontext">
-				<a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+				<a href="{{ url('/uzytkownik/profil') }}" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
 				
                     @guest
                     @if (Route::has('login'))

@@ -9,6 +9,7 @@ use App\Models\Produkty;
 use App\Models\Task;
 use App\Models\Gospodarstwo;
 use App\Models\Zamowienia;
+use App\Models\ZamowienieSzczegoly;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Uzytkownicy\StoreUzytkownicyRequest;
 use App\Http\Requests\Uzytkownicy\UpdateUzytkownicyRequest;
@@ -201,7 +202,15 @@ class UserController extends Controller
         $kategorie = Kategorie::all();
         $Uzytkownik = Auth::user();
         $gospodarstwo=Gospodarstwo::all();
-     return view('FrontEnd.Uzytkownicy.uzytkownikprofil',compact('Uzytkownik','tasks','kategorie','gospodarstwo'));
+        $ZamowieniaWOczekiwaniu= Zamowienia::where('ZamowienieStatus','W oczekiwaniu')->count();
+        $ZamowieniaSprzedane= Zamowienia::where('ZamowienieStatus','Sprzedane')->count();
+        $ZamowieniaPotwierdzone= Zamowienia::where('ZamowienieStatus','Potwierdzone')->count();
+        $Zamowienia= Zamowienia::count();
+        $uzytkownik = Auth::user();
+        $zamowieniaszczegoly = Zamowienia::where('zamowienie.fk_uzytkownik','=', $uzytkownik->id)->get()->take(5);
+        
+     return view('FrontEnd.Uzytkownicy.uzytkownikprofil',compact('Uzytkownik','tasks','kategorie','gospodarstwo','ZamowieniaWOczekiwaniu',
+     'ZamowieniaSprzedane','ZamowieniaPotwierdzone','Zamowienia','zamowieniaszczegoly','uzytkownik'));
         
     }
 
