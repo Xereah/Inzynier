@@ -17,6 +17,7 @@
 <link href="{{ asset('css/new/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('css/new/ui.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('css/new/responsive.css') }}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     @yield('css-styles')
 </head>
 <body>

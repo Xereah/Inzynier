@@ -109,7 +109,7 @@
 								Zniżka <span>0.0%</span>
 							</div>
 							<div class="field grand-total">
-								Total <span>{{ $zamowienia->ZamowienieKoszt.' zł' }}</span>
+								Koszt całkowity <span>{{ $zamowienia->ZamowienieKoszt.' zł' }}</span>
 							</div>
 						</div>
 

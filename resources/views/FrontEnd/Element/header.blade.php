@@ -186,6 +186,10 @@
         <li class="nav-item">
           <a class="nav-link" href="{{url('produkty/menu')}}">Produkty</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url('produkty/menu')}}">Kontakt</a>
+        </li>
+      
        
       </ul>
     </div> <!-- collapse .// -->
