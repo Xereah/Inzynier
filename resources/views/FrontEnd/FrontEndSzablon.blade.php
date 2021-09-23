@@ -59,13 +59,13 @@
                     </nav>
                 </aside> <!-- col.// -->
                 <div class="col-md-9">
-                    <!-- <article class="banner-wrap obrazek more">
+                    <article class="banner-wrap obrazek more">
         <h3>Codziennie <span>świeże</span> <br>produkty</h3>
         <a href="{{url('produkty/menu')}}" class="button--saqui button--round-l button--text-thick" data-text="Kup Teraz!">Kup Teraz!</a>
 	
-		</article> -->
+		</article>
 
-                    <div class="w3-content w3-display-container" style="width:100%;height:450px;">
+                    <!-- <div class="w3-content w3-display-container" style="width:100%;height:450px;">
                         <img class="mySlides" src="Zdjecie/Pole1.jpg" style="width:100%;height:450px;">
                         <img class="mySlides" src="Zdjecie/pole4.jpg" style="width:100%;height:450px;">
                         <img class="mySlides" src="Zdjecie/pole3.jpg" style="width:100%;height:450px;">
@@ -80,7 +80,7 @@
                             <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
                                 onclick="currentDiv(3)"></span>
                         </div>
-                    </div>
+                    </div> -->
 
 
                 </div> <!-- col.// -->
