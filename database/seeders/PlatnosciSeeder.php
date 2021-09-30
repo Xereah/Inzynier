@@ -27,7 +27,6 @@ class PlatnosciSeeder extends Seeder
             DB::table('platnosc')->insert([
                 // stałe id
                 'id' => $key,
-                // losowy wyraz
                 'platnosc' => $platnosc,
                 // losowa data w zadanym zakresie
                 'created_at' => $faker->dateTimeBetween(

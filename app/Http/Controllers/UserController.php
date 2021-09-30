@@ -87,6 +87,7 @@ class UserController extends Controller
         $uzytkownik->adress = $request->adress;
         $uzytkownik->email = $request->email;
         $uzytkownik->phone = $request->phone;
+        $uzytkownik->level = '1';
         $uzytkownik->password = bcrypt($request->password);
         $uzytkownik->save();
         return redirect()->route('index.index')->with('message', 'Udało się dodać użytkownika.');

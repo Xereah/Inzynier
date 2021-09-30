@@ -57,7 +57,11 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
+                    @if($termin == NULL)
+                    <h3>Uzupełnij wizytę</h3>
+                    @else
                     <h3>{{$termin->Data}}</h3>
+                    @endif
                     <p>Następna wizyta na targu</p>
                 </div>
                 <div class="icon">
@@ -131,7 +135,8 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer clearfix">
-            <a href="{{ url('/zamowienia')}}" class="btn btn-sm btn-secondary float-right">Przejdź do edycji zamówień</a>
+            <a href="{{ url('/zamowienia')}}" class="btn btn-sm btn-secondary float-right">Przejdź do edycji
+                zamówień</a>
         </div>
         <!-- /.card-footer -->
     </div>
@@ -158,7 +163,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                @if($produktystanilosc != 0)
+                    @if($produktystanilosc != 0)
                     @foreach($produktystan as $stan)
                     <tr>
                         <td>
@@ -170,24 +175,12 @@
                     @else
                     <tr>
                         <td>
-                <p>Wszystkie produkty są dostępne</p>
-                      </td>
+                            <p>Wszystkie produkty są dostępne</p>
+                        </td>
                     </tr>
-                @endif
+                    @endif
                 </tbody>
             </table>
-        </div>
-    </div>
-
-
-    <div class="col-lg-6">
-        <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-chart-pie mr-1"></i>
-                Wykres najchętniej kupowanych produktów
-            </div>
-            <div class="card-body"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
-            <div class="card-footer small text-muted">Aktualizowane wczoraj 11:59</div>
         </div>
     </div>
 </div>
@@ -211,7 +204,7 @@
                 <tr>
                     <th>Produkt</th>
                     <th>Cena </th>
-                    <th>Sprzedaż</th>
+                   
                 </tr>
             </thead>
             <tbody>
@@ -222,13 +215,6 @@
                         {{$lista->Nazwa}}
                     </td>
                     <td>{{$lista->Cena}} zł</td>
-                    <td>
-                        <small class="text-success mr-1">
-                            <i class="fas fa-arrow-up"></i>
-                            {{rand(5, 15)}}%
-                        </small>
-                        {{rand(5, 150)}} sprzedanych
-                    </td>
                 </tr>
                 @endforeach
             </tbody>
@@ -236,8 +222,4 @@
     </div>
     @endsection
 
-    @section('js')
-    <script src="{{ asset('js/wykresy/chart-area-demo.js') }}" defer></script>
-    <script src="{{ asset('js/wykresy/chart-bar-demo.js') }}" defer></script>
-    <script src="{{ asset('js/wykresy/chart-pie-demo.js') }}" defer></script>
-    @endsection
+   

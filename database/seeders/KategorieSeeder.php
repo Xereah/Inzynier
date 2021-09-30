@@ -29,10 +29,10 @@ class KategorieSeeder extends Seeder
             DB::table('kategorie')->insert([
                 // stałe id
                 'id' => $kategoria['id'],
-                // losowy wyraz
+               
                 'Nazwa' => $kategoria['Nazwa'],
                 'Opis' => $kategoria['Opis'],
-                // losowa data w zadanym zakresie
+              
                 'created_at' => $faker->dateTimeBetween(
                      '-20 days',
                      '-10 days'

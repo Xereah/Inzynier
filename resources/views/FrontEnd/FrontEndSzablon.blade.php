@@ -88,6 +88,12 @@
         </div> <!-- container //  -->
     </section>
 
+    <!-- <div class="jumbotron" style="background-image: url(https://hubertkajdan.com/wp-content/uploads/2019/06/2019-06-20-Jezioro-Lednickie-010-Pano-1024x663.jpg); background-size: cover; height:650px; margin:15px; ">
+   <div class="container for-about">
+   <h1>About</h1>
+   </div>
+</div> -->
+
     <main role="main" class="container col-sm-9 py-4 " style="background-color:white;min-height:700px;">
 
         @yield('content')
