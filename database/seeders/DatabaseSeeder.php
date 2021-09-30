@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             KategorieSeeder::class,
             PlatnosciSeeder::class,
             ProduktySeeder::class,
-           
+            PermissionsDemoSeeder::class,
         ]);
     }
 }

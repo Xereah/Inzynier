@@ -89,7 +89,11 @@ class UserController extends Controller
         $uzytkownik->phone = $request->phone;
         $uzytkownik->level = '1';
         $uzytkownik->password = bcrypt($request->password);
+      
+        $uzytkownik->assignRole('Uzytkownik');    
         $uzytkownik->save();
+
+
         return redirect()->route('index.index')->with('message', 'Udało się dodać użytkownika.');
     } catch(\Illuminate\Database\QueryException $e) {
         \Log::error($e);
@@ -160,7 +164,17 @@ class UserController extends Controller
              $uzytkownik->email = $request->email;
              $uzytkownik->phone = $request->phone;
              $uzytkownik->password = bcrypt($request->password);
-             $uzytkownik->level = $request->level;
+
+            if($uzytkownik->level = 1){
+            $uzytkownik->assignRole('Administrator');    
+            $uzytkownik->level = '1';
+            }
+            else{
+                $uzytkownik->assignRole('Uzytkownik');    
+                $uzytkownik->level = '2';
+            }
+
+
              $uzytkownik->save();
             
             return redirect()->route('uzytkownik.index')
