@@ -10,11 +10,13 @@ use App\Models\Task;
 use App\Models\Gospodarstwo;
 use App\Models\Zamowienia;
 use App\Models\ZamowienieSzczegoly;
+use App\Models\model_has_roles;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Uzytkownicy\StoreUzytkownicyRequest;
 use App\Http\Requests\Uzytkownicy\UpdateUzytkownicyRequest;
 use Session;
 use Auth;
+use DB;
 class UserController extends Controller
 {
     /**
@@ -60,6 +62,7 @@ class UserController extends Controller
         $uzytkownik->phone = $request->phone;
         $uzytkownik->password = bcrypt($request->password);
         $uzytkownik->level = $request->level;
+        $uzytkownik->assignRole('Uzytkownik');  
         $uzytkownik->save();
         return redirect()->route('uzytkownik.index')->with('message', 'Udało się dodać użytkownika.');
     } catch(\Illuminate\Database\QueryException $e) {
@@ -145,15 +148,16 @@ class UserController extends Controller
      */
     public function update(UpdateUzytkownicyRequest $request, $id)
     {
-        // $uzytkownik = User::find($request->id);
-        // $uzytkownik->name = $request->name;
-        // $uzytkownik->surname = $request->surname;
-        // $uzytkownik->adress = $request->adress;
-        // $uzytkownik->email = $request->email;
-        // $uzytkownik->password = bcrypt($request->password);
-        // $uzytkownik->level = $request->level;
-        // $uzytkownik->save();
-        // return redirect()->route('uzytkownik.index')->with('message', 'Udało się edytowac użytkownika.');
+       
+
+        DB::table('model_has_roles')->where('model_id',$id)->delete();
+        $model = model_has_roles::create([
+            'role_id' => $request->level,
+            'model_type' =>'App\Models\User',
+            'model_id' => $request->id,
+        ]);
+
+       
 
         try {
             // pobranie aktualnej kategorii z bazy
@@ -163,20 +167,13 @@ class UserController extends Controller
              $uzytkownik->adress = $request->adress;
              $uzytkownik->email = $request->email;
              $uzytkownik->phone = $request->phone;
+             $uzytkownik->level = $request->level;
              $uzytkownik->password = bcrypt($request->password);
 
-            if($uzytkownik->level = 1){
-            $uzytkownik->assignRole('Administrator');    
-            $uzytkownik->level = '1';
-            }
-            else{
-                $uzytkownik->assignRole('Uzytkownik');    
-                $uzytkownik->level = '2';
-            }
-
-
-             $uzytkownik->save();
             
+              
+             $uzytkownik->save();
+             
             return redirect()->route('uzytkownik.index')
                 ->with('message', 'Udało się edytowac użytkownika.');
         } catch(\Illuminate\Database\QueryException $e) {
@@ -192,6 +189,7 @@ class UserController extends Controller
                     ->with('message', 'Nie udało się edytowac użytkownika.');
             }
         }
+     
     }
 
     /**
