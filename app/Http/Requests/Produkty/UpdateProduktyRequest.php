@@ -29,6 +29,13 @@ class UpdateProduktyRequest extends FormRequest
             'fk_kategorie'=> [
                 'required','numeric'
             ],
+            'Opis'=> [
+                'required'
+            ],
+            'status'=> [
+                'required'
+            ],
+           
         ];
     }
 }

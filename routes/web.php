@@ -17,7 +17,7 @@ Route::get('/' , [App\Http\Controllers\HomeController::class, 'index'])->name('h
 
 Route::name('kokpit.')->prefix('kokpit')->group(function(){
     Route::get('', [KokpitController::class,'index'])
-        ->name('index')->middleware(['permission:update']);; 
+        ->name('index')->middleware(['permission:update']);
 });
 
 Auth::routes();
