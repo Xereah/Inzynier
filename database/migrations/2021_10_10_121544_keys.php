@@ -39,6 +39,10 @@ class Keys extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('produkty');
+        Schema::dropIfExists('zamowienie');
+        Schema::dropIfExists('platnosc');
+        Schema::dropIfExists('users');
+        Schema::dropIfExists('kategorie');
     }
 }

@@ -23,7 +23,8 @@ class Produkty extends Model
         'Ilosc',
         'JednostkaMiary',
         'Opis',
-        'fk_kategorie'
+        'fk_kategorie',
+        'status'
     ];
 
     public function kategoria()
