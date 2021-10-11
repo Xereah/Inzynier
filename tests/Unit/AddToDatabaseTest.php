@@ -12,7 +12,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 class AddToDatabaseTest extends TestCase
 {
-   
+    
     /**
      * A basic test example.
      *
