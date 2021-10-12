@@ -4,8 +4,12 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use App\Models\User;
+use Tests\DuskTestCase;
+use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
+use auth;
+use HasFactory;
 class AuthUserTest extends TestCase
 {
     
@@ -53,17 +57,22 @@ class AuthUserTest extends TestCase
         $response->assertRedirect('/');
 
     }
-    
-    public function testLogout()
-    {
-        factory(User::class)->create([
-            'email' => 'test@test.pl',
-            'password' => bcrypt('test1234'),
-        ]);
 
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/logout')->logout();
-        });
+    public function test_user_can_logout()
+    {
+         $user = $this->post('/login', [
+            'email' => 'admin@wp.com',
+            'password' => bcrypt('Admin@1234'),
+        ]);
+        
+
+        // When
+        $this->post(route('logout'));
+
+        // Then
+        $this->assertGuest();
     }
+
+
 
 }
