@@ -6,11 +6,11 @@ use App\Models\Produkty;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 class LandingPageTest extends TestCase
 {
     
-
+    use DatabaseTransactions;
     /** @test */
     public function test_landing_page_loads_correctly()
     {

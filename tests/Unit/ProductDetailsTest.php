@@ -6,10 +6,10 @@ use App\Models\Produkty;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 class ProductDetailsTest extends TestCase
 {
-    
+    use DatabaseTransactions;
 
     /** @test */
     public function test_can_view_product_details()
@@ -56,7 +56,7 @@ class ProductDetailsTest extends TestCase
     public function test_stock_level_ok()
     {
         $product = Produkty::create([    
-            'id' =>97,        
+            'id' => 97,        
             'Nazwa' => 'Test',
             'Cena' => 3,
             'Zdjecie' => 'Zdjecie/ziemniaki.jpg',

@@ -10,9 +10,10 @@ use App\Models\Zamowienia;
 use App\Models\ZamowienieSzczegoly;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 class AddToDatabaseTest extends TestCase
 {
-    
+    use DatabaseTransactions;
     /**
      * A basic test example.
      *

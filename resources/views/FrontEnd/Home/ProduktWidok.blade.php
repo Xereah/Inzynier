@@ -102,7 +102,7 @@
 
                                         @if($produkty->Ilosc !=0)
                                         <p class="btn-holder"><a href="{{ url('cart/add/'.$produkty->id) }}"
-                                                class="btn btn-primary btn-md mr-1 mb-2">
+                                                class="btn btn-primary btn-md mr-1 mb-2" name="dodaj" value="Dodaj do koszyka" >
                                                 <i class="fas fa-shopping-cart pr-2"></i> Dodaj do koszyka</a> </p>
 
                                         @endif
