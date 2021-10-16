@@ -75,15 +75,7 @@ class AuthUserTest extends DuskTestCase
 
     public function test_a_user_cannot_login_with_invalid_credentials()
     {
-        $user = User::create([ 
-            'name' => 'Testowy',
-            'surname' => 'Testowy',
-            'email' => 'test@test.pl',
-            'adress' => 'Sieradz',
-            'phone' => 513623174,
-            'password' => bcrypt('test1234'),
-            'level' => 1,
-        ]);
+    
 
         $this->browse(function (Browser $browser) {
             $browser->visit('http://localhost/Inzynier/public/login')
@@ -97,16 +89,7 @@ class AuthUserTest extends DuskTestCase
 
     public function test_a_user_can_login_with_valid_credentials()
     {
-        $user = User::create([ 
-            'name' => 'Testowy',
-            'surname' => 'Testowy',
-            'email' => 'test@test.pl',
-            'adress' => 'Sieradz',
-            'phone' => 513623174,
-            'password' => bcrypt('test1234'),
-            'level' => 1,
-        ]);
-
+      
         $this->browse(function (Browser $browser) {
             $browser->visit('http://localhost/Inzynier/public/login')
                     ->assertSee('Zaloguj')
@@ -116,5 +99,7 @@ class AuthUserTest extends DuskTestCase
                    
         });
     }
+  
 
+    
 }

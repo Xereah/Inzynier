@@ -67,7 +67,7 @@ class ProductDetailsTest extends TestCase
             'status' => 1,
        ]);
 
-       $response = $this->get('/index/'.$product->id);
+        $response = $this->get('/index/'.$product->id);
 
         $response->assertSee('Dodaj do koszyka');
     }
