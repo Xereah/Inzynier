@@ -24,7 +24,7 @@ class ZamowieniaKlientController extends Controller
      */
     public function index()
     {
-        $tasks= Task::all();
+        $tasks= Task::all()->last();;
         $produkty= DB::table('produkty')
         ->where('produkty.status', 1)->get();
         $kategorie = Kategorie::all();

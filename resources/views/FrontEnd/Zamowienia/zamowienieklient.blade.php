@@ -18,7 +18,7 @@
     
     <!-- /.col-lg-12 -->
 </div>
-<div class="alert alert-info" role="alert">
+<div class="alert alert-info text-center" role="alert">
  <h4> Uwaga, w przypadku <b>zakupu towaru z odbiorem na rynku</b> wymagane jest poświadczenie w postaci wydruku <b>paragonu</b>!!</h4>
 </div>
 <!-- /.row -->
@@ -39,6 +39,7 @@
                             <th>Data zamówienia</th>
                             <th>Status zamówienia</th>
                             <th>Rodzaj płatności</th>
+                            <th>Termin odbioru na rynku</th>
                             <th>Paragon</th>
                         </tr>
                     </thead>
@@ -52,6 +53,11 @@
                             
                             <td>{{ $zamówienie->ZamowienieStatus }}</td>
                             <td> {{ $zamówienie->zamowieniaplatnosc->platnosc }}   </td>
+                            @if($zamówienie->fk_platnosc== 1)
+                            <td>{{ $tasks-> Data }}</td>
+                            @else 
+                            <td></td>
+                            @endif
                             <td>  <a href="{{ url('/uzytkownik/zamowienia/szczegoly/'.$zamówienie->id) }}" title="paragon" class="btn btn-info">
                                 Paragon fiskalny
                                 </a></td>
