@@ -14,7 +14,7 @@ class UpdateDatabaseTest extends TestCase
     use DatabaseTransactions;
     
   
-    public function testUpdateUsers()
+    public function test_update_users()
     {   
         $data['name'] = 'Test1';
 		
@@ -28,7 +28,7 @@ class UpdateDatabaseTest extends TestCase
 
     }
 
-    public function testUpdateProducts()
+    public function test_update_products()
     {   
         $data = ([       
             'Nazwa' => 'Test',
@@ -62,7 +62,7 @@ class UpdateDatabaseTest extends TestCase
 
     }
 
-    public function testUpdateCategory()
+    public function test_update_category()
     {   
         $data = ([       
             'Nazwa' => 'TestCategory',

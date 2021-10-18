@@ -19,7 +19,7 @@ class AddToDatabaseTest extends TestCase
      *
      * @return void
      */
-    public function testCanAddCategory()    
+    public function test_can_add_category()    
     {        
         $kategorie = Kategorie::create([
             'Nazwa' => 'Miody',
@@ -31,7 +31,7 @@ class AddToDatabaseTest extends TestCase
 
 
 
-    public function testCanAddProduct()    
+    public function test_can_add_product()    
     {
         
         $produkt = Produkty::create([            
@@ -57,7 +57,7 @@ class AddToDatabaseTest extends TestCase
         $this->assertNotEmpty($produkt);
     }
 
-    public function testCanAddPayment()    
+    public function test_can_add_payment()    
     {        
         $platnosc = Platnosc::create([
             'platnosc' => 'test'
@@ -67,7 +67,7 @@ class AddToDatabaseTest extends TestCase
         $this->assertNotEmpty($platnosc);
     }
 
-    public function testCanAddStore()    
+    public function test_can_add_store()    
     {
         
         $zamowienie = Zamowienia::create([            
@@ -87,7 +87,7 @@ class AddToDatabaseTest extends TestCase
         $this->assertNotEmpty($zamowienie);
     }
 
-    public function testCanAddStoreDetails()    
+    public function test_can_add_storeDetails()    
     {
         
         $zamowienieszczegoly = ZamowienieSzczegoly::create([            
