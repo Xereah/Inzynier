@@ -98,7 +98,7 @@
                 <br>
                 <p>
                     <a href="{{ route('index.show',$product->id)}}" class="btn btn-success btn-block"> Szczegóły </a>
-                    <a href="{{ url('cart/add/'.$product->id) }}"  class="btn btn-primary btn-block"><i
+                    <a href="{{ url('cart/add/'.$product->id) }}"  onclick="alert('Dodano {{ $product->Nazwa }} do koszyka ')" class="btn btn-primary btn-block"><i
                             class="fa fa-shopping-cart"></i>
                         <span class="text">Dodaj do koszyka</span>
                     </a>

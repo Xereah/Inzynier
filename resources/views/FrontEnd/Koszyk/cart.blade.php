@@ -1,7 +1,7 @@
 @extends('FrontEnd.FrontEndSzablon3')
 
 @section('css-styles')
-<link href="{{ asset('css/koszyk.css') }}" rel="stylesheet">
+<!-- <link href="{{ asset('css/koszyk.css') }}" rel="stylesheet"> -->
 @endsection
 
 @section('title', 'Koszyk')

@@ -185,16 +185,7 @@
 
         <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link pl-0" data-toggle="dropdown" href="#"><i class="fa fa-bars"></i> Kategorie </a>
-                    <div class="dropdown-menu">
-                        @foreach($kategorie as $kategoria)
-                        <a class="dropdown-item"
-                            href="{{ url('produkty/kategorie/'.$kategoria->id) }}">{{ $kategoria->Nazwa }} <i
-                                class="fas fa-chevron-right" style="float:right;"></i></a>
-                        @endforeach
-                    </div>
-                </li>
+                
 
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="{{ route('index.index') }}">Strona główna</a>
@@ -202,9 +193,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('produkty/menu')}}">Produkty</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('produkty/menu')}}">Kontakt</a>
-                </li>
+              
 
 
             </ul>

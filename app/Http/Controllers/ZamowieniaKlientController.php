@@ -31,8 +31,9 @@ class ZamowieniaKlientController extends Controller
         $cart = Cart::content();
         $uzytkownik = Auth::user();
         $gospodarstwo=Gospodarstwo::all();
+        $platnosc= Platnosc::all();
         $zamowienia = Zamowienia::where('zamowienie.fk_uzytkownik','=', $uzytkownik->id)->get();
-        return view('FrontEnd.Zamowienia.zamowienieklient', compact('zamowienia','kategorie','produkty','tasks','gospodarstwo','cart','uzytkownik'));
+        return view('FrontEnd.Zamowienia.zamowienieklient', compact('zamowienia','kategorie','produkty','tasks','gospodarstwo','cart','uzytkownik','platnosc'));
     }
 
     public function podgladZamowienia($id)

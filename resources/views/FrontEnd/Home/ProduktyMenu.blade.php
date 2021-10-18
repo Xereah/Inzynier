@@ -34,7 +34,7 @@
                                     <i class="fa fa-info-circle" dusk="Szczegóły" aria-hidden="true"></i> Szczegóły</a> </p>
                             @if($product->Ilosc !=0)
                             <p class="btn-holder"><a href="{{ url('cart/add/'.$product->id) }}"
-                                    class="btn btn-primary btn-block text-center" role="button">
+                                    class="btn btn-primary btn-block text-center" role="button" onclick="alert('Dodano {{ $product->Nazwa }} do koszyka ')"> 
                                     <i class="fas fa-shopping-cart pr-2" dusk="Dodaj do koszyka"></i> Dodaj do koszyka</a> </p>
                             @endif
                         </div>

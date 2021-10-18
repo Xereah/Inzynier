@@ -54,8 +54,8 @@
      
       @if($product->Ilosc !=0)
         <p class="btn-holder"><a href="{{ url('cart/add/'.$product->id) }}"
-        class="btn btn-primary btn-md mr-1 mb-2">
-               <i class="fas fa-shopping-cart pr-2"></i> Dodaj do koszyka</a> </p>
+        class="btn btn-primary btn-md mr-1 mb-2" onclick="alert('Dodano {{ $product->Nazwa }} do koszyka ')">
+               <i class="fas fa-shopping-cart pr-2" ></i> Dodaj do koszyka</a> </p>
                @endif
     </div>
   </div>
