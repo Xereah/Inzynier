@@ -15,10 +15,10 @@ class UpdateGospodarstwoRequest extends FormRequest
     {
         return [
             'Imie_Wlasciciel'=> [
-                'required','max:50','min:3'
+                'required','alpha','max:50','min:3'
             ],
             'Nazwisko_Wlasciciel'=> [
-                'required','max:50','min:3'
+                'required','alpha','max:50','min:3'
             ],
             'Miejscowosc'=> [
                 'required','max:50','min:3'
@@ -33,7 +33,7 @@ class UpdateGospodarstwoRequest extends FormRequest
                 'required','numeric'
             ],
             'Email'=> [
-                'required',
+                'required','Email:rfc,dns'
             ],
         ];
     }

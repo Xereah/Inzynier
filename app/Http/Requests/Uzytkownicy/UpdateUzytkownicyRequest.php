@@ -15,22 +15,22 @@ class UpdateUzytkownicyRequest extends FormRequest
     {
         return [
             'name'=> [
-                'required','max:50','min:3'
+                'required','max:50','min:3','alpha',
             ],
             'surname'=> [
-                'required','max:50','min:3'
+                'required','max:50','min:3','alpha',
             ],
             'adress'=> [
                 'required','max:50','min:3'
             ],
             'email'=> [
-                'required',
+                'required','email:rfc,dns'
             ],
             'phone'=> [
-                'required','numeric'
+                'required','digits:9','numeric',
             ],
             'password'=> [
-                'required',
+                'required','min:8'
             ],
         ];
     }
