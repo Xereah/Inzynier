@@ -7,6 +7,8 @@ use App\Models\Task;
 use App\Models\Kategorie;
 use App\Models\Produkty;
 use App\Models\Zamowienia;
+use App\Http\Requests\Kalendarz\StoreKalendarzRequest;
+use App\Http\Requests\Kalendarz\UpdateKalendarzRequest;
 class TasksController extends Controller
 {
     /**
@@ -40,7 +42,7 @@ class TasksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreKalendarzRequest $request)
     {
         Task::create($request->all());
         return redirect()->route('task.index');
@@ -83,13 +85,14 @@ class TasksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateKalendarzRequest $request, $id)
     {
         try{
             $task = Task::find($request->id);
             $task->Nazwa = $request->Nazwa;
             $task->Opis = $request->Opis;
             $task->Data = $request->Data;
+           
             $task->save();
             return redirect()->route('task.index')->with('message', 'Udało się zaaktualizować Kalendarz.');
         } catch(\Illuminate\Database\QueryException $e) {

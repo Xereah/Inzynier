@@ -6,7 +6,7 @@
     <div class="card-header">
         <h3 class="card-title">Dodawanie nowego wpisu do kalendarza</h3>
     </div>
-    <form action="{{ route('task.store') }}" method="post">
+    <form action="{{ route('task.store') }}" method="post" id="Kalendarz-form">
         <div class="card-body">
             {{ csrf_field() }}
             <label>Nazwa Wpisu</label>
@@ -33,4 +33,14 @@ $('.date').datepicker({
     dateFormat: "yy-mm-dd"
 });
 </script>
+@endsection
+
+@section('js')
+{{-- Laravel Javascript Validation --}}
+
+<script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+{!! JsValidator::formRequest('App\Http\Requests\Kalendarz\StoreKalendarzRequest', '#Kalendarz-form'); !!}
+
+
+
 @endsection

@@ -39,7 +39,16 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-
+            <a href="{{ url('/data/delete',$task->id)}}" title="Usunięcie daty"
+                                    onclick="return confirm('Jesteś pewień że chcesz to usunąć?!');"
+                                    class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+            </a>
+             <a href="{{ route('task.edit',$task->id)}}" title="Edycja"
+                                  
+                                    class="btn btn-success">
+                                    <i class="fas fa-edit"></i>
+            </a>
 
         </div>
     </div>

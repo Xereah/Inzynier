@@ -105,14 +105,11 @@ Route::name('task.')->prefix('task')->group(function(){
         ->name('edit')
         ->middleware(['auth'])
         ->where('id', '[0-9]+');
-   Route::patch('{id}',  [TasksController::class,'update'])
-        ->name('update')
-        ->where('id', '[0-9]+');
-    Route::delete('{id}',  [TasksController::class,'destroy'])
-        ->name('destroy')
-       ->where('id', '[0-9]+');
+  
     Route::get('/show/{id}', [App\Http\Controllers\TasksController::class, 'showtask'])->name('showtask');
 });
+Route::get('/data/delete/{id}', [App\Http\Controllers\TasksController::class, 'destroy'])->name('destroy');
+Route::post('/data/{id}', [App\Http\Controllers\TasksController::class, 'update'])->name('update');
 // strona główna
 Route::name('index.')->prefix('index')->group(function(){
     Route::get('', [FrontEndController::class,'index'])
