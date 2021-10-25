@@ -142,10 +142,10 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="card" style="margin-left:100px; margin-right:50px;">
+
+    <div class="card">
         <div class="card-header border-0">
-            <h3 class="card-title">Brak produktów na stanie</h3>
+            <h3 class="card-title">Brakujące produkty</h3>
             <div class="card-tools">
                 <a href="#" class="btn btn-tool btn-sm">
                     <i class="fas fa-download"></i>
@@ -183,7 +183,7 @@
             </table>
         </div>
     </div>
-</div>
+
 
 
 <div class="card" style="margin-left:10px;">

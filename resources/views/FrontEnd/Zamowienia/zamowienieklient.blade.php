@@ -53,7 +53,7 @@
                             
                             <td>{{ $zamówienie->ZamowienieStatus }}</td>
                             <td> {{ $zamówienie->zamowieniaplatnosc->platnosc }}   </td>
-                            @if($zamówienie->fk_platnosc== 1)
+                            @if($tasks!=NULL && $zamówienie->fk_platnosc== 1 )
                             <td>{{ $tasks-> Data }}</td>
                             @else 
                             <td></td>
