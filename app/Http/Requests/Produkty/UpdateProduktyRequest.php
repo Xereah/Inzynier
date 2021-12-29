@@ -10,12 +10,15 @@ class UpdateProduktyRequest extends FormRequest
      * Reguły walidacji
      *
      * @return array
+     * 
      */
+    
+    
     public function rules()
     {
         return [
             'Nazwa'=> [
-                'required','max:50','min:3'
+                'required','max:50','min:3',
             ],
             'Cena'=> [
                 'required','numeric'
