@@ -2,6 +2,11 @@
 
 @section('css-styles')
 <link href="{{ asset('css/online.css') }}" rel="stylesheet" type="text/css" />
+<style>
+input:valid{
+    border-color:black;
+}
+    </style>
 @endsection
 
 @section('title', 'Płatność')
@@ -49,23 +54,24 @@
                                     src="https://img.icons8.com/color/48/000000/maestro.png" /> </div>
                         </div>
                         <form action="{{ url('/order/order-success') }}">
-                            <label for="validationDefault01" class="form-label">Imie i Nazwisko</label>
-                            <input type="text" placeholder="Jan Kowalski" class="form-control" id="validationDefault01"
+                            <label for="validationDefault01" class="form-label">Imie</label>
+                            <input type="text" placeholder="Jan " class="form-control" pattern="[A-Za-z]{1,32}" id="validationDefault01"
                                 required>
-
+                                <label for="validationDefault01" class="form-label">Nazwisko</label>
+                            <input type="text" placeholder="Kowalski" class="form-control" pattern="[A-Za-z]{1,32}" id="validationDefault01"
+                                required>
                             <label for="validationDefault02" class="form-label">Numer karty</label>
-                            <input type="text" placeholder="0125 6780 4567 9909" class="form-control"
+                            <input type="text" placeholder="0125 6780 4567 9909" pattern="[0-9]{13,16}" class="form-control"
                                 id="validationDefault02" required>
                             <div class="row">
                                 <div class="col-4">
                                     <label for="validationDefault03" class="form-label">Data:</label>
-                                    <input type="text" placeholder="YY/MM" class="form-control" id="validationDefault03"
+                                    <input type="text" placeholder="YY/MM" class="form-control" pattern="(?:0[1-9]|1[0-2])/[0-9]{2}" id="validationDefault03"
                                         required>
                                 </div>
                                 <div class="col-4">
                                     <label for="validationDefault04" class="form-label">CVV:</label>
-                                    <input type="text" placeholder="382" class="form-control" id="validationDefault04"
-                                        required>
+                                    <input class="form-control" id="field" placeholder="381" type="number" max="999" pattern="([0-9]|[0-9]|[0-9])" name="cvv" required/>
                                 </div>
                             </div> 
 
