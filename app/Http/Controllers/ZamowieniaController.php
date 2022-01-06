@@ -61,8 +61,9 @@ class ZamowieniaController extends Controller
         } 
         }
 
-        public function ZamowienieSukces()
+        public function ZamowienieSukces(Request $request)
         {
+            
         $uzytkownik = Auth::user();
         $tasks= Task::all();
         $kategorie = Kategorie::all();
@@ -74,6 +75,8 @@ class ZamowieniaController extends Controller
                 return redirect('/cart');    
             }
         }
+
+
         private function savePaymentInfo($paymentType)
         {
             $payment = new Platnosc();

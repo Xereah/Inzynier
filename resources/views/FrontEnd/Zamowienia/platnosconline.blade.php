@@ -64,11 +64,10 @@
                                 </div>
                                 <div class="col-4">
                                     <label for="validationDefault04" class="form-label">CVV:</label>
-                                    <input type="text" placeholder="YY/MM" class="form-control" id="validationDefault04"
+                                    <input type="text" placeholder="382" class="form-control" id="validationDefault04"
                                         required>
                                 </div>
-                            </div> <input type="checkbox" id="save_card" class="align-left"> <label
-                                for="save_card">Zapisz informacje o karcie</label>
+                            </div> 
 
                     </div>
                 </div>

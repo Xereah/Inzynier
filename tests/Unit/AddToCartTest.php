@@ -59,8 +59,9 @@ class AddToCartTest extends DuskTestCase
     {        
         $this->browse(function (Browser $browser) {
             $browser->visit('http://localhost/Inzynier/public/produkty/menu')
-                    ->assertSee('Nasze produkty')                   
+                    ->assertSee('Nasze produkty')                     
                     ->click('@Dodaj do koszyka')
+                    ->click('@Ok')
                     ->assertPathIs('/Inzynier/public/login');
                    
         });

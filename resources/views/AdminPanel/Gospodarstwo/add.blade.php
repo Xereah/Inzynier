@@ -64,6 +64,4 @@
 <script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 {!! JsValidator::formRequest('App\Http\Requests\Gospodarstwo\StoreGospodarstwoRequest', '#Gospodarstwo-form'); !!}
 
-
-
 @endsection
