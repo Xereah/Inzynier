@@ -15,10 +15,10 @@ class UpdateUzytkownicyRequest extends FormRequest
     {
         return [
             'name'=> [
-                'required','max:50','min:3','alpha',
+                'required','max:50','min:3',
             ],
             'surname'=> [
-                'required','max:50','min:3','alpha',
+                'required','max:50','min:3',
             ],
             'adress'=> [
                 'required','max:50','min:3'

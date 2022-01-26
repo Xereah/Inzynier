@@ -15,10 +15,10 @@ class UpdateKalendarzRequest extends FormRequest
     {
         return [
             'Nazwa'=> [
-                'required','alpha','max:50','min:3'
+                'required','max:50','min:3'
             ],
             'Opis'=> [
-                'required','alpha','max:50','min:3'
+                'required','max:50','min:3'
             ],
             'Data'=> [
                 'required','date'
