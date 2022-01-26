@@ -3,10 +3,10 @@
 @section('css-styles')
 <link href="{{ asset('css/online.css') }}" rel="stylesheet" type="text/css" />
 <style>
-input:valid{
-    border-color:black;
+input:valid {
+    border-color: black;
 }
-    </style>
+</style>
 @endsection
 
 @section('title', 'Płatność')
@@ -55,25 +55,26 @@ input:valid{
                         </div>
                         <form action="{{ url('/order/order-success') }}">
                             <label for="validationDefault01" class="form-label">Imie</label>
-                            <input type="text" placeholder="Jan " class="form-control" pattern="[A-Za-z]{1,32}" id="validationDefault01"
-                                required>
-                                <label for="validationDefault01" class="form-label">Nazwisko</label>
-                            <input type="text" placeholder="Kowalski" class="form-control" pattern="[A-Za-z]{1,32}" id="validationDefault01"
-                                required>
+                            <input type="text" placeholder="Jan " class="form-control" pattern="[A-Za-z]{1,32}"
+                                id="validationDefault01" required>
+                            <label for="validationDefault01" class="form-label">Nazwisko</label>
+                            <input type="text" placeholder="Kowalski" class="form-control" pattern="[A-Za-z]{1,32}"
+                                id="validationDefault01" required>
                             <label for="validationDefault02" class="form-label">Numer karty</label>
-                            <input type="text" placeholder="0125 6780 4567 9909" pattern="[0-9]{13,16}" class="form-control"
-                                id="validationDefault02" required>
+                            <input type="text" placeholder="0125 6780 4567 9909" pattern="[0-9]{13,16}"
+                                class="form-control" id="validationDefault02" required>
                             <div class="row">
                                 <div class="col-4">
                                     <label for="validationDefault03" class="form-label">Data:</label>
-                                    <input type="text" placeholder="YY/MM" class="form-control" pattern="(?:0[1-9]|1[0-2])/[0-9]{2}" id="validationDefault03"
-                                        required>
+                                    <input type="text" placeholder="YY/MM" class="form-control"
+                                        pattern="(?:0[1-9]|1[0-2])/[0-9]{2}" id="validationDefault03" required>
                                 </div>
                                 <div class="col-4">
                                     <label for="validationDefault04" class="form-label">CVV:</label>
-                                    <input class="form-control" id="field" placeholder="381" type="number" max="999" pattern="([0-9]|[0-9]|[0-9])" name="cvv" required/>
+                                    <input class="form-control" id="field" placeholder="381" type="number" max="999"
+                                        pattern="([0-9]|[0-9]|[0-9])" name="cvv" required />
                                 </div>
-                            </div> 
+                            </div>
 
                     </div>
                 </div>
@@ -107,9 +108,7 @@ input:valid{
                             <div class="col text-right"><b>{{Cart::subtotal()}} zł</b></div>
                         </div>
                         <div class="row lower">
-
                         </div>
-                        <!-- <a href="{{ url('/order/order-success') }}" class="btn btn-primary float-md-right"> Złóż zamówienie </a> -->
                         <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Złóż zamówienie
                         </button>
@@ -118,7 +117,7 @@ input:valid{
 
                         <p class="text-muted text-center">Zwroty nie są przyjmowane</p>
                         </form>
-                  
+
                     </div>
                 </div>
             </div>

@@ -2,58 +2,10 @@
 
 @section('title', 'Sklep')
 @section('content')
-
-
-
-
-
-<!-- <h2>{{$kategoria1->Nazwa}}</h2>
-            @foreach($produkty as $product)
-        <div class="col-md-12">
-            <div class="row p-2 bg-white border rounded">
-                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="{{ asset($product->Zdjecie) }}"></div>
-                <div class="col-md-6 mt-1">
-                    <h5>{{ $product->Nazwa }}</h5>
-                    <div class="d-flex flex-row">
-                    </div>
-                    {{ $product->Opis }}
-                    <hr>
-                   <strong> <p>Pozostało na stanie {{ $product->Ilosc }}{{ $product->JednostkaMiary }}</p></strong>
-                </div>
-                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                    <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1">{{ $product->Cena }} zł</h4>
-                    </div>
-                    <h6 class="text-success">Odbiór na rynku</h6>
-                    <div class="d-flex flex-column mt-4">
-                    <a href="{{ route('index.show',$product->id)}}"
-                                class="btn btn-primary btn-sm" role="button">Szczegóły</a>
-                                @if($product->Ilosc !=0)
-                    <a href="{{ url('cart/add/'.$product->id) }}"
-                                class="btn btn-warning btn-block text-center" role="button">Dodaj do koszyka</a></div>
-                                @endif
-                                
-                </div>
-               
-            </div>
-            
-            </div>
-           
-    
-            @endforeach -->
-
-
 <header class="border-bottom mb-4 pb-3">
     <div class="form-inline">
         <h2>{{$kategoria1->Nazwa}}</h2>
 
-        <!-- <span class="mr-md-auto"> </span>
-			<select class="mr-2 form-control">
-				<option>Latest items</option>
-				<option>Trending</option>
-				<option>Most Popular</option>
-				<option>Cheapest</option>
-			</select> -->
     </div>
 </header><!-- sect-heading -->
 
@@ -98,7 +50,8 @@
                 <br>
                 <p>
                     <a href="{{ route('index.show',$product->id)}}" class="btn btn-success btn-block"> Szczegóły </a>
-                    <a href="{{ url('cart/add/'.$product->id) }}"  onclick="alert('Dodano {{ $product->Nazwa }} do koszyka ')" class="btn btn-primary btn-block"><i
+                    <a href="{{ url('cart/add/'.$product->id) }}"
+                        onclick="alert('Dodano {{ $product->Nazwa }} do koszyka ')" class="btn btn-primary btn-block"><i
                             class="fa fa-shopping-cart"></i>
                         <span class="text">Dodaj do koszyka</span>
                     </a>

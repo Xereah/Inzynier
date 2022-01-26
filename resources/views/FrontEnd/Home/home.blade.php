@@ -23,7 +23,8 @@
                         <a href="{{ route('index.show',$product->id)}}" class="title">
                             <h5>{{ $product->Nazwa }}</h5>
                         </a>
-                        <div class="price mt-1">Cena: {{ $product->Cena }}zł/{{$product->JednostkaMiary}}</div> <!-- price-wrap.// -->
+                        <div class="price mt-1">Cena: {{ $product->Cena }}zł/{{$product->JednostkaMiary}}</div>
+                        <!-- price-wrap.// -->
 
                     </figcaption>
                 </div>
@@ -44,5 +45,3 @@
 
 
 @endsection
-
-

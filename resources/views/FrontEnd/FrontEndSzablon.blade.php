@@ -65,34 +65,13 @@
 	
 		</article>
 
-                    <!-- <div class="w3-content w3-display-container" style="width:100%;height:450px;">
-                        <img class="mySlides" src="Zdjecie/Pole1.jpg" style="width:100%;height:450px;">
-                        <img class="mySlides" src="Zdjecie/pole4.jpg" style="width:100%;height:450px;">
-                        <img class="mySlides" src="Zdjecie/pole3.jpg" style="width:100%;height:450px;">
-                        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
-                            style="width:100%">
-                            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
-                                onclick="currentDiv(1)"></span>
-                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
-                                onclick="currentDiv(2)"></span>
-                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
-                                onclick="currentDiv(3)"></span>
-                        </div>
-                    </div> -->
+                  
 
 
                 </div> <!-- col.// -->
             </div> <!-- row.// -->
         </div> <!-- container //  -->
     </section>
-
-    <!-- <div class="jumbotron" style="background-image: url(https://hubertkajdan.com/wp-content/uploads/2019/06/2019-06-20-Jezioro-Lednickie-010-Pano-1024x663.jpg); background-size: cover; height:650px; margin:15px; ">
-   <div class="container for-about">
-   <h1>About</h1>
-   </div>
-</div> -->
 
     <main role="main" class="container col-sm-9 py-4 " style="background-color:white;min-height:700px;">
 

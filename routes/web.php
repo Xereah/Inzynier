@@ -110,6 +110,8 @@ Route::name('task.')->prefix('task')->group(function(){
 });
 Route::get('/data/delete/{id}', [App\Http\Controllers\TasksController::class, 'destroy'])->name('destroy');
 Route::post('/data/{id}', [App\Http\Controllers\TasksController::class, 'update'])->name('update');
+
+
 // strona główna
 Route::name('index.')->prefix('index')->group(function(){
     Route::get('', [FrontEndController::class,'index'])

@@ -61,7 +61,8 @@ class FrontEndController extends Controller
         $kategoria1 = Kategorie::where('id', $id)->first();
         $kategorie= Kategorie::All();
         $produkty = DB::table('produkty')
-        ->where('produkty.fk_kategorie', $id)->simplePaginate(3);
+        ->where('produkty.fk_kategorie', $id)
+        ->where('produkty.status', 1)->simplePaginate(3);
         $gospodarstwo=Gospodarstwo::all();
         return view('frontEnd.Home.KategorieWidok', compact('produkty','kategorie','kategoria1','tasks','gospodarstwo'));
     }

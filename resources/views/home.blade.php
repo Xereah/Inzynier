@@ -143,46 +143,46 @@
 </div>
 
 
-    <div class="card">
-        <div class="card-header border-0">
-            <h3 class="card-title">Brakujące produkty</h3>
-            <div class="card-tools">
-                <a href="#" class="btn btn-tool btn-sm">
-                    <i class="fas fa-download"></i>
-                </a>
-                <a href="#" class="btn btn-tool btn-sm">
-                    <i class="fas fa-bars"></i>
-                </a>
-            </div>
-        </div>
-        <div class="card-body table-responsive p-0">
-            <table class="table table-striped table-valign-middle">
-                <thead>
-                    <tr>
-                        <th>Produkt</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if($produktystanilosc != 0)
-                    @foreach($produktystan as $stan)
-                    <tr>
-                        <td>
-                            <img src="{{$stan->Zdjecie}}" alt="{{$stan->Nazwa}}" class="img-circle img-size-32 mr-2">
-                            {{$stan->Nazwa}}
-                        </td>
-                    </tr>
-                    @endforeach
-                    @else
-                    <tr>
-                        <td>
-                            <p>Wszystkie produkty są dostępne</p>
-                        </td>
-                    </tr>
-                    @endif
-                </tbody>
-            </table>
+<div class="card">
+    <div class="card-header border-0">
+        <h3 class="card-title">Brakujące produkty</h3>
+        <div class="card-tools">
+            <a href="#" class="btn btn-tool btn-sm">
+                <i class="fas fa-download"></i>
+            </a>
+            <a href="#" class="btn btn-tool btn-sm">
+                <i class="fas fa-bars"></i>
+            </a>
         </div>
     </div>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-striped table-valign-middle">
+            <thead>
+                <tr>
+                    <th>Produkt</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if($produktystanilosc != 0)
+                @foreach($produktystan as $stan)
+                <tr>
+                    <td>
+                        <img src="{{$stan->Zdjecie}}" alt="{{$stan->Nazwa}}" class="img-circle img-size-32 mr-2">
+                        {{$stan->Nazwa}}
+                    </td>
+                </tr>
+                @endforeach
+                @else
+                <tr>
+                    <td>
+                        <p>Wszystkie produkty są dostępne</p>
+                    </td>
+                </tr>
+                @endif
+            </tbody>
+        </table>
+    </div>
+</div>
 
 
 
@@ -204,7 +204,7 @@
                 <tr>
                     <th>Produkt</th>
                     <th>Cena </th>
-                   
+
                 </tr>
             </thead>
             <tbody>
@@ -221,5 +221,3 @@
         </table>
     </div>
     @endsection
-
-   

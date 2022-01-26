@@ -4,22 +4,20 @@
 
 @section('css-styles')
 <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
-        crossorigin="anonymous" />
+    crossorigin="anonymous" />
 
 @endsection
-
-
-
 @section('content')
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header" style="margin-left:10%;margin-top:2%;">Informacje o zamówieniach</h1>
     </div>
-    
+
     <!-- /.col-lg-12 -->
 </div>
 <div class="alert alert-info text-center" role="alert">
- <h4> Uwaga, w przypadku <b>zakupu towaru z odbiorem na rynku</b> wymagane jest poświadczenie w postaci wydruku <b>paragonu</b>!!</h4>
+    <h4> Uwaga, w przypadku <b>zakupu towaru z odbiorem na rynku</b> wymagane jest poświadczenie w postaci wydruku
+        <b>paragonu</b>!!</h4>
 </div>
 <!-- /.row -->
 <div class="row col-lg-10" style="margin-left:10%; margin-top:5%;">
@@ -34,7 +32,7 @@
                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTable">
                     <thead>
                         <tr>
-                            
+
                             <th>Imie i nazwisko</th>
                             <th>Data zamówienia</th>
                             <th>Status zamówienia</th>
@@ -46,22 +44,23 @@
                     <tbody>
                         @foreach($zamowienia as $zamówienie)
                         <tr class="odd gradeX">
-                            
+
                             <td>{{ $uzytkownik->name.' '.$uzytkownik->surname }}</td>
-                            
+
                             <td>{{ $zamówienie->created_at }}</td>
-                            
+
                             <td>{{ $zamówienie->ZamowienieStatus }}</td>
-                            <td> {{ $zamówienie->zamowieniaplatnosc->platnosc }}   </td>
+                            <td> {{ $zamówienie->zamowieniaplatnosc->platnosc }} </td>
                             @if($tasks!=NULL && $zamówienie->fk_platnosc== 1 )
                             <td>{{ $tasks-> Data }}</td>
-                            @else 
+                            @else
                             <td></td>
                             @endif
-                            <td>  <a href="{{ url('/uzytkownik/zamowienia/szczegoly/'.$zamówienie->id) }}" title="paragon" class="btn btn-info">
-                                Paragon fiskalny
+                            <td> <a href="{{ url('/uzytkownik/zamowienia/szczegoly/'.$zamówienie->id) }}"
+                                    title="paragon" class="btn btn-info">
+                                    Paragon fiskalny
                                 </a></td>
-                          
+
                         </tr>
                         @endforeach
                     </tbody>
@@ -70,16 +69,16 @@
             <!-- /.panel-body -->
         </div>
         <!-- /.panel -->
-        
+
     </div>
     <!-- /.col-lg-12 -->
-    
+
 </div>
 
 @endsection
 
 @section('js-scripts')
-    <script src="{{ asset('js/datatables-demo.js') }}" defer></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script src="{{ asset('js/datatables-demo.js') }}" defer></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 @endsection

@@ -16,26 +16,23 @@
                         <img src="{{ asset($product->Zdjecie) }}" class="card-img-top w-100" height="200px" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->Nazwa }}</h5>
-
                             <div class="row ">
                                 <div class="col-md-12">
                                     <h4>Cena: {{ $product->Cena }}zł/{{ $product->JednostkaMiary }}</h4>
                                 </div>
                                 <div class="col-md-12">
-
-
-
-
                                 </div>
-
                             </div>
                             <p class="btn-holder "><a href="{{ route('index.show',$product->id)}}"
                                     class="btn btn-success btn-block text-center" role="button">
-                                    <i class="fa fa-info-circle" dusk="Szczegóły" aria-hidden="true"></i> Szczegóły</a> </p>
+                                    <i class="fa fa-info-circle" dusk="Szczegóły" aria-hidden="true"></i> Szczegóły</a>
+                            </p>
                             @if($product->Ilosc !=0)
                             <p class="btn-holder"><a href="{{ url('cart/add/'.$product->id) }}"
-                                    class="btn btn-primary btn-block text-center" role="button" onclick="alert('Dodano {{ $product->Nazwa }} do koszyka ')"> 
-                                    <i class="fas fa-shopping-cart pr-2" dusk="Dodaj do koszyka"></i> Dodaj do koszyka</a> </p>
+                                    class="btn btn-primary btn-block text-center" role="button"
+                                    onclick="alert('Dodano {{ $product->Nazwa }} do koszyka ')">
+                                    <i class="fas fa-shopping-cart pr-2" dusk="Dodaj do koszyka"></i> Dodaj do
+                                    koszyka</a> </p>
                             @endif
                         </div>
                     </div>

@@ -90,7 +90,7 @@ class UserController extends Controller
         $uzytkownik->adress = $request->adress;
         $uzytkownik->email = $request->email;
         $uzytkownik->phone = $request->phone;
-        $uzytkownik->level = '1';
+        $uzytkownik->level = '2';
         $uzytkownik->password = bcrypt($request->password);
       
         $uzytkownik->assignRole('Uzytkownik');    
