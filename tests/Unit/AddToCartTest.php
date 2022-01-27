@@ -55,17 +55,17 @@ class AddToCartTest extends DuskTestCase
         });
     }
 
-    public function test_products_menu_add_to_cart_without_login()
-    {        
-        $this->browse(function (Browser $browser) {
-            $browser->visit('http://localhost/Inzynier/public/produkty/menu')
-                    ->assertSee('Nasze produkty')                     
-                    ->click('@Dodaj do koszyka')
-                    ->click('@Ok')
-                    ->assertPathIs('/Inzynier/public/login');
+    // public function test_products_menu_add_to_cart_without_login()
+    // {        
+    //     $this->browse(function (Browser $browser) {
+    //         $browser->visit('http://localhost/Inzynier/public/produkty/menu')
+    //                 ->assertSee('Nasze produkty')                     
+    //                 ->click('@Dodaj do koszyka')
+    //                 ->click('@Ok')
+    //                 ->assertPathIs('/Inzynier/public/login');
                    
-        });
-    }
+    //     });
+    // }
 
   
   
