@@ -18,7 +18,7 @@
             <div class="text-center">
               <h1 class="h4 text-gray-900 mb-4">Utwórz konto!</h1>
             </div>
-            <form method="POST" action="{{ route('uzytkownik.storeguest') }}" class="user">
+            <form method="POST" id="Uzytkownicy-form" action="{{ route('uzytkownik.storeguest') }}" class="user">
               @csrf
 
               <div class="form-group">
@@ -103,4 +103,13 @@
       </div>
     </div>
   </div>
+@endsection
+@section('js')
+{{-- Laravel Javascript Validation --}}
+
+<script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+{!! JsValidator::formRequest('App\Http\Requests\Uzytkownicy\UpdateUzytkownicyRequest', '#Uzytkownicy-form'); !!}
+
+
+
 @endsection

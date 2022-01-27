@@ -53,6 +53,9 @@ class UserController extends Controller
      */
     public function store(StoreUzytkownicyRequest $request)
     { 
+
+       
+       
         try {
         $uzytkownik = new User();
         $uzytkownik->name = $request->name;
@@ -61,9 +64,16 @@ class UserController extends Controller
         $uzytkownik->email = $request->email;
         $uzytkownik->phone = $request->phone;
         $uzytkownik->password = bcrypt($request->password);
-        $uzytkownik->level = $request->level;
-        $uzytkownik->assignRole('Uzytkownik');  
+        $uzytkownik->level = $request->level;  
         $uzytkownik->save();
+
+        $model = model_has_roles::create([
+            'role_id' => $request->level,
+            'model_type' =>'App\Models\User',
+            'model_id' => $uzytkownik->id,
+        ]);
+             
+        
         return redirect()->route('uzytkownik.index')->with('message', 'Udało się dodać użytkownika.');
     } catch(\Illuminate\Database\QueryException $e) {
         \Log::error($e);
@@ -78,10 +88,11 @@ class UserController extends Controller
                 ->with('message', 'Nie udało się dodać użytkownika.');
         }
     }
-    }
+}
+    
 
 
-    public function storeguest(Request $request)
+    public function storeguest(StoreUzytkownicyRequest $request)
     { 
         try {
         $uzytkownik = new User();

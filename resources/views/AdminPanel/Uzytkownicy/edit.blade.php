@@ -47,7 +47,11 @@
                 <label>Rola</label>
                 <select name="level" class="form-control">
                     <option value="{{ $uzytkownik->level }}">
-                        {{ $uzytkownik->level == 1 ? 'Administrator':'Uzytkownik' }}</option>
+                        @if($uzytkownik->level == 1)
+                       Administrator
+                       @else
+                       Użytkownik
+                       @endif
                     <option value="1">Administrator</option>
                     <option value="2">Użytkownik</option>
                 </select>

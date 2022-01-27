@@ -24,7 +24,7 @@ class UpdateUzytkownicyRequest extends FormRequest
                 'required','max:50','min:3'
             ],
             'email'=> [
-                'required','email:rfc,dns'
+                'required','email:rfc,dns','unique:users'
             ],
             'phone'=> [
                 'required','digits:9','numeric',
