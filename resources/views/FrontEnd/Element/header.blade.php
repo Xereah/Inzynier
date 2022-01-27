@@ -54,7 +54,11 @@
                                     <a class="dropdown-item" href="{{ url('/uzytkownik/zamowienia') }}">
                                         {{ __('Zamówienia') }}
                                     </a>
-
+                                    @can('update')
+                                    <a class="dropdown-item" href="{{ url('/kokpit') }}">
+                                        {{ __('Panel Administratora') }}
+                                    </a>
+                                    @endcan
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Wyloguj') }}

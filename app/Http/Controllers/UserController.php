@@ -106,7 +106,7 @@ class UserController extends Controller
       
         $uzytkownik->assignRole('Uzytkownik');    
         $uzytkownik->save();
-
+        Auth::loginUsingId($uzytkownik->id);
 
         return redirect()->route('index.index')->with('message', 'Udało się dodać użytkownika.');
     } catch(\Illuminate\Database\QueryException $e) {
@@ -122,6 +122,8 @@ class UserController extends Controller
                 ->with('message', 'Nie udało się dodać użytkownika.');
         }
     }
+    
+
     }
 
     /**
